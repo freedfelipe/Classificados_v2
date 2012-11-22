@@ -1,0 +1,16 @@
+Tarefas Clasificados
+
+Primeira etapa (2012-11-21 / 2012-11-25)
+- Modular : Admin / Front       - ok
+- Validar Todos os formulários  - ok
+- Inserir busca nas listas      - ok
+
+Segunda etapa 
+- CRUD de Planos (admin)
+- CRUD de categorias (admin)
+- CRUD de Anuncios (admin) -- Upload de imagens ( com contador de imagens )
+
+
+
+para as próximas etapas:
+CRUD para Contratos
