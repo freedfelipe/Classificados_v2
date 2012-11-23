@@ -32,7 +32,27 @@ class Plans extends CI_Controller{
 			array(
 				'field'	=> 'name', 
 				'label'	=> 'Nome', 
-				'rules'	=> 'required'
+				'rules'	=> 'trim|required|xss_clean'
+			),
+			array(
+				'field'	=> 'description', 
+				'label'	=> 'Descrição', 
+				'rules'	=> 'trim|required|xss_clean'
+			),
+			array(
+				'field'	=> 'price', 
+				'label'	=> 'Valor', 
+				'rules'	=> 'trim|required|xss_clean'
+			),
+			array(
+				'field'	=> 'num_pics', 
+				'label'	=> 'Valor', 
+				'rules'	=> 'trim|required|xss_clean'
+			),
+			array(
+				'field'	=> 'period', 
+				'label'	=> 'Dias de Publicação', 
+				'rules'	=> 'trim|required|xss_clean'
 			),
 			array(
 				'field'	=> 'status_id', 
@@ -94,20 +114,22 @@ class Plans extends CI_Controller{
 			$this->render($this->router->method, $data);
 			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_error') . '</p>');
 		} else {
-			if($this->data_model->create($_POST)){
+			if($this->data_model->create()){
 				$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_insert_success') . '</p>');
 				redirect($this->url);
 			}
 		}
 	}
 	
-	public final function update($id)
+	public final function update($id, $idHash)
 	{
 		$this->log($this->router->method);
 		
-		$data['url_title']	= $this->parameter_model->get('system_title');
-		$data['scr_title']	= $this->title[$this->router->method];
-		$data['row']		= $this->data_model->by('id', $id);
+		$data['id']				= $id;
+		$data['hash_id']		= $idHash;
+		$data['url_title']		= $this->parameter_model->get('system_title');
+		$data['scr_title']		= $this->title[$this->router->method];
+		$data['row']			= $this->data_model->by(array('id' => $id, 'idHash' => $idHash));
 		
 		$this->form_validation->set_rules($this->validation);
 		
@@ -115,7 +137,8 @@ class Plans extends CI_Controller{
 			$this->render($this->router->method, $data);
 			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_error') . '</p>');
 		} else {
-			if($this->data_model->update($id, $_POST)){
+			
+			if($this->data_model->update($this->uri->segment(4), $this->uri->segment(5))){
 				$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_update_success') . '</p>');
 			} else {
 				$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_update_fail') . '</p>');

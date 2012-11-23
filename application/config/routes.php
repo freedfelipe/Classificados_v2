@@ -8,6 +8,7 @@ $route['default_controller']                        = "backend/users/login";
 // Rotas backend -- backend
 //Rotas de Login e Segurança
 $route['admin']					                          = 'backend/users';
+$route['admin/login']					                  = 'backend/users/login';
 $route['admin/sair']	    				              = 'backend/users/logout';
 $route['admin/perfil']   				                  = 'backend/users/profile';
 

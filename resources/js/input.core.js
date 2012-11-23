@@ -2,8 +2,8 @@ $(document).ready(function(){
     //formatar moeda do input
 	$('input.add_price').priceFormat({
 		prefix: '',
-		centsSeparator: '.',
-		thousandsSeparator: ','
+		centsSeparator: ',',
+		thousandsSeparator: '.'
     });
 	
 	$(".onlynumbers").numeric();

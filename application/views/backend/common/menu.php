@@ -12,13 +12,6 @@
 	
 	
 	<li class="top">
-		<a href="javascript:" class="top_link"><span>Administração</span></a>
-		<ul class="sub">
-			<li><a href="<?=site_url();?>bancos/">Bancos</a></li>
-			<li><a href="<?=site_url();?>grupos/">Grupos</a></li>
-			<li><a href="<?=site_url();?>distribuidores/">Distribuidores</a></li>
-			
-		</ul>
-		
+		<a href="<?=site_url();?>admin/planos/" class="top_link"><span>Planos</span></a>
 	</li>
 </ul>

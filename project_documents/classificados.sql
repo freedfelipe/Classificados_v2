@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 22, 2012 at 10:20 PM
+-- Generation Time: Nov 23, 2012 at 09:46 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `sys_log` (
   `created_in` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `status_id` int(11) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1209 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1268 ;
 
 --
 -- Dumping data for table `sys_log`
@@ -485,7 +485,66 @@ INSERT INTO `sys_log` (`id`, `user_id`, `session_id`, `user_ip`, `user_browser`,
 (1205, 1, 'e8cc63e380db1839e96d9961173212d7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/grupos/editar/1/0a8bd1d69076acf2b6c36a0fc58a4f2f', 'Array\n(\n)\n', 'user_groups', 'update', '2012-11-22 20:20:21', 1),
 (1206, 1, 'e8cc63e380db1839e96d9961173212d7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/grupos/editar/1/0a8bd1d69076acf2b6c36a0fc58a4f2f', 'Array\n(\n)\n', 'user_groups', 'update', '2012-11-22 20:20:21', 1),
 (1207, 1, 'e8cc63e380db1839e96d9961173212d7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/grupos/editar/1/0a8bd1d69076acf2b6c36a0fc58a4f2f', 'Array\n(\n    [name] => Administradores\n    [status_id] => 1\n)\n', 'user_groups', 'update', '2012-11-22 20:20:24', 1),
-(1208, 1, 'e8cc63e380db1839e96d9961173212d7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/grupos', 'Array\n(\n)\n', 'user_groups', 'index', '2012-11-22 20:20:24', 1);
+(1208, 1, 'e8cc63e380db1839e96d9961173212d7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/grupos', 'Array\n(\n)\n', 'user_groups', 'index', '2012-11-22 20:20:24', 1),
+(1209, 0, 'e3bc9ab1f83faf0d220fddb15f0b75f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/', 'Array\n(\n)\n', 'users', 'login', '2012-11-23 15:45:01', 1),
+(1210, 1, 'e3bc9ab1f83faf0d220fddb15f0b75f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-11-23 15:45:05', 1),
+(1211, 1, 'e3bc9ab1f83faf0d220fddb15f0b75f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-11-23 15:45:05', 1),
+(1212, 0, 'd35b59a229b2d36c94a9d1e1cc502dee', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/login', 'Array\n(\n)\n', 'users', 'login', '2012-11-23 17:47:49', 1),
+(1213, 1, 'd35b59a229b2d36c94a9d1e1cc502dee', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-11-23 17:47:53', 1),
+(1214, 1, 'd35b59a229b2d36c94a9d1e1cc502dee', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-11-23 17:47:53', 1),
+(1215, 1, 'af189b2e9837e6f579ab322f8d08a122', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-11-23 19:06:26', 1),
+(1216, 1, 'af189b2e9837e6f579ab322f8d08a122', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-11-23 19:06:26', 1),
+(1217, 1, 'fc3defb9850dcafe6bec9b5869675dc3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-11-23 19:06:29', 1),
+(1218, 1, 'fc3defb9850dcafe6bec9b5869675dc3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-11-23 19:06:29', 1),
+(1219, 1, 'fc3defb9850dcafe6bec9b5869675dc3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-11-23 19:06:30', 1),
+(1220, 1, 'fc3defb9850dcafe6bec9b5869675dc3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-11-23 19:06:30', 1),
+(1221, 1, 'fc3defb9850dcafe6bec9b5869675dc3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos', 'Array\n(\n)\n', 'plans', 'index', '2012-11-23 19:07:52', 1),
+(1222, 1, 'fc3defb9850dcafe6bec9b5869675dc3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:07:58', 1),
+(1223, 1, 'fc3defb9850dcafe6bec9b5869675dc3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:07:58', 1),
+(1224, 1, 'fc3defb9850dcafe6bec9b5869675dc3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:10:34', 1),
+(1225, 1, 'fc3defb9850dcafe6bec9b5869675dc3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:10:34', 1),
+(1226, 1, '9c415d662fcc67bbe8a2d42fbbfd5a5b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:12:25', 1),
+(1227, 1, '9c415d662fcc67bbe8a2d42fbbfd5a5b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:12:25', 1),
+(1228, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:41:56', 1),
+(1229, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:41:56', 1),
+(1230, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:42:47', 1),
+(1231, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:42:47', 1),
+(1232, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:42:54', 1),
+(1233, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:42:54', 1),
+(1234, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:43:15', 1),
+(1235, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:43:15', 1),
+(1236, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:43:29', 1),
+(1237, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:43:29', 1),
+(1238, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:43:52', 1),
+(1239, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:43:52', 1),
+(1240, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:44:04', 1),
+(1241, 1, '633bded089679e178fa36956b637ceec', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:44:04', 1),
+(1242, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:55:22', 1),
+(1243, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:55:22', 1),
+(1244, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n    [name] => \n    [description] => \n    [num_pics] => \n    [price] => \n    [period] => \n    [status_id] => 0\n)\n', 'plans', 'create', '2012-11-23 19:55:25', 1),
+(1245, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n    [name] => \n    [description] => \n    [num_pics] => \n    [price] => \n    [period] => \n    [status_id] => 0\n)\n', 'plans', 'create', '2012-11-23 19:55:25', 1),
+(1246, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:55:36', 1),
+(1247, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:55:36', 1),
+(1248, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:56:04', 1),
+(1249, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:56:04', 1),
+(1250, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos', 'Array\n(\n)\n', 'plans', 'index', '2012-11-23 19:56:16', 1),
+(1251, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:56:21', 1),
+(1252, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n)\n', 'plans', 'create', '2012-11-23 19:56:21', 1),
+(1253, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n    [name] => \n    [description] => \n    [num_pics] => \n    [price] => \n    [period] => \n    [status_id] => 0\n)\n', 'plans', 'create', '2012-11-23 19:57:25', 1),
+(1254, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n    [name] => \n    [description] => \n    [num_pics] => \n    [price] => \n    [period] => \n    [status_id] => 0\n)\n', 'plans', 'create', '2012-11-23 19:57:25', 1),
+(1255, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n    [name] => \n    [description] => \n    [num_pics] => \n    [price] => \n    [period] => \n    [status_id] => 0\n)\n', 'plans', 'create', '2012-11-23 19:59:18', 1),
+(1256, 1, '1c7f1a2e27a7675832fabf41e846127d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n    [name] => \n    [description] => \n    [num_pics] => \n    [price] => \n    [period] => \n    [status_id] => 0\n)\n', 'plans', 'create', '2012-11-23 19:59:18', 1),
+(1257, 1, '5378eeb8b1af0d0139398a865decf218', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n    [name] => Plano de Teste\n    [description] => <p>Descri&ccedil;&atilde;o de Plano de teste</p>\n    [num_pics] => 12\n    [price] => 12,33\n    [period] => 10\n    [status_id] => 1\n)\n', 'plans', 'create', '2012-11-23 20:03:59', 1),
+(1258, 1, '307165779069f74b03f80372f002c184', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/adicionar', 'Array\n(\n    [name] => Plano de Teste\n    [description] => <p>Descri&ccedil;&atilde;o de Plano de teste</p>\n    [num_pics] => 12\n    [price] => 12,33\n    [period] => 10\n    [status_id] => 1\n)\n', 'plans', 'create', '2012-11-23 20:32:12', 1),
+(1259, 1, '307165779069f74b03f80372f002c184', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos', 'Array\n(\n)\n', 'plans', 'index', '2012-11-23 20:32:12', 1),
+(1260, 1, '04430628bd28ed36d3da4a17e625a489', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos', 'Array\n(\n)\n', 'plans', 'index', '2012-11-23 20:42:21', 1),
+(1261, 1, '04430628bd28ed36d3da4a17e625a489', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos', 'Array\n(\n)\n', 'plans', 'index', '2012-11-23 20:42:57', 1),
+(1262, 1, '04430628bd28ed36d3da4a17e625a489', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/editar/1/d83867180be525f82a29a9435506bf5b', 'Array\n(\n)\n', 'plans', 'update', '2012-11-23 20:43:07', 1),
+(1263, 1, '04430628bd28ed36d3da4a17e625a489', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/editar/1/d83867180be525f82a29a9435506bf5b', 'Array\n(\n)\n', 'plans', 'update', '2012-11-23 20:43:07', 1),
+(1264, 1, '04430628bd28ed36d3da4a17e625a489', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/editar/1/d83867180be525f82a29a9435506bf5b', 'Array\n(\n    [name] => Plano de Teste\n    [description] => <p>Descri&ccedil;&atilde;o de Plano de teste lol</p>\n    [num_pics] => 1\n    [price] => 12,00\n    [period] => 10\n    [status_id] => 1\n)\n', 'plans', 'update', '2012-11-23 20:44:14', 1),
+(1265, 1, '04430628bd28ed36d3da4a17e625a489', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos', 'Array\n(\n)\n', 'plans', 'index', '2012-11-23 20:44:14', 1),
+(1266, 1, '04430628bd28ed36d3da4a17e625a489', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/editar/1/d83867180be525f82a29a9435506bf5b', 'Array\n(\n)\n', 'plans', 'update', '2012-11-23 20:44:19', 1),
+(1267, 1, '04430628bd28ed36d3da4a17e625a489', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/17.0 Firefox/17.0', 'http://local.classificados.com.br/admin/planos/editar/1/d83867180be525f82a29a9435506bf5b', 'Array\n(\n)\n', 'plans', 'update', '2012-11-23 20:44:19', 1);
 
 -- --------------------------------------------------------
 
@@ -588,6 +647,33 @@ CREATE TABLE IF NOT EXISTS `sys_permission` (
   `status_id` int(11) DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sys_plan`
+--
+
+CREATE TABLE IF NOT EXISTS `sys_plan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idHash` varchar(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `description` text NOT NULL,
+  `num_pics` int(11) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `period` int(11) NOT NULL,
+  `created_in` datetime NOT NULL,
+  `update_in` datetime NOT NULL,
+  `status_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `sys_plan`
+--
+
+INSERT INTO `sys_plan` (`id`, `idHash`, `name`, `description`, `num_pics`, `price`, `period`, `created_in`, `update_in`, `status_id`) VALUES
+(1, 'd83867180be525f82a29a9435506bf5b', 'Plano de Teste', '<p>Descri&ccedil;&atilde;o de Plano de teste lol</p>', 1, 12.00, 10, '2012-11-23 18:32:12', '2012-11-23 18:44:14', 1);
 
 -- --------------------------------------------------------
 

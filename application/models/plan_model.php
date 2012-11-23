@@ -4,7 +4,7 @@
  * Model de Tipos de Ações
  * @author Felipe <felipe@wadtecnologia.com.br>
  */
-class User_group_model extends CI_Model{
+class Plan_model extends CI_Model{
 	
 	private $tablename;
 	private $per_page;
@@ -13,23 +13,32 @@ class User_group_model extends CI_Model{
 	{
 		parent::__construct();
 		
-		$this->tablename	= 'sys_group';
+		$this->tablename	= 'sys_plan';
 		$this->per_page		= $this->parameter_model->get('rows_per_page');
 	}
 	
-	public final function by($by, $value)
+	public final function by($by = array())
 	{
-		$query = $this->db->get_where($this->tablename, array('status_id >' => 0, $by => $value));
+		$query = $this->db->get_where($this->tablename, $by);
 		
 		if($query->num_rows() > 0){
-			return $query->result();
+			return $query->result_array();
 		}
 		
 		return false;
 	}
 	
-	public final function create($data)
+	public final function create($data = array())
 	{
+		$data['idHash']			= getHash();
+		$data['name'] 			= $this->input->post('name', TRUE);
+		$data['description']	= $this->input->post('description', TRUE);
+		$data['num_pics'] 		= $this->input->post('num_pics', TRUE);
+		$data['price'] 			= $this->input->post('price', TRUE);
+		$data['period']			= $this->input->post('period', TRUE);
+		$data['created_in']		= date('Y-m-d H:i:s');
+		$data['status_id'] 		= $this->input->post('status_id', TRUE);
+		
 		if($this->db->insert($this->tablename, $data)){
 			return true;
 		}
@@ -53,7 +62,7 @@ class User_group_model extends CI_Model{
 		 
 		$this->db->select('*');
 		$this->db->from($this->tablename);
-		$this->db->where(array('status_id' => 1));
+		//$this->db->where(array('status_id' => 1));
 		if($search){ $this->db->like(array('name' => $search['seeking'])); }
 		$this->db->order_by('name');
 		
@@ -65,7 +74,7 @@ class User_group_model extends CI_Model{
 		$query = $this->db->get();
 		
 		if($query->num_rows() > 0){			
-			$result['rows'] = $query->result();
+			$result['rows'] = $query->result_array();
 			$result['count'] = $query->num_rows();
 			return $result;
 		}
@@ -95,9 +104,17 @@ class User_group_model extends CI_Model{
 		return false;
 	}
 	
-	public final function update($id, $data)
+	public final function update($id = '', $idHash = '', $data = array())
 	{
-		$this->db->where('id', $id);
+		$data['name'] 			= $this->input->post('name', TRUE);
+		$data['description']	= $this->input->post('description', TRUE);
+		$data['num_pics'] 		= $this->input->post('num_pics', TRUE);
+		$data['price'] 			= $this->input->post('price', TRUE);
+		$data['period']			= $this->input->post('period', TRUE);
+		$data['update_in']		= date('Y-m-d H:i:s');
+		$data['status_id'] 		= $this->input->post('status_id', TRUE);
+		
+		$this->db->where(array('id' => $id, 'idHash' => $idHash));
 		
 		if($this->db->update($this->tablename, $data)){
 			return true;

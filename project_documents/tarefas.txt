@@ -6,7 +6,7 @@ Primeira etapa (2012-11-21 / 2012-11-25)
 - Inserir busca nas listas      - ok
 
 Segunda etapa 
-- CRUD de Planos (admin)
+- CRUD de Planos (admin)        - ok
 - CRUD de categorias (admin)
 - CRUD de Anuncios (admin) -- Upload de imagens ( com contador de imagens )
 

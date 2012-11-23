@@ -16,12 +16,12 @@
 		<tbody>
 			<?php foreach($dados['rows'] as $row){?>
 				<tr>
-					<td nowrap><?=$row->name?></td>
-					<td nowrap><?=format_date($row->created_in)?></td>
-					<td nowrap><?=status($row->status_id)?></td>
+					<td nowrap><?=$row['name']?></td>
+					<td nowrap><?=format_date($row['created_in'])?></td>
+					<td nowrap><?=status($row['status_id'])?></td>
 					<td nowrap>
-						<?=anchor($url.'editar/'.$row->id, $this->lang->line('button_update'), 'class="button"');?>
-						<?=anchor($url.'remover/'.$row->id, $this->lang->line('button_delete'), 'class="button" rel="delete"');?>
+						<?=anchor($url.'editar/'.$row['id'].'/'.$row['idHash'], $this->lang->line('button_update'), 'class="button"');?>
+						<?=anchor($url.'remover/'.$row['id'], $this->lang->line('button_delete'), 'class="button" rel="delete"');?>
 					</td>
 				</tr>
 			<?php } ?>
