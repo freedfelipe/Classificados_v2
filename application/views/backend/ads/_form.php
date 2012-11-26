@@ -7,7 +7,7 @@
 			<div>
 				<select name="category_id" id="category_id" class="form_input">
 					<option value="-1">Selecione...</option>
-					<? if($this->router->method == 'update'){ $data_select =  $row[0]['category_id']; }else{ $data_select = set_value('category_id'); } status_select($data_select);?>
+					<? if($this->router->method == 'update'){ $data_select =  $row[0]['category_id']; }else{ $data_select = set_value('category_id'); } data_select($category, $data_select);?>
 				</select>
 			</div>
 		</div>

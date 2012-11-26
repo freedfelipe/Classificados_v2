@@ -16,6 +16,7 @@ class Ads extends CI_Controller{
 		
 		$this->user_model->is_logged();
 		$this->load->model('advertisement_model', 'data_model');
+		$this->load->model('category_model');
 		$this->url = '/admin/anuncios/';
 		
 		$this->limit = $this->parameter_model->get('rows_per_page');
@@ -92,6 +93,8 @@ class Ads extends CI_Controller{
 		
 		$data['url_title']	= $this->parameter_model->get('system_title');
 		$data['scr_title']	= $this->title[$this->router->method];
+		
+		$data['category']	= $this->category_model->by(array('status_id' => '1'));
 		
 		$this->form_validation->set_rules($this->validation);
 		
