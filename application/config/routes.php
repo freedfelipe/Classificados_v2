@@ -44,12 +44,26 @@ $route['admin/modulos/remover/(:num)']			          = 'backend/modules/delete/$1'
 $route['admin/paginas']							          = 'backend/pages';
 $route['admin/paginas/(:num)/(:any)']			          = 'backend/pages/update/$1/$2';
 
-//Rotas de Distribuidor
+//Rotas de Planos
 $route['admin/planos']                                    = 'backend/plans';
-$route['admin/planos/(:num)']					          = 'backend/plans/index/$1';
 $route['admin/planos/adicionar']                          = 'backend/plans/create';
 $route['admin/planos/editar/(:num)/(:any)']               = 'backend/plans/update/$1/$2';
 $route['admin/planos/remover/(:num)/(:any)']              = 'backend/plans/delete/$1/$2';
+$route['admin/planos/(:any)']					          = 'backend/plans/index/$1';
+
+//Rotas de categorias
+$route['admin/categorias']                                    = 'backend/categories';
+$route['admin/categorias/adicionar']                          = 'backend/categories/create';
+$route['admin/categorias/editar/(:num)/(:any)']               = 'backend/categories/update/$1/$2';
+$route['admin/categorias/remover/(:num)/(:any)']              = 'backend/categories/delete/$1/$2';
+$route['admin/categorias/(:any)']					          = 'backend/categories/index/$1';
+
+//Rotas de Anuncios - Administrador
+$route['admin/anuncios']                                    = 'backend/ads';
+$route['admin/anuncios/adicionar']                          = 'backend/ads/create';
+$route['admin/anuncios/editar/(:num)/(:any)']               = 'backend/ads/update/$1/$2';
+$route['admin/anuncios/remover/(:num)/(:any)']              = 'backend/ads/delete/$1/$2';
+$route['admin/anuncios/(:any)']					            = 'backend/ads/index/$1';
 
 //Rotas de Grupos
 //$route['admin/grupos']                                    = 'backend/groups';

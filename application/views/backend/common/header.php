@@ -59,7 +59,7 @@
 		<div class="user">
 			Olá, <?=$this->session->userdata('user_name')?> | 
 			<!--<a href="<?=site_url()?>admin/perfil">meu perfil</a> | -->
-			<a href="<?=site_url()?>sair">sair</a>
+			<a href="<?=site_url()?>admin/sair">sair</a>
 		</div>
 	</div>
 	

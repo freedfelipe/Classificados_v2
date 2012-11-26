@@ -14,4 +14,10 @@
 	<li class="top">
 		<a href="<?=site_url();?>admin/planos/" class="top_link"><span>Planos</span></a>
 	</li>
+	<li class="top">
+		<a href="<?=site_url();?>admin/categorias/" class="top_link"><span>Categorias</span></a>
+	</li>
+	<li class="top">
+		<a href="<?=site_url();?>admin/anuncios/" class="top_link"><span>Anúncios</span></a>
+	</li>
 </ul>
