@@ -8,9 +8,14 @@ Primeira etapa (2012-11-21 / 2012-11-25)
 Segunda etapa 
 - CRUD de Planos (admin)        - ok
 - CRUD de categorias (admin)    - ok
-- CRUD de Anuncios (admin) -- Upload de imagens ( com contador de imagens )     --
+
+- CRUD de Marcas    - ok
+- CRUD de Modelos   - ok
+
+- CRUD de Anuncios (admin) -- Upload de imagens     --
 
 
 
 para as próximas etapas:
+FRONT END
 

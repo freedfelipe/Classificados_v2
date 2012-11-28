@@ -18,6 +18,12 @@
 		<a href="<?=site_url();?>admin/categorias/" class="top_link"><span>Categorias</span></a>
 	</li>
 	<li class="top">
+		<a href="<?=site_url();?>admin/marcas/" class="top_link"><span>Marcas</span></a>
+	</li>
+	<li class="top">
+		<a href="<?=site_url();?>admin/modelos/" class="top_link"><span>Modelos</span></a>
+	</li>
+	<li class="top">
 		<a href="<?=site_url();?>admin/anuncios/" class="top_link"><span>Anúncios</span></a>
 	</li>
 </ul>

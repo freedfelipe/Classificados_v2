@@ -58,6 +58,20 @@ $route['admin/categorias/editar/(:num)/(:any)']               = 'backend/categor
 $route['admin/categorias/remover/(:num)/(:any)']              = 'backend/categories/delete/$1/$2';
 $route['admin/categorias/(:any)']					          = 'backend/categories/index/$1';
 
+//Rotas de Marcas
+$route['admin/marcas']                                          = 'backend/brands';
+$route['admin/marcas/adicionar']                                = 'backend/brands/create';
+$route['admin/marcas/editar/(:num)']                         = 'backend/brands/update/$1';
+$route['admin/marcas/remover/(:num)']                        = 'backend/brands/delete/$1';
+$route['admin/marcas/(:any)']					                = 'backend/brands/index/$1';
+
+//Rotas de Modelos
+$route['admin/modelos']                                          = 'backend/models';
+$route['admin/modelos/adicionar']                                = 'backend/models/create';
+$route['admin/modelos/editar/(:num)']                         = 'backend/models/update/$1';
+$route['admin/modelos/remover/(:num)']                        = 'backend/models/delete/$1';
+$route['admin/modelos/(:any)']					                = 'backend/models/index/$1';
+
 //Rotas de Anuncios - Administrador
 $route['admin/anuncios']                                    = 'backend/ads';
 $route['admin/anuncios/adicionar']                          = 'backend/ads/create';
