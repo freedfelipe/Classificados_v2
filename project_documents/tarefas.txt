@@ -12,6 +12,17 @@ Segunda etapa
 - CRUD de Marcas    - ok
 - CRUD de Modelos   - ok
 
+- CRUD de categoria de publicidade - ok
+
+- ( verificar o esquema meu deus que fiz no select de status do MPV )
+
+- CRUD de Publicidade
+- CMS da página de publicidade
+
+- CRUD de Parceiros
+- CMS da página de parceiros
+
+
 - CRUD de Anuncios (admin) -- Upload de imagens     --
 
 

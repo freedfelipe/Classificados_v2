@@ -1,5 +1,5 @@
 <ul class="menu">
-	<li class="top"><a href="#" class="top_link"><span><?=$this->lang->line('menu_system_title');?></span></a>
+	<li class="top"><a href="javascript:" class="top_link"><span><?=$this->lang->line('menu_system_title');?></span></a>
 		<ul class="sub">
 			<li class="menu_separator"><?=$this->lang->line('menu_system_modparams');?></li>
 			<li><a href="<?=site_url();?>admin/parametros"><?=$this->lang->line('menu_system_parameters');?></a></li>
@@ -25,5 +25,15 @@
 	</li>
 	<li class="top">
 		<a href="<?=site_url();?>admin/anuncios/" class="top_link"><span>Anúncios</span></a>
+	</li>
+	<li class="top"><a href="javascript:" class="top_link"><span>Publicidade</span></a>
+		<ul class="sub">
+			<li>
+				<a href="<?=site_url();?>admin/publicidade-categorias/" class="top_link"><span>Categorias de Publicidade</span></a>
+			</li>
+			<li>
+				<a href="<?=site_url();?>admin/publicidade/" class="top_link"><span>Publicidade</span></a>
+			</li>
+		</ul>
 	</li>
 </ul>
