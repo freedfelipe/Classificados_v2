@@ -189,3 +189,15 @@ function consCep($cep)
 		print html_entity_decode($pagina);
 	}
 }
+
+function invertData($tData = '00/00/0000')
+{
+	if(empty($tData)) {
+		$tData = '00/00/0000';
+	}
+		$tData = explode('/', $tData);
+		$nData = $tData[2].'-'.$tData[1].'-'.$tData[0];
+	
+	
+	return $nData;
+}

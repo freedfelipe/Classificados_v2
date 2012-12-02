@@ -79,12 +79,19 @@ $route['admin/anuncios/editar/(:num)/(:any)']                       = 'backend/a
 $route['admin/anuncios/remover/(:num)/(:any)']                      = 'backend/ads/delete/$1/$2';
 $route['admin/anuncios/(:any)']					                    = 'backend/ads/index/$1';
 
-//Rotas de Anuncios - Administrador
+//Rotas de categoria das publicidades
 $route['admin/publicidade-categorias']                              = 'backend/advertising_categories';
 $route['admin/publicidade-categorias/adicionar']                    = 'backend/advertising_categories/create';
 $route['admin/publicidade-categorias/editar/(:num)/(:any)']         = 'backend/advertising_categories/update/$1/$2';
 $route['admin/publicidade-categorias/remover/(:num)/(:any)']        = 'backend/advertising_categories/delete/$1/$2';
 $route['admin/publicidade-categorias/(:any)']                       = 'backend/advertising_categories/index/$1';
+
+//Rotas de publicidades
+$route['admin/publicidade']                                         = 'backend/advertising';
+$route['admin/publicidade/adicionar']                               = 'backend/advertising/create';
+$route['admin/publicidade/editar/(:num)/(:any)']                    = 'backend/advertising/update/$1/$2';
+$route['admin/publicidade/remover/(:num)']                          = 'backend/advertising/delete/$1';
+$route['admin/publicidade/(:any)']                                  = 'backend/advertising/index/$1';
 
 //Rotas de Grupos
 //$route['admin/grupos']                                    = 'backend/groups';
