@@ -15,12 +15,13 @@
 		<div class="field_row <?php if(form_error('status_id')){print('validation_error');}?>">
 			<div class="field_label">Status:</div>
 			<div>
-			<select name="status_id" id="status_id" class="form_input">
-				<option>Selecione...</option>
-				<?status_select(@$row[0]->status_id)?>
-			</select>
+				<select name="status_id" id="status_id" class="form_input">
+					<option value="-1">Selecione...</option>
+					<? if($this->router->method == 'update'){ $data_select =  $row[0]->status_id; }else{ $data_select = set_value('status_id'); } status_select($data_select);?>
+				</select>
 			</div>
 		</div>
+		
 	</fieldset>
 	
 	<br />

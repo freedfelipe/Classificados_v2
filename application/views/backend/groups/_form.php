@@ -11,7 +11,7 @@
 			<div class="field_label">Status:</div>
 			<div>
 				<select name="active" id="active" class="form_input">
-					<option value="0">Selecione...</option>
+					<option value="-1">Selecione...</option>
 					<? if($this->router->method == 'update'){ $data_select =  $row[0]['active']; }else{ $data_select = set_value('active'); } status_select($data_select);?>
 				</select>
 			</div>

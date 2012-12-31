@@ -42,7 +42,7 @@
 			<div>
 				<select name="status_id" id="status_id" class="form_input">
 					<option value="-1">Selecione...</option>
-					<? if($this->router->method == 'update'){ $data_select =  $row[0]['status_id']; }else{ if(set_value('status_id') == '') { $data_select = 1; }else{ $data_select = set_value('status_id'); } } status_select($data_select);?>
+					<? if($this->router->method == 'update'){ $data_select =  $row[0]['status_id']; }else{ $data_select = set_value('status_id'); } status_select($data_select);?>
 				</select>
 			</div>
 		</div>

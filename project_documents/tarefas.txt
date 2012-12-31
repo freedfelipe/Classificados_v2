@@ -14,7 +14,7 @@ Segunda etapa
 
 - CRUD de categoria de publicidade - ok
 
-- ( verificar o esquema meu deus que fiz no select de status do MPV )
+- ( verificar o esquema meu deus que fiz no select de status do MPV ) - ok
 
 - CRUD de Publicidade - ok
 - CMS da página de publicidade
