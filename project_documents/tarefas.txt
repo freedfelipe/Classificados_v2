@@ -17,10 +17,10 @@ Segunda etapa
 - ( verificar o esquema meu deus que fiz no select de status do MPV ) - ok
 
 - CRUD de Publicidade - ok
-- CMS da página de publicidade
+- CMS da página de publicidade -- Aguardando Layout
 
-- CRUD de Parceiros
-- CMS da página de parceiros
+- CRUD de Parceiros -- ok
+- CMS da página de parceiros -- Aguardando Layout
 
 
 - CRUD de Anuncios (admin) -- Upload de imagens     --

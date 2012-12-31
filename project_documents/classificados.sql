@@ -422,7 +422,7 @@ CREATE TABLE IF NOT EXISTS `sys_log` (
   `created_in` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `status_id` int(11) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1496 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1531 ;
 
 --
 -- Extraindo dados da tabela `sys_log`
@@ -1130,7 +1130,43 @@ INSERT INTO `sys_log` (`id`, `user_id`, `session_id`, `user_ip`, `user_browser`,
 (1492, 1, '243d03bb3f3efceae4478e24d4f1bf1f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0', 'http://local.classificados.com.br/admin/publicidade/editar/1/2f8f16156a53c2bc91ca3b75811a7a25', 'Array\n(\n    [advertising_category_id] => 2\n    [name] => teste 2 com arquivo\n    [start_date] => 01/12/2012\n    [end_date] => 31/12/2012\n    [link] => http://google.com.br\n    [status_id] => 1\n)\n', 'advertising', 'update', '2012-12-02 02:01:08', 1),
 (1493, 1, '243d03bb3f3efceae4478e24d4f1bf1f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0', 'http://local.classificados.com.br/admin/publicidade/editar/1/2f8f16156a53c2bc91ca3b75811a7a25', 'Array\n(\n)\n', 'advertising', 'update', '2012-12-02 02:01:08', 1),
 (1494, 1, '243d03bb3f3efceae4478e24d4f1bf1f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0', 'http://local.classificados.com.br/admin/publicidade/editar/1/2f8f16156a53c2bc91ca3b75811a7a25', 'Array\n(\n)\n', 'advertising', 'update', '2012-12-02 02:01:08', 1),
-(1495, 1, '22efb543b24b29c8e52e3c98b9070a91', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0', 'http://local.classificados.com.br/admin/publicidade', 'Array\n(\n)\n', 'advertising', 'index', '2012-12-02 02:03:08', 1);
+(1495, 1, '22efb543b24b29c8e52e3c98b9070a91', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0', 'http://local.classificados.com.br/admin/publicidade', 'Array\n(\n)\n', 'advertising', 'index', '2012-12-02 02:03:08', 1),
+(1496, 0, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/', 'Array\n(\n)\n', 'users', 'login', '2012-12-31 12:09:48', 1),
+(1497, 1, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-12-31 12:09:55', 1),
+(1498, 1, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/usuarios', 'Array\n(\n)\n', 'users', 'index', '2012-12-31 12:09:55', 1),
+(1499, 1, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/planos', 'Array\n(\n)\n', 'plans', 'index', '2012-12-31 12:12:59', 1),
+(1500, 1, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/marcas', 'Array\n(\n)\n', 'brands', 'index', '2012-12-31 12:13:24', 1),
+(1501, 1, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/categorias', 'Array\n(\n)\n', 'categories', 'index', '2012-12-31 12:13:27', 1),
+(1502, 1, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/anuncios', 'Array\n(\n)\n', 'ads', 'index', '2012-12-31 12:13:34', 1),
+(1503, 1, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/anuncios/adicionar', 'Array\n(\n)\n', 'ads', 'create', '2012-12-31 12:13:36', 1),
+(1504, 1, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/anuncios/adicionar', 'Array\n(\n)\n', 'ads', 'create', '2012-12-31 12:13:36', 1),
+(1505, 1, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade-categorias', 'Array\n(\n)\n', 'advertising_categories', 'index', '2012-12-31 12:14:03', 1),
+(1506, 1, 'bc049e9f0d7dd23e6bed8d49c293f937', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade', 'Array\n(\n)\n', 'advertising', 'index', '2012-12-31 12:14:06', 1),
+(1507, 1, '51a2e6b12a9f8554b5d29ebf460d57a1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade', 'Array\n(\n)\n', 'advertising', 'index', '2012-12-31 12:15:14', 1),
+(1508, 1, 'f31b586d6bc2cc00bcebf50ed429b0f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade', 'Array\n(\n)\n', 'advertising', 'index', '2012-12-31 12:39:02', 1),
+(1509, 1, 'f31b586d6bc2cc00bcebf50ed429b0f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade/adicionar', 'Array\n(\n)\n', 'advertising', 'create', '2012-12-31 12:39:05', 1),
+(1510, 1, 'f31b586d6bc2cc00bcebf50ed429b0f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade/adicionar', 'Array\n(\n)\n', 'advertising', 'create', '2012-12-31 12:39:05', 1),
+(1511, 1, 'f31b586d6bc2cc00bcebf50ed429b0f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade/adicionar', 'Array\n(\n)\n', 'advertising', 'create', '2012-12-31 12:39:21', 1),
+(1512, 1, 'f31b586d6bc2cc00bcebf50ed429b0f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade/adicionar', 'Array\n(\n)\n', 'advertising', 'create', '2012-12-31 12:39:21', 1),
+(1513, 1, 'f31b586d6bc2cc00bcebf50ed429b0f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade/adicionar', 'Array\n(\n)\n', 'advertising', 'create', '2012-12-31 12:39:25', 1),
+(1514, 1, 'f31b586d6bc2cc00bcebf50ed429b0f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade/adicionar', 'Array\n(\n)\n', 'advertising', 'create', '2012-12-31 12:39:25', 1),
+(1515, 1, 'f31b586d6bc2cc00bcebf50ed429b0f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade/adicionar', 'Array\n(\n)\n', 'advertising', 'create', '2012-12-31 12:39:27', 1),
+(1516, 1, 'f31b586d6bc2cc00bcebf50ed429b0f9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade/adicionar', 'Array\n(\n)\n', 'advertising', 'create', '2012-12-31 12:39:27', 1),
+(1517, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade/adicionar', 'Array\n(\n)\n', 'advertising', 'create', '2012-12-31 13:15:46', 1),
+(1518, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/publicidade/adicionar', 'Array\n(\n)\n', 'advertising', 'create', '2012-12-31 13:15:46', 1);
+INSERT INTO `sys_log` (`id`, `user_id`, `session_id`, `user_ip`, `user_browser`, `user_url`, `user_post`, `model`, `action`, `created_in`, `status_id`) VALUES
+(1519, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parceiros', 'Array\n(\n)\n', 'partners', 'index', '2012-12-31 13:16:11', 1),
+(1520, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parceiros/adicionar', 'Array\n(\n)\n', 'partners', 'create', '2012-12-31 13:16:14', 1),
+(1521, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parametros', 'Array\n(\n)\n', 'parameters', 'index', '2012-12-31 13:17:44', 1),
+(1522, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parametros/adicionar', 'Array\n(\n)\n', 'parameters', 'create', '2012-12-31 13:18:00', 1),
+(1523, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parametros/adicionar', 'Array\n(\n)\n', 'parameters', 'create', '2012-12-31 13:18:00', 1),
+(1524, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parametros/adicionar', 'Array\n(\n    [name] => UPLOAD_PATH_PARTNER\n    [value] => resources/upload/parceiros/\n    [status_id] => 1\n)\n', 'parameters', 'create', '2012-12-31 13:18:43', 1),
+(1525, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parametros', 'Array\n(\n)\n', 'parameters', 'index', '2012-12-31 13:18:44', 1),
+(1526, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parceiros/adicionar', 'Array\n(\n)\n', 'partners', 'create', '2012-12-31 13:18:56', 1),
+(1527, 1, '6d7ad22b5517d39a94a03e8c2c27bbea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parceiros/adicionar', 'Array\n(\n)\n', 'partners', 'create', '2012-12-31 13:18:56', 1),
+(1528, 1, 'd58952dd859b92a0fd773c5e67a062d2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parceiros/adicionar', 'Array\n(\n    [name] => Teste Parceiro\n    [link] => http://google.com.br\n    [status_id] => 1\n)\n', 'partners', 'create', '2012-12-31 13:34:35', 1),
+(1529, 1, 'd58952dd859b92a0fd773c5e67a062d2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parceiros/adicionar', 'Array\n(\n    [name] => Teste Parceiro\n    [link] => http://google.com.br\n    [status_id] => 1\n)\n', 'partners', 'create', '2012-12-31 13:38:01', 1),
+(1530, 1, 'd58952dd859b92a0fd773c5e67a062d2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0', 'http://local.classificados.com.br/admin/parceiros', 'Array\n(\n)\n', 'partners', 'index', '2012-12-31 13:38:01', 1);
 
 -- --------------------------------------------------------
 
@@ -3748,7 +3784,7 @@ CREATE TABLE IF NOT EXISTS `sys_parameter` (
   `created_in` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `status_id` int(11) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Extraindo dados da tabela `sys_parameter`
@@ -3762,7 +3798,33 @@ INSERT INTO `sys_parameter` (`id`, `name`, `value`, `created_in`, `status_id`) V
 (5, 'CONTACT_EMAIL', 'freedfelipe@gmail.com', '2012-08-31 02:18:47', 1),
 (6, 'SUBJECT_EMAIL', 'Contato Email', '2012-08-31 02:27:58', 1),
 (7, 'author', 'Wad Tecnologia', '2012-09-04 14:25:22', 1),
-(8, 'UPLOAD_PATH_ADVERTISING', 'resources/upload/publicidade/', '2012-12-02 00:28:06', 1);
+(8, 'UPLOAD_PATH_ADVERTISING', 'resources/upload/publicidade/', '2012-12-02 00:28:06', 1),
+(9, 'UPLOAD_PATH_PARTNER', 'resources/upload/parceiros/', '2012-12-31 13:18:43', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `sys_partner`
+--
+
+CREATE TABLE IF NOT EXISTS `sys_partner` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idHash` varchar(50) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `file` varchar(250) NOT NULL,
+  `link` varchar(250) NOT NULL,
+  `created_in` datetime NOT NULL,
+  `update_in` datetime NOT NULL,
+  `status_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `sys_partner`
+--
+
+INSERT INTO `sys_partner` (`id`, `idHash`, `name`, `file`, `link`, `created_in`, `update_in`, `status_id`) VALUES
+(1, '176d6f8d13d7a0d80c679209e1c3c15a', 'Teste Parceiro', 'parceiros_esc1.jpg', 'http://google.com.br', '2012-12-31 11:38:01', '0000-00-00 00:00:00', 1);
 
 -- --------------------------------------------------------
 

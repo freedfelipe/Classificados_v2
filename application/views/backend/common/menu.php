@@ -36,4 +36,7 @@
 			</li>
 		</ul>
 	</li>
+	<li class="top">
+		<a href="<?=site_url();?>admin/parceiros/" class="top_link"><span>Parceiros</span></a>
+	</li>
 </ul>

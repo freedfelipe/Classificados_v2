@@ -93,6 +93,14 @@ $route['admin/publicidade/editar/(:num)/(:any)']                    = 'backend/a
 $route['admin/publicidade/remover/(:num)']                          = 'backend/advertising/delete/$1';
 $route['admin/publicidade/(:any)']                                  = 'backend/advertising/index/$1';
 
+//Rotas de parceiros
+$route['admin/parceiros']                                           = 'backend/partners';
+$route['admin/parceiros/adicionar']                                 = 'backend/partners/create';
+$route['admin/parceiros/editar/(:num)/(:any)']                      = 'backend/partners/update/$1/$2';
+$route['admin/parceiros/remover/(:num)']                            = 'backend/partners/delete/$1';
+$route['admin/parceiros/(:any)']                                    = 'backend/partners/index/$1';
+
+
 //Rotas de Grupos
 //$route['admin/grupos']                                    = 'backend/groups';
 //$route['admin/grupos/(:num)']					          = 'backend/groups/index/$1';
