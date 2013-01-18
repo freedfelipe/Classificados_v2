@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]>                  <html class="ie7 no-js" lang="pt">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="pt">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="pt">  <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<title>Meu Carro Turbo</title>
+	
+	<meta name="description" content="Meu Carro Turbo - O seu classificados turbinado!" />
+	<meta name="keywords" content="Carro Turbo, Aspirado, Rebaixado, Classificados" />
+	<meta name="author" content="Wad Tecnologia - Diogo Pedro e Felipe Albert" />
+	
+	<!-- Smartphone -->
+	<link href="./css/phone.css" rel="stylesheet" type="text/css" media="only screen and (max-width:320px)" class="cssfx" />
+	<!-- Phone Wide -->
+	<link href="./css/phone-landscape.css" rel="stylesheet" type="text/css" media="only screen and (min-width:321px) and (max-width:480px)" class="cssfx" />
+	<!-- Tablet -->
+	<link href="./css/tablet.css" rel="stylesheet" type="text/css" media="only screen and (min-width:481px) and (max-width:768px)" class="cssfx" />
+	<!--[if !lte IE 6]><!-->
+		<link rel="stylesheet" href="css/style.css" media="screen" />
+		<link rel="stylesheet" href="css/fancybox.min.css" media="screen" />
+		<link rel="stylesheet" href="css/mediaelementplayer.min.css" media="screen" />
+	<!--<![endif]-->
+
+	<!--[if lte IE 6]>
+		<link rel="stylesheet" href="http://universal-ie6-css.googlecode.com/files/ie6.1.1.css" media="screen, projection">
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Banner -->
+	<link rel="stylesheet" type="text/css" href="css/destaque.css">
+	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+	
+</head>
+
+<body>
+	<header>
+		<div id="margin">
+			<div id="logo"><a href="#"><img src="images/logo.png" width="100%" /></a></div>
+			<div id="menu_topo">
+				<a href="#">HOME</a>  |  <a href="#">QUEM SOMOS</a>  | <a href="#">PUBLICIDADE</a>  |  <a href="#">PLANOS</a>  |  <a href="#">PARCEIROS</a>  |  <a href="#">CONTATO</a>
+			</div>
+			<div class="login">
+				<a href="#"><div class="user-novo">Usuário Novo</div></a>
+				
+				<div class="info-user">
+					<div id="right-div">
+						<a href="#"><div id="login-btn">Login</div></a>
+						<a href="#"><div id="logout-btn">Logout</div></a>
+					</div>
+					<div id="left-div">
+						<a href="#"><div class="logado">Diogo Pedro dos Santos</div></a>
+						<a href="#"><div class="my-anuncios">Meus Anúncios</div></a>
+						<a href="#"><div class="my-conta">Minha conta</div></a>
+						
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</header>
+	<div class="menu">
+		<div id="margin">
+			<a href="#"><div class="bt_menu"><div id="aspirados">Aspirados</div></div></a>
+			<a href="#"><div class="bt_menu"><div id="rebaixados">Rebaixados</div></div></a>
+			<a href="#"><div class="bt_menu"><div id="stock">Stock</div></div></a>
+			<a href="#"><div class="bt_menu"><div id="turbo">Turbo</div></div></a>
+			<a href="#"><div class="bt_menu"><div id="acessorios"><div class="pecas">Peças</div> Acessórios</div></div></a>
+			<a href="#"><div class="bt_menu"><div id="mecanica"><div class="pecas">Peças</div> Mecânica</div></div></a>
+			<a href="#"><div class="bt_menu"><div id="rodas">Rodas</div></div></a>
+			<a href="#"><div class="add-anuncio"><div id="texto">Adicionar <br />novo <br />anúncio!</div></div></a>
+		</div>
+	</div>
+	<!-- Destaque - Banner -->
+	<div id="faixa-banner" class="clearfix">
+		<div id="margin">
+			<div class="title-destaque"><b>Ofertas</b> em Destaques</div>
+			
+			<div id="viewer" class="clearfix">
+				<div id="panels">
+					<div id="slider">
+						<div id="panel1">
+							<img src="img/banner1.jpg" alt="banner 1">
+							<div class="tit-destaque">
+								<div class="texto-destaque">Subaru Impreza STI - </div>
+								<div class="preco-destaque">R$ 80.000,00</div>
+							</div>
+							
+						</div>
+						<div id="panel2">
+							<img src="img/banner2.jpg" alt="Image 2">
+							<div class="tit-destaque">
+								<div class="texto-destaque">Subaru Impreza STI - </div>
+								<div class="preco-destaque">R$ 80.000,00</div>
+							</div>
+						</div>
+						<div id="panel3">
+							<img src="img/banner3.jpg" alt="Image 3">
+							<div class="tit-destaque">
+								<div class="texto-destaque">Subaru Impreza STI - </div>
+								<div class="preco-destaque">R$ 80.000,00</div>
+							</div>
+						</div>
+						<div id="panel4">
+							<img src="img/banner4.jpg" alt="Image 4">
+							<div class="tit-destaque">
+								<div class="texto-destaque">Subaru Impreza STI - </div>
+								<div class="preco-destaque">R$ 80.000,00</div>
+							</div>
+						</div>
+						<div id="panel5">
+							<img src="img/banner5.jpg" alt="Image 5">
+							<div class="tit-destaque">
+								<div class="texto-destaque">Subaru Impreza STI - </div>
+								<div class="preco-destaque">R$ 80.000,00</div>
+							</div>
+						</div>
+						<div id="panel6">
+							<img src="img/banner6.jpg" alt="Image 6">
+							<div class="tit-destaque">
+								<div class="texto-destaque">Subaru Impreza STI - </div>
+								<div class="preco-destaque">R$ 80.000,00</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="previews-destaque">
+					<div class="title-preview">Outros Destaques</div>
+					<ul id="nav">
+						<li class="thumb1"><a href="#panel1" title="Panel 1"><img src="img/banner1.jpg" width="150px"/><div class="preview-info">Subaru Impreza STI</div></a></li>
+						<li class="thumb2"><a href="#panel2" title="Panel 2"><img src="img/banner2.jpg" width="150px"/><div class="preview-info">Subaru Impreza STI</div></a></li>
+						<li class="thumb3"><a href="#panel3" title="Panel 3"><img src="img/banner3.jpg" width="150px"/><div class="preview-info">Subaru Impreza STI</div></a></li>
+					</ul>
+					<ul id="nav">
+						<li class="thumb4"><a href="#panel4" title="Panel 4"><img src="img/banner4.jpg" width="150px"/><div class="preview-info">Subaru Impreza STI</div></a></li>
+						<li class="thumb5"><a href="#panel5" title="Panel 5"><img src="img/banner5.jpg" width="150px"/><div class="preview-info">Subaru Impreza STI</div></a></li>
+						<li class="thumb6"><a href="#panel6" title="Panel 6"><img src="img/banner6.jpg" width="150px"/><div class="preview-info">Subaru Impreza STI</div></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!-- Fim destaque - Banner -->
+	
+	<!-- Inicio do conteudo -->
+	<div id="content" class="clearfix">
+		<div id="margin">
+			<div class="navegacao">Você está: <a href="#">Home</a></div>
+			<div class="title-content">Todos <font size="5">(1.000) Resultados</font></div>
+			
+			<div class="widget-left">
+				<div class="filtro">
+					<div id="title">Filtros</div>
+					<div id="opcoes">
+						<form name="filtros">
+						<div id="texto">Marca</div>
+						<div id="campo">
+							<select name="marca" id="marca" >
+								<option value="1">item 1</option>
+								<option value="2">item 2</option>
+								<option value="3">item 3</option>
+								<option value="4">item 4</option>
+								<option value="0">All</option>
+							</select>
+						</div>
+						
+						<div id="texto">Modelo</div>
+						<div id="campo">
+							<select name="modelo" id="modelo" >
+								<option value="1">item 1</option>
+								<option value="2">item 2</option>
+								<option value="3">item 3</option>
+								<option value="4">item 4</option>
+								<option value="0">All</option>
+							</select>
+						</div>
+						
+						<div id="texto">Categoria</div>
+						<div id="campo">
+							<select name="categoria" id="categoria" >
+								<option value="1">item 1</option>
+								<option value="2">item 2</option>
+								<option value="3">item 3</option>
+								<option value="4">item 4</option>
+								<option value="0">All</option>
+							</select>
+						</div>
+						
+						<div id="texto">Faixa de Preço</div>
+						<div id="campo">
+							<select name="faixa-preco" id="faixa-preco" >
+								<option value="1">item 1</option>
+								<option value="2">item 2</option>
+								<option value="3">item 3</option>
+								<option value="4">item 4</option>
+								<option value="0">All</option>
+							</select>
+							
+							<select name="faixa-preco1" id="faixa-preco1" >
+								<option value="1">item 1</option>
+								<option value="2">item 2</option>
+								<option value="3">item 3</option>
+								<option value="4">item 4</option>
+								<option value="0">All</option>
+							</select>
+						</div>
+						
+						<div id="texto">Estado</div>
+						<div id="campo">
+							<select name="estado" id="estado" >
+								<option value="1">item 1</option>
+								<option value="2">item 2</option>
+								<option value="3">item 3</option>
+								<option value="4">item 4</option>
+								<option value="0">All</option>
+							</select>
+						</div>
+						
+						<div id="texto">Cidade</div>
+						<div id="campo">
+							<select name="cidade" id="cidade" >
+								<option value="1">item 1</option>
+								<option value="2">item 2</option>
+								<option value="3">item 3</option>
+								<option value="4">item 4</option>
+								<option value="0">All</option>
+							</select>
+						</div>
+						
+					</div>
+					<input type="reset" name="limpar" id="bt-limpar" value="Limpar">
+					<input type="submit" name="filtrar" id="bt-filtrar" value="Filtrar">
+					</form>
+				</div>
+				
+				<!-- Publicidade -->
+				<div class="info-publicidade">Publicidade</div>
+				<div class="publicidade-widget">300x250</div>
+				<!-- Publicidade -->
+				<div class="info-publicidade">Publicidade</div>
+				<div class="publicidade-widget">300x250</div>
+				
+				<!-- Parceiros -->
+				<div class="parceiros">
+					<div id="title">Parceiros</div>
+					<div id="banner">Parceiro 1 280x130</div>
+					<div id="banner">Parceiro 2 280x130</div>
+					<div id="banner">Parceiro 3 280x130</div>
+					<div id="info">
+						<font size="4">Quer ser um parceiro do</font><br />
+						<b><font size="6">Meu Carro Turbo?</font></b><br /><br />
+						<font size="4">Veja como é fácil - <a href="#">clique aqui!</a></font>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="principal">
+				<div class="paginacao">
+					
+					<div id="right">
+						<div id="texto">Página</div>
+						<a href="#"><div id="pages">1</div></a>
+						<a href="#"><div id="pages">2</div></a>
+						<a href="#"><div id="pages">3</div></a>
+						<a href="#"><div id="pages">4</div></a>
+						<a href="#"><div id="pages">></div></a>
+					</div>
+				</div>
+				
+				<!-- Anuncios -->
+				<div class="line_anuncio">
+					<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="anuncio/foto1.jpg" width="150"/></div></a>
+					<div id="cabecalho">
+						<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
+						<a href="#"><div id="preco">R$ 80.000,00</div></a>
+					</div>
+					<div id="detalhes">
+						<div id="categoria">Categoria: </div><a href="#"><div id="aspirado">Aspirados</div></a>
+						<a href="#"><div id="user">Nome do user</div></a>
+					</div>
+					<div id="vermais">
+						<div id="regiao"> <a href="#">Cidade</a> | <a href="#">Estado</a></div>
+						<a href="#"><div id="detalhes">Ver Detalhes</div></a>
+					</div>
+				</div>
+				
+				<div class="line_anuncio">
+					<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+					<div id="cabecalho">
+						<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
+						<a href="#"><div id="preco">R$ 80.000,00</div></a>
+					</div>
+					<div id="detalhes">
+						<div id="categoria">Categoria: </div><a href="#"><div id="rebaixado">Rebaixado</div></a>
+						<a href="#"><div id="user">Nome do user</div></a>
+					</div>
+					<div id="vermais">
+						<div id="regiao"> <a href="#">Cidade</a> | <a href="#">Estado</a></div>
+						<a href="#"><div id="detalhes">Ver Detalhes</div></a>
+					</div>
+				</div>
+				
+				<div class="line_anuncio">
+					<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+					<div id="cabecalho">
+						<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
+						<a href="#"><div id="preco">R$ 80.000,00</div></a>
+					</div>
+					<div id="detalhes">
+						<div id="categoria">Categoria: </div><a href="#"><div id="stock">Stock</div></a>
+						<a href="#"><div id="user">Nome do user</div></a>
+					</div>
+					<div id="vermais">
+						<div id="regiao"> <a href="#">Cidade</a> | <a href="#">Estado</a></div>
+						<a href="#"><div id="detalhes">Ver Detalhes</div></a>
+					</div>
+				</div>
+				
+				<div class="line_anuncio">
+					<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+					<div id="cabecalho">
+						<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
+						<a href="#"><div id="preco">R$ 80.000,00</div></a>
+					</div>
+					<div id="detalhes">
+						<div id="categoria">Categoria: </div><a href="#"><div id="turbo">Turbo</div></a>
+						<a href="#"><div id="user">Nome do user</div></a>
+					</div>
+					<div id="vermais">
+						<div id="regiao"> <a href="#">Cidade</a> | <a href="#">Estado</a></div>
+						<a href="#"><div id="detalhes">Ver Detalhes</div></a>
+					</div>
+				</div>
+				
+				<!-- Anúncio meio -->
+				<div class="line_anuncio">
+					<div class="info-publicidade-meio">Publicidade</div>
+					<div class="publicidade-meio">468 x 60</div>
+				</div>
+				
+				<div class="line_anuncio">
+					<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+					<div id="cabecalho">
+						<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
+						<a href="#"><div id="preco">R$ 80.000,00</div></a>
+					</div>
+					<div id="detalhes">
+						<div id="categoria">Categoria: </div><a href="#"><div id="acessorio">Acessorio</div></a>
+						<a href="#"><div id="user">Nome do user</div></a>
+					</div>
+					<div id="vermais">
+						<div id="regiao"> <a href="#">Cidade</a> | <a href="#">Estado</a></div>
+						<a href="#"><div id="detalhes">Ver Detalhes</div></a>
+					</div>
+				</div>
+				
+				<div class="line_anuncio">
+					<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+					<div id="cabecalho">
+						<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
+						<a href="#"><div id="preco">R$ 80.000,00</div></a>
+					</div>
+					<div id="detalhes">
+						<div id="categoria">Categoria: </div><a href="#"><div id="mecanica">Mecânica</div></a>
+						<a href="#"><div id="user">Nome do user</div></a>
+					</div>
+					<div id="vermais">
+						<div id="regiao"> <a href="#">Cidade</a> | <a href="#">Estado</a></div>
+						<a href="#"><div id="detalhes">Ver Detalhes</div></a>
+					</div>
+				</div>
+				
+				<div class="line_anuncio">
+					<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+					<div id="cabecalho">
+						<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
+						<a href="#"><div id="preco">R$ 80.000,00</div></a>
+					</div>
+					<div id="detalhes">
+						<div id="categoria">Categoria: </div><a href="#"><div id="rodas">Rodas</div></a>
+						<a href="#"><div id="user">Nome do user</div></a>
+					</div>
+					<div id="vermais">
+						<div id="regiao"> <a href="#">Cidade</a> | <a href="#">Estado</a></div>
+						<a href="#"><div id="detalhes">Ver Detalhes</div></a>
+					</div>
+				</div>
+				
+				<!-- Anúncio meio -->
+				<div class="line_anuncio">
+					<div class="info-publicidade-meio">Publicidade</div>
+					<div class="publicidade-meio">468 x 60</div>
+				</div>
+				
+				<div class="line_anuncio">
+					<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+					<div id="cabecalho">
+						<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
+						<a href="#"><div id="preco">R$ 80.000,00</div></a>
+					</div>
+					<div id="detalhes">
+						<div id="categoria">Categoria: </div><a href="#"><div id="aspirado">Aspirados</div></a>
+						<a href="#"><div id="user">Nome do user</div></a>
+					</div>
+					<div id="vermais">
+						<div id="regiao"> <a href="#">Cidade</a> | <a href="#">Estado</a></div>
+						<a href="#"><div id="detalhes">Ver Detalhes</div></a>
+					</div>
+				</div>
+				
+				<div class="line_anuncio">
+					<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+					<div id="cabecalho">
+						<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
+						<a href="#"><div id="preco">R$ 80.000,00</div></a>
+					</div>
+					<div id="detalhes">
+						<div id="categoria">Categoria: </div><a href="#"><div id="aspirado">Aspirados</div></a>
+						<a href="#"><div id="user">Nome do user</div></a>
+					</div>
+					<div id="vermais">
+						<div id="regiao"> <a href="#">Cidade</a> | <a href="#">Estado</a></div>
+						<a href="#"><div id="detalhes">Ver Detalhes</div></a>
+					</div>
+				</div>
+				
+				<div class="line_anuncio">
+					<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+					<div id="cabecalho">
+						<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
+						<a href="#"><div id="preco">R$ 80.000,00</div></a>
+					</div>
+					<div id="detalhes">
+						<div id="categoria">Categoria: </div><a href="#"><div id="aspirado">Aspirados</div></a>
+						<a href="#"><div id="user">Nome do user</div></a>
+					</div>
+					<div id="vermais">
+						<div id="regiao"> <a href="#">Cidade</a> | <a href="#">Estado</a></div>
+						<a href="#"><div id="detalhes">Ver Detalhes</div></a>
+					</div>
+				</div>
+				
+				<!-- Paginacao final -->
+				<div class="paginacao">
+					
+					<div id="right">
+						<div id="texto">Página</div>
+						<a href="#"><div id="pages">1</div></a>
+						<a href="#"><div id="pages">2</div></a>
+						<a href="#"><div id="pages">3</div></a>
+						<a href="#"><div id="pages">4</div></a>
+						<a href="#"><div id="pages">></div></a>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+
+
+<footer class="clearfix">
+
+	<div id="margin">
+		<div class="box-ajuda">
+			<div id="titulo">
+				<b>Precisa</b> de ajuda?
+			</div>
+			
+			<div id="links"><a href="#">Como criar uma conta</a></div> 
+			<div id="links"><a href="#">Como inserir um anúncio</a></div> 
+			<div id="links"><a href="#">Como excluir um anúncio</a></div> 
+			<div id="links"><a href="#">Como editar um anúncio</a></div> 
+		</div>
+		
+		<div class="box-informacoes">
+			<div id="titulo">
+				<b>Informações</b>
+			</div>
+			<div id="colunas">
+				<div id="links"><a href="#">Planos</a></div> 
+				<div id="links"><a href="#">Publicidade</a></div> 
+				<div id="links"><a href="#">Parceiros</a></div> 
+				<div id="links"><a href="#">Quem Somos</a></div> 
+			</div>
+			<div id="colunas">
+				<div id="links"><a href="#">Sugestão</a></div> 
+				<div id="links"><a href="#">Reclamação</a></div> 
+				<div id="links"><a href="#">Contato</a></div> 
+			</div>
+			
+		</div>
+		
+		
+	</div>
+
+		<div class="three-fourth">
+			<nav id="footer-nav" class="clearfix">
+				<ul>
+					<li><a href="index.html" id="first1">Home</a></li>
+					<li><a href="roda_tambores.html">Roda de <br /> Tambores</a></li>
+					<li><a href="roda_tambores_corp.html">Roda de Tambores <br />Corporativa</a></li>
+					<li><a href="historico_pessoal.html">Histórico <br />pessoal</a></li>
+					<li><a href="artigos_livros.html">Artigos e <br />livros</a></li>
+					<li><a href="fotos_videos.html">Fotos e <br />vídeos</a></li>
+				</ul>
+				
+			</nav><!-- end -->
+			<b id="title_form">Formulário</b>
+			<form action="#" method="get">
+				<div class="left_contato">
+					<label>Nome:</label> <input type="text" name="nome" id="contato_nome">
+					<label>E-mail:</label> <input type="text" name="email" id="contato_email">
+					<label>Assunto:</label> <input type="text" name="assunto" id="contato_assunto">
+				</div>
+				<div class="right_contato">
+					<label>Mensagem:</label> <textarea cols="" rows="" id="contato_mensagem"></textarea>
+					<input type="submit" name="enviar" id="contato_botao" value="Enviar!">
+				</div>
+			</form>
+			<!-- end -->
+			
+		</div><!-- end -->
+		<div class="one-fourth last">
+			<span class="title">Redes Sociais</span>
+			<ul class="social-links">
+				<li class="twitter"><a href="#">Twitter</a></li>
+				<li class="facebook"><a href="#">Facebook</a></li>
+				<li class="vimeo"><a href="#">Vimeo</a></li>
+				<li class="youtube"><a href="#">YouTube</a></li>
+				<li class="skype"><a href="#">Skype</a></li>
+			</ul><!-- end -->
+			
+			<span class="title1">Contato</span>
+			<ul class="contact-info">
+				<li class="address"><a href="#">www.teamworks.com.br</a></li>
+				<li class="phone">(11) 98124-9809 | (11) 3804-1107</li>
+				<li class="email"><a href="mailto:thiagonistal@gmail.com">thiagonistal@gmail.com</a></li>
+			</ul>
+		</div><!-- end -->
+		
+		
+	</div><!-- end -->
+
+</footer><!-- end #footer -->
+
+<footer id="footer-bottom" class="clearfix">
+
+	<div class="container">
+
+		<ul>
+			<li>TEAM WORKS &copy; 2012</li>
+			
+		</ul>
+
+	</div><!-- end  -->
+
+</footer><!-- end #footer2 -->
+<!-- Banner - Destaque -->
+<script type="text/javascript">
+(function($){
+//object containing margin settings
+	var margins = {
+		panel1: 0,
+		panel2: -653,
+		panel3: -1306,
+		panel4: -1959,
+		panel5: -2612,
+		panel6: -3265
+	}
+//handle nav click
+	$("#nav a").click(function(e){
+					
+		//stop browser default
+		e.preventDefault();
+					
+		//remove on states for all nav links
+		$("#nav a").removeClass("on");
+					
+		//add on state to selected nav link
+		$(this).addClass("on");
+					
+		//set margin of slider to move
+		$("#slider").animate({
+			marginLeft: margins[$(this).attr("href").split("#")[1]]
+		});					
+	});
+				
+	/*hide descriptive text
+	$("#slider p").hide();
+				
+	//show descriptive text on mouseover (hide on mouseout)
+	$("#slider img").hover(
+		function() {
+			$(this).next().slideDown();
+		}, function() {
+			$(this).next().slideUp();
+		});*/
+				
+})(jQuery);
+</script>
+
+</body>
+</html>

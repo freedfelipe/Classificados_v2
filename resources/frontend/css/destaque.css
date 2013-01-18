@@ -1,0 +1,65 @@
+#viewer { width:980px; margin:auto; }
+#nav {  float:left; margin-left: 5px; padding:0; list-style-type:none; }
+#nav li {  height:100px; padding:0; margin-bottom: 10px; }
+.previews-destaque{
+    float: left;
+    width: 310px;
+}
+.title-preview{
+    margin-bottom: 10px;
+    font:20px "rondalo";
+    padding-left: 10px;
+    font-weight: bold;
+    width: 310px;
+}
+#panels { width:653px; height:390px; overflow:hidden; position:relative; float:left; }
+#slider { width:3918px; height:643px; }
+#slider div { float:left; position:relative; }
+#slider .tit-destaque{
+    position:absolute;
+    float: left;
+    margin-top:-43px;
+    width:623px;
+    height:45px;
+    padding:15px 15px 10px;
+    background-color:#414141;
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius:5px;
+    behavior:url(border-radius.htc);
+}
+.texto-destaque{
+    float: left;
+    color:#fff;
+    font:25px "rondalo";
+    margin-top: 10px;
+}
+
+.preco-destaque{
+    color:#fff;
+    font:25px "rondalo";
+    background: url(../images/icon-preco.png) no-repeat #333333;
+    background-position: 2px;
+    float: right;
+    padding: 12px 10px 10px 35px;
+    margin-left: 50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    behavior:url(border-radius.htc);   
+}
+.preview-info{
+    position:absolute;
+    color:#fff;
+    font:13px "rondalo";
+    margin-top:-14px;
+    width:140px;
+    padding:5px 5px 5px;
+    background-color:#414141;
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius:5px;
+    behavior:url(border-radius.htc);
+    
+}

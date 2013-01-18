@@ -2,7 +2,7 @@
 
 // Rotas do Site -- front end
 $route['404_override']                                              = '';
-$route['default_controller']                                        = "backend/users/login";
+$route['default_controller']                                        = "frontend/home/index";
 
 
 // Rotas backend -- backend
@@ -101,8 +101,10 @@ $route['admin/parceiros/remover/(:num)']                            = 'backend/p
 $route['admin/parceiros/(:any)']                                    = 'backend/partners/index/$1';
 
 
-//Rotas de Grupos
-//$route['admin/grupos']                                    = 'backend/groups';
+//Rotas de FRONTEND
+
+//Rotas da home
+$route['home']                                                      = 'frontend/home/index';
 //$route['admin/grupos/(:num)']					          = 'backend/groups/index/$1';
 //$route['admin/grupos/adicionar']				          = 'backend/groups/create';
 //$route['admin/grupos/editar/(:num)/(:any)']               = 'backend/groups/update/$1/$2';
