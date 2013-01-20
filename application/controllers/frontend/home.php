@@ -15,7 +15,9 @@ class Home extends CI_Controller{
 		parent::__construct();
 		
 		$this->load->model('partner_model');
-		//$this->load->model('category_model');
+		$this->load->model('brand_model');
+		$this->load->model('category_model');
+		
 		$this->url = '/home/';
 		
 		$this->limit = $this->parameter_model->get('rows_per_page');
@@ -45,7 +47,6 @@ class Home extends CI_Controller{
 		$data['url']			= $this->url;
 		$data['dir']			= 'frontend/'.$this->router->class.'/';
 		$data['url_title']		= $this->parameter_model->get('system_title');
-		//$data['scr_title']		= $this->title[$method];
 		
 		$this->load->view('frontend/common/header', $data);
 		$this->load->view('frontend/'.$this->router->class . '/' . $method, $data);
@@ -57,10 +58,9 @@ class Home extends CI_Controller{
 		$data['url_title']	= $this->parameter_model->get('system_title');
 		$data['scr_title']	= 'Home';
 		
+		$data['brand']		= $this->brand_model->by(array('status_id' => 1));
 		$data['partners']	= $this->partner_model->by(array('status_id' => 1));
-		
-		//printr($data);
-		
+		$data['category']	= $this->category_model->by(array('status_id' => 1));
 		
 		$this->render($this->router->method, $data);
 	}
