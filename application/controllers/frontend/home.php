@@ -14,7 +14,7 @@ class Home extends CI_Controller{
 	{
 		parent::__construct();
 		
-		$this->user_model->is_logged();
+		//$this->user_model->is_logged();
 		//$this->load->model('advertisement_model', 'data_model');
 		//$this->load->model('category_model');
 		$this->url = '/home/';
