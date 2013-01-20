@@ -97,9 +97,15 @@
 				<!-- Parceiros -->
 				<div class="parceiros">
 					<div id="title">Parceiros</div>
-					<div id="banner">Parceiro 1 280x130</div>
-					<div id="banner">Parceiro 2 280x130</div>
-					<div id="banner">Parceiro 3 280x130</div>
+					
+					<? /*printr($partners);*/ foreach($partners as $k=>$v){?>
+					<div id="banner">
+						<a href="<?=$v['link'];?>">
+							<img src="<?=site_url('resources/upload/parceiros/'.$v['file']);?>" />
+						</a>
+					</div>
+					<? } ?>
+					
 					<div id="info">
 						<font size="4">Quer ser um parceiro do</font><br />
 						<b><font size="6">Meu Carro Turbo?</font></b><br /><br />

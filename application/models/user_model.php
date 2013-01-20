@@ -173,7 +173,7 @@ class User_model extends CI_Model{
 			return true;
 		}
 		
-		redirect('login/');
+		redirect('admin/login/');
 	}
 	
 	public final function login($email, $password)
