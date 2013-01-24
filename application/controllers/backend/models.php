@@ -14,7 +14,6 @@ class Models extends CI_Controller{
 	{
 		parent::__construct();
 		
-		$this->user_model->is_logged();
 		$this->load->model('model_model', 'data_model');
 		$this->load->model('brand_model');
 		$this->url = '/admin/modelos/';
@@ -73,6 +72,8 @@ class Models extends CI_Controller{
 	
 	public final function index()
 	{
+		$this->user_model->is_logged();
+		
 		$data['url_title']	= $this->parameter_model->get('system_title');
 		$data['scr_title']	= $this->title[$this->router->method];
 		
@@ -89,6 +90,8 @@ class Models extends CI_Controller{
 	
 	public final function create()
 	{
+		$this->user_model->is_logged();
+		
 		$this->log($this->router->method);
 		
 		$data['url_title']	= $this->parameter_model->get('system_title');
@@ -111,6 +114,8 @@ class Models extends CI_Controller{
 	
 	public final function update($id)
 	{
+		$this->user_model->is_logged();
+		
 		$this->log($this->router->method);
 		
 		$data['id']				= $id;
@@ -137,6 +142,8 @@ class Models extends CI_Controller{
 	
 	public final function delete($id)
 	{
+		$this->user_model->is_logged();
+		
 		if($this->data_model->delete($id)){
 			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_delete_success') . '</p>');
 		} else {
@@ -144,5 +151,19 @@ class Models extends CI_Controller{
 		}
 		
 		redirect($this->url);
+	}
+	
+	public final function search($brand_id = '')
+	{
+		$data = $this->data_model->by(array('brand_id' => $brand_id, 'status_id' => 1));
+		
+		if($data){
+			
+			print('<option value="-1" selected="selected">Selecione...</option>');
+			
+			foreach($data as $k=>$v){
+				print('<option value="' . $v['id'] . '">' . $v['name'] . '</option>');
+			}
+		}
 	}
 }

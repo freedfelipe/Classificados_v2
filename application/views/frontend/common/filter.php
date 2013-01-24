@@ -12,7 +12,7 @@
         
         <div id="texto">Modelo</div>
         <div id="campo">
-            <select name="modelo" id="modelo" >
+            <select name="model_id" id="model_id" >
                 <option value="-1">Selecione uma Marca</option>
             </select>
         </div>
@@ -46,23 +46,15 @@
         
         <div id="texto">Estado</div>
         <div id="campo">
-            <select name="estado" id="estado" >
-                <option value="1">item 1</option>
-                <option value="2">item 2</option>
-                <option value="3">item 3</option>
-                <option value="4">item 4</option>
-                <option value="0">All</option>
+            <select name="state_id" id="state_id" >
+                <? data_select($state, @$_POST['state_id']);?>
             </select>
         </div>
         
         <div id="texto">Cidade</div>
         <div id="campo">
-            <select name="cidade" id="cidade" >
-                <option value="1">item 1</option>
-                <option value="2">item 2</option>
-                <option value="3">item 3</option>
-                <option value="4">item 4</option>
-                <option value="0">All</option>
+            <select name="city_id" id="city_id" >
+                <option value="-1">Selecione um estado</option>
             </select>
         </div>
         

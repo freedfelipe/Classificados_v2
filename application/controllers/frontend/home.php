@@ -17,6 +17,7 @@ class Home extends CI_Controller{
 		$this->load->model('partner_model');
 		$this->load->model('brand_model');
 		$this->load->model('category_model');
+		$this->load->model('state_model');
 		
 		$this->url = '/home/';
 		
@@ -61,6 +62,7 @@ class Home extends CI_Controller{
 		$data['brand']		= $this->brand_model->by(array('status_id' => 1));
 		$data['partners']	= $this->partner_model->by(array('status_id' => 1));
 		$data['category']	= $this->category_model->by(array('status_id' => 1));
+		$data['state']		= $this->state_model->by(array('status_id' => 1));
 		
 		$this->render($this->router->method, $data);
 	}

@@ -75,6 +75,8 @@ function status_select($selected)
 
 function data_select($rows, $selected)
 {
+	print('<option value="-1">Selecione</option>');
+	
 	foreach($rows as $row){
 		if($row['id'] == $selected){
 			print('<option value="'.$row['id'].'" selected="selected">'.$row['name'].'</option>');

@@ -100,11 +100,28 @@ $route['admin/parceiros/editar/(:num)/(:any)']                      = 'backend/p
 $route['admin/parceiros/remover/(:num)']                            = 'backend/partners/delete/$1';
 $route['admin/parceiros/(:any)']                                    = 'backend/partners/index/$1';
 
+//Rotas de Estados
+$route['admin/estados']                                             = 'backend/states';
+$route['admin/estados/adicionar']                                   = 'backend/states/create';
+$route['admin/estados/editar/(:num)/(:any)']                        = 'backend/states/update/$1/$2';
+$route['admin/estados/remover/(:num)/(:any)']                       = 'backend/states/delete/$1/$2';
+$route['admin/estados/(:any)']                                      = 'backend/states/index/$1';
+
+//Rotas de Cidades
+$route['admin/cidades']                                             = 'backend/cities';
+$route['admin/cidades/adicionar']                                   = 'backend/cities/create';
+$route['admin/cidades/editar/(:num)/(:any)']                        = 'backend/cities/update/$1/$2';
+$route['admin/cidades/remover/(:num)/(:any)']                       = 'backend/cities/delete/$1/$2';
+$route['admin/cidades/consultar/(:num)']                            = 'backend/cities/search/$1';
+$route['admin/cidades/(:any)']                                      = 'backend/cities/index/$1';
 
 //Rotas de FRONTEND
 
 //Rotas da home
 $route['home']                                                      = 'frontend/home/index';
+$route['modelos/consultar/(:num)']                                  = 'backend/models/search/$1';
+$route['cidades/consultar/(:num)']                                  = 'backend/cities/search/$1';
+
 //$route['admin/grupos/(:num)']					          = 'backend/groups/index/$1';
 //$route['admin/grupos/adicionar']				          = 'backend/groups/create';
 //$route['admin/grupos/editar/(:num)/(:any)']               = 'backend/groups/update/$1/$2';
