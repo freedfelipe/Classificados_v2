@@ -115,12 +115,32 @@ $route['admin/cidades/remover/(:num)/(:any)']                       = 'backend/c
 $route['admin/cidades/consultar/(:num)']                            = 'backend/cities/search/$1';
 $route['admin/cidades/(:any)']                                      = 'backend/cities/index/$1';
 
+//Rotas de opcionais
+$route['admin/opcionais']                                           = 'backend/optional';
+$route['admin/opcionais/adicionar']                                 = 'backend/optional/create';
+$route['admin/opcionais/editar/(:num)/(:any)']                      = 'backend/optional/update/$1/$2';
+$route['admin/opcionais/remover/(:num)/(:any)']                     = 'backend/optional/delete/$1/$2';
+$route['admin/opcionais/consultar/(:num)']                          = 'backend/optional/search/$1';
+$route['admin/opcionais/(:any)']                                    = 'backend/optional/index/$1';
+
 //Rotas de FRONTEND
+
+
 
 //Rotas da home
 $route['home']                                                      = 'frontend/home/index';
 $route['modelos/consultar/(:num)']                                  = 'backend/models/search/$1';
 $route['cidades/consultar/(:num)']                                  = 'backend/cities/search/$1';
+
+
+// Anuncio
+$route['anuncio/cadastrar']                                         = 'frontend/ads/create';
+
+
+// tela de login
+$route['entrar']                                                    = 'frontend/login/index';
+
+
 
 //$route['admin/grupos/(:num)']					          = 'backend/groups/index/$1';
 //$route['admin/grupos/adicionar']				          = 'backend/groups/create';

@@ -12,31 +12,34 @@
 	
 	
 	<li class="top">
-		<a href="<?=site_url();?>admin/planos/" class="top_link"><span>Planos</span></a>
+		<a href="<?=site_url('admin/planos/');?>" class="top_link"><span>Planos</span></a>
 	</li>
 	<li class="top">
-		<a href="<?=site_url();?>admin/categorias/" class="top_link"><span>Categorias</span></a>
+		<a href="<?=site_url('admin/categorias/');?>" class="top_link"><span>Categorias</span></a>
 	</li>
 	<li class="top">
-		<a href="<?=site_url();?>admin/marcas/" class="top_link"><span>Marcas</span></a>
+		<a href="<?=site_url('admin/marcas/');?>" class="top_link"><span>Marcas</span></a>
 	</li>
 	<li class="top">
-		<a href="<?=site_url();?>admin/modelos/" class="top_link"><span>Modelos</span></a>
+		<a href="<?=site_url('admin/modelos/');?>" class="top_link"><span>Modelos</span></a>
 	</li>
 	<li class="top">
-		<a href="<?=site_url();?>admin/anuncios/" class="top_link"><span>Anúncios</span></a>
+		<a href="<?=site_url('admin/anuncios/');?>" class="top_link"><span>Anúncios</span></a>
 	</li>
 	<li class="top"><a href="javascript:" class="top_link"><span>Publicidade</span></a>
 		<ul class="sub">
 			<li>
-				<a href="<?=site_url();?>admin/publicidade-categorias/" class="top_link"><span>Categorias de Publicidade</span></a>
+				<a href="<?=site_url('admin/publicidade-categorias/');?>" class="top_link"><span>Categorias de Publicidade</span></a>
 			</li>
 			<li>
-				<a href="<?=site_url();?>admin/publicidade/" class="top_link"><span>Publicidade</span></a>
+				<a href="<?=site_url('admin/publicidade/');?>" class="top_link"><span>Publicidade</span></a>
 			</li>
 		</ul>
 	</li>
 	<li class="top">
-		<a href="<?=site_url();?>admin/parceiros/" class="top_link"><span>Parceiros</span></a>
+		<a href="<?=site_url('admin/parceiros/');?>" class="top_link"><span>Parceiros</span></a>
+	</li>
+	<li class="top">
+		<a href="<?=site_url('admin/opcionais/');?>" class="top_link"><span>Opcionais</span></a>
 	</li>
 </ul>

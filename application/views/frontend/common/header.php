@@ -74,7 +74,9 @@
 	
 	<?$this->load->view('frontend/common/menu');?>
 	
+	<?if($this->uri->segment(1) != 'entrar'){?>
 	<?$this->load->view('frontend/common/banner');?>
+	<? } ?>
 	
 	<!-- Inicio do conteudo -->
 	<div id="content" class="clearfix">

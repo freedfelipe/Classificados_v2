@@ -981,6 +981,691 @@ footer #margin{
 #footer-nav li:last-child a { padding-right: 0; }
 
 /* ---------------------------------------------------------------------- */
+/*	Novo Anuncio
+/* ---------------------------------------------------------------------- */
+.title-anuncio{
+     margin-top: 30px;
+     width: 100%;
+     float: left;
+     font-family: rondalo;
+     font-size: 40px;
+}
+.aba-hover{
+     -webkit-border-top-left-radius: 5px;
+     -webkit-border-top-right-radius: 5px;
+     -moz-border-top-right-radius: 5px;
+     -moz-border-top-left-radius: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     margin-right: 1px;
+     background: #990000;
+     color: #fff;
+     font-family: rondalo;
+     font-size: 25px;
+     float: left;
+     padding: 7px 5px 7px 5px;
+     margin-top: 15px;
+     cursor: pointer;
+     
+}
+.aba-simple{
+     -webkit-border-top-left-radius: 5px;
+     -webkit-border-top-right-radius: 5px;
+     -moz-border-top-right-radius: 5px;
+     -moz-border-top-left-radius: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     margin-right: 1px;
+     background: #990000;
+     color: #fff;
+     font-family: rondalo;
+     font-size: 25px;
+     float: left;
+     padding: 5px 5px 1px 5px;
+     margin-top: 23px;
+     cursor: pointer;
+     
+}
+#content-anuncio{
+     background: #fff;
+     border-top: 1px solid #E6E6E6;
+}
+#content-anuncio #margin{
+     width: 980px;
+     margin: 0px auto;
+}
+#content-anuncio #title-plano{
+     margin-top: 30px;
+     width: 100%;
+     float: left;
+     font-family: rondalo;
+     font-size: 30px;
+}
+#content-anuncio #sub-title-plano{
+     margin-top: 15px;
+     width: 100%;
+     float: left;
+     font-family: rondalo;
+     font-size: 20px;
+}
+#content-anuncio #line-planos{
+     float: left;
+     width: 100%;
+     margin-bottom: 30px;
+     margin-top: 20px;
+}
+#content-anuncio #box-plano{
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     background: #F2F2F2;
+     border: 1px solid #E6E6E6;
+     width: 290px;
+     float: left;
+     margin-right: 10px;
+     margin-left: 10px;
+}
+#box-plano #title{
+     width: 100%;
+     float: left;
+     font-family: rondalo;
+     font-size: 40px;
+     text-transform: uppercase;
+     padding: 15px 0px 10px 0px;
+     text-align: center;
+}
+#box-plano #icone{
+     width: 100%;
+     float: left;
+     border-bottom: 1px solid #E6E6E6;
+     text-align: center;
+}
+#box-plano #informacoes{
+     float: left;
+     width: 49%;
+     border-right: 1px solid #E6E6E6;
+}
+#box-plano #informacoes #text-preco{
+     float: left;
+     width: 100%;
+     padding: 5px 5px 5px 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     margin-bottom: 5px;
+}
+#box-plano #informacoes #detalhes-line-ativo{
+     width: 100%;
+     float: left;
+     background: url(../images/icon-check-planos.png) no-repeat;
+     background-position: 5px 0px;
+     padding: 0px 5px 5px 25px;
+     font-family: rondalo;
+     font-size: 16px;
+}
+#box-plano #informacoes #detalhes-line-inativo{
+     width: 100%;
+     float: left;
+     background: url(../images/icon-uncheck-planos.png) no-repeat;
+     background-position: 5px 0px;
+     padding: 0px 5px 5px 25px;
+     font-family: rondalo;
+     font-size: 16px;
+}
+#box-plano #escolha{
+     float: left;
+     width: 50%;
+}
+#box-plano #escolha #texto{
+     width: 100%;
+     float: left;
+     font-family: rondalo;
+     font-size: 25px;
+     padding-top: 30px;
+     height: 40px;
+     text-align: center;
+}
+#box-plano #escolha #radio{
+     width: 100%;
+     float: left;
+     text-align: center;
+}
+#box-plano #escolha input[type="radio"] {
+     display:none;
+}
+
+#box-plano #escolha input[type="radio"] + label {
+}
+
+#box-plano #escolha input[type="radio"] + label span {
+     display:inline-block;
+     width:19px;
+     height:19px;
+     margin: 10px 4px 0px 60px;
+     background:url(../images/check_radio_sheet.png) -38px top no-repeat;
+     cursor:pointer;
+}
+
+#box-plano #escolha input[type="radio"]:checked + label span {
+    background:url(../images/check_radio_sheet.png) -57px top no-repeat;
+}
+#content-anuncio #line-btns{
+     float: left;
+     width: 100%;
+     margin-bottom: 30px;
+     margin-top: 20px;
+}
+#content-anuncio #line-btns #anterior{
+     background: #990000;
+     color: #fff;
+     text-align: center;
+     font-family: rondalo;
+     font-size: 25px;
+     padding: 10px;
+     float: right;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+      margin-right:  10px;
+}
+#content-anuncio #line-btns #proximo{
+     background: #990000;
+     color: #fff;
+     text-align: center;
+     font-family: rondalo;
+     font-size: 25px;
+    
+     padding: 10px;
+     float: right;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+}
+#informacoes-planos{
+     background: #F2F2F2;
+     border: 1px solid #E6E6E6;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     margin-left: 10px;
+     margin-right: 10px;
+     width: 95%;
+     padding: 10px;
+     text-align: center;
+     font-family: rondalo;
+     font-size: 20px;
+     margin-top: 20px;
+     float: left;
+     
+}
+#linha-planos-2{
+     width: 100%;
+     float: left;
+     border-bottom: 1px solid #E6E6E6;
+     margin-top: 20px;
+}
+#linha-planos-2 #title{
+     width: 100%;
+     float: left;
+     font-family: rondalo;
+     font-size: 30px;
+     padding: 5px;
+     margin-bottom: 15px;
+}
+#texto-form{
+     float: left;
+     padding: 10px 10px 5px 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     margin-left: 10px;
+     width: 100px;
+     text-align: right;
+}
+#formulario-line{
+     width: 338px;
+     float: left;
+     margin-bottom: 15px;
+}
+
+#form-linha{
+     width: 100%;
+     float: left;
+}
+#form-categoria{
+     width: 330px;
+     height: 45px;
+     margin-left: 15px;
+     overflow: hidden;
+     font-family: rondalo;
+     font-size: 20px;
+     background: url(../images/form.png) no-repeat;
+     border: 1px solid #E6E6E6;
+     cursor: pointer;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     behavior:url(border-radius.htc);
+}
+#placa{
+     float: left;
+     background: #fff;
+     width: 315px;
+     height: 33px;
+     border: 1px solid #E6E6E6;
+     margin-left: 15px;
+     margin-bottom: 5px;
+     margin-top: 0px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     padding: 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     color:#000;
+}
+#opcionais{
+     float: left;
+     width: 229px;
+     border-right: 1px solid #E6E6E6;
+     margin-left: 15px;
+     margin-bottom: 20px;
+}
+#opcionais #linha{
+     width: 100%;
+     padding: 5px;
+     float: left;
+}
+#opcionais #linha #texto{
+     font-family: rondalo;
+     font-size: 20px;
+     text-align: left;
+     padding-top: 3px;
+}
+
+#opcionais1{
+     float: left;
+     width: 229px;
+     margin-left: 15px;
+     margin-bottom: 20px;
+}
+#opcionais1 #linha{
+     width: 100%;
+     padding: 5px;
+     float: left;
+}
+#opcionais1 #linha #texto{
+     font-family: rondalo;
+     font-size: 20px;
+     text-align: left;
+     padding-top: 3px;
+}
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label {
+    color:#f2f2f2;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(../images/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+    background:url(../images/check_radio_sheet.png) -19px top no-repeat;
+}
+#formulario-line textarea {
+     resize:none;
+     width: 825px;
+     height: 190px;
+     border: 1px solid #E6E6E6;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+}
+#preco{
+     float: left;
+     background: #fff;
+     width: 315px;
+     height: 33px;
+     border: 1px solid #E6E6E6;
+     margin-left: 15px;
+     margin-bottom: 5px;
+     margin-top: 0px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     padding: 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     color:#000;
+}
+#line-preco{
+     width: 338px;
+     float: left;
+     margin-left: 10px;
+     margin-bottom: 15px;
+     margin-top: 10px;
+}
+#line-preco #texto{
+     font-family: rondalo;
+     font-size: 20px;
+     text-align: left;
+     padding-top: 3px;
+     
+}
+#texto-form1{
+     float: left;
+     padding: 15px 10px 5px 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     margin-left: 10px;
+     width: 200px;
+     text-align: right;
+}
+#video{
+     float: left;
+     background: #fff;
+     width: 700px;
+     height: 33px;
+     border: 1px solid #E6E6E6;
+     margin-left: 15px;
+     margin-bottom: 5px;
+     margin-top: 0px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     padding: 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     color:#000;
+}
+#line-fotos{
+     width: 100%;
+     float: left;
+     margin-bottom: 20px;
+}
+.select-six{
+     margin: 20px 0 0 0;
+     list-style-image: none;
+}
+ .upload-file-container{
+		width: 140px;
+		height: 105px;
+		cursor: pointer;
+		background: url("../images/upload_a_photo.gif") no-repeat;
+		float: left;
+		margin: 0 20px 0 0;
+	}
+
+ .upload-file-container:nth-child(6){
+		margin: 0;
+	}
+
+.upload-file-container span{
+		display: inline-block;
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+	}
+
+.upload-file-container input{
+		width: 20px;
+		cursor: pointer;
+	}
+
+
+ .select-four div.checkbox-custom label{
+		display: block;
+		margin: 2px 0 0 0;
+	}
+
+.select-four div.two-fourth{
+		width: 458px;
+	}
+.field-content{
+     margin: 0 0 0 22px;
+     list-style-image: none;
+     
+}
+
+	.ie7 .select-four input{
+		margin: 0 0 0 -20px;
+		/*ie7 bug*/
+}
+
+.ie7  .select-four input:nth-child(1){
+     margin: 0 !important;
+}
+#formulario-line-user{
+     width: 350px;
+     float: left;
+     margin-bottom: 15px;
+}
+#linha-user{
+     float: left;
+     width: 440px;
+     border-right: 1px solid #E6E6E6;
+     margin-bottom: 20px;
+}
+#nome-user{
+     float: left;
+     background: #fff;
+     width: 310px;
+     height: 33px;
+     border: 1px solid #E6E6E6;
+     margin-left: 15px;
+     margin-bottom: 5px;
+     margin-top: 0px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     padding: 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     color:#000;
+}
+#texto-form-user{
+     float: left;
+     padding: 10px 10px 5px 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     margin-left: 10px;
+     width: 65px;
+     text-align: right;
+}
+#linha-tel{
+     float: left;
+     width: 340px;
+     border-right: 1px solid #E6E6E6;
+     margin-bottom: 20px;
+}
+#formulario-line-tel{
+     width: 250px;
+     float: left;
+     margin-bottom: 15px;
+}
+#nome-tel{
+     float: left;
+     background: #fff;
+     width: 210px;
+     height: 33px;
+     border: 1px solid #E6E6E6;
+     margin-left: 15px;
+     margin-bottom: 5px;
+     margin-top: 0px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     padding: 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     color:#000;
+}
+#linha-regiao{
+     width: 198px;
+     float: left;
+     margin-bottom: 15px;
+}
+#formulario-line-regiao{
+     width: 108px;
+     float: left;
+     margin-bottom: 15px;
+}
+#nome-regiao{
+     float: left;
+     background: #fff;
+     width: 80px;
+     height: 33px;
+     border: 1px solid #E6E6E6;
+     margin-left: 15px;
+     margin-bottom: 5px;
+     margin-top: 0px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     padding: 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     color:#000;
+}
+#seguranca-planos{
+    
+     margin-left: 10px;
+     margin-right: 10px;
+     width: 95%;
+     padding: 10px;
+     text-align: center;
+     font-family: rondalo;
+     font-size: 20px;
+     margin-top: 20px;
+     float: left;
+     
+}
+
+/* LOGIN */
+#content-login{
+     background: #fff;
+     border-top: 1px solid #E6E6E6;
+}
+#content-login #margin{
+     width: 980px;
+     margin: 0px auto;
+}
+#content-login #title-login{
+     margin-top: 30px;
+     width: 100%;
+     float: left;
+     font-family: rondalo;
+     font-size: 30px;
+
+}
+#content-login #linha{
+     width: 100%;
+     float: left;
+     margin-bottom: 30px;
+}
+#content-login #box-login{
+     margin: 0px auto;
+     background: #F2F2F2;
+     margin-top: 20px;
+     /*position:relative;*/
+     width: 500px;
+     float: left;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border: 1px solid #E6E6E6;
+}
+#line-box-line{
+     width: 100%;
+     padding: 5px;
+     float: left;
+}
+#text-login{
+     width: 100px;
+     font-family: rondalo;
+     font-size: 30px;
+     text-align: right;
+     float: left;
+     padding-top: 5px;
+}
+#form-login{
+     width: 350px;
+     float: left;
+     
+}
+#login{
+     float: left;
+     background: #fff;
+     width: 315px;
+     height: 33px;
+     border: 1px solid #E6E6E6;
+     margin-left: 15px;
+     margin-bottom: 5px;
+     margin-top: 0px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     padding: 5px;
+     font-family: rondalo;
+     font-size: 20px;
+     color:#000;
+}
+#icon-login-page{
+     background: url(../images/icon-login-page.png) no-repeat;
+     height: 128px;
+     width: 128px;
+     position:relative;
+     margin: 0px auto;
+}
+#btn-login{
+     width: 328px;
+     position:relative;
+     margin: 0px auto;
+}
+
+#login_botao{
+     background: #990000;
+     width: 150px;
+     height: 40px;
+     margin-top: 5px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     margin-right: 5px;
+     font-family: rondalo;
+     font-size: 25px;
+     color:#fff;
+     cursor: pointer;
+}
+#line-box-adicional{
+     width: 100%;
+     padding: 5px;
+     float: left;
+     text-align: center;
+     font-family: rondalo;
+     font-size: 15px;
+}
+#line-face{
+     width: 162px;
+     position:relative;
+     margin: 0px auto;
+     cursor: pointer;
+}
+#btn-facebook{
+     width: 160px;
+     height: 22px;
+     background: url(../images/btn-facebook.png) no-repeat;
+}
+
+/* ---------------------------------------------------------------------- */
 /*	Elementos Básicos
 /* ---------------------------------------------------------------------- */
 ::-moz-selection { background: #990000; color: #fff; text-shadow: none; }
@@ -994,7 +1679,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 h3, h4, h5 { font-weight: 600; }
 
-
 /* -------------------------------------------------- */
 /*	Contato Informações
 /* -------------------------------------------------- */
@@ -1002,10 +1686,10 @@ h3, h4, h5 { font-weight: 600; }
 #footer .contact-info { }
 .contact-info { margin: 0; }
 .contact-info li {
-	float: left;
-	list-style: none;
-	margin: 0 0 5px 4px;
-	padding: 0 0 0 24px;
+     float: left;
+     list-style: none;
+     margin: 0 0 5px 4px;
+     padding: 0 0 0 24px;
 }
 .contact-info li:first-child { margin-left: 0; }
 .contact-info .address { background: url(../img/icon-address.png) no-repeat 0 0; }

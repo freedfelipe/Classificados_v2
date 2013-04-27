@@ -19,8 +19,8 @@ class Log_model extends CI_Model{
 		$data = array(
 			'user_id'		=> $this->session->userdata('user_id'),
 			'session_id' 	=> $this->session->userdata('session_id'),
-			'user_ip' 		=> $this->session->userdata('ip_address'),
-			'user_browser' 	=> $this->session->userdata('user_agent'),
+			'user_ip' 		=> $_SERVER['REMOTE_ADDR'],
+			'user_browser' 	=> $_SERVER['HTTP_USER_AGENT'],
 			'user_url' 		=> current_url(),
 			'user_post' 	=> print_r($_POST, TRUE),
 			'model'			=> $model,

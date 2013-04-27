@@ -1,10 +1,10 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Controller da Home
+ * Controller de Anuncios
  * @author Felipe <felipe@wadtecnologia.com.br>
  */
-class Home extends CI_Controller{
+class Ads extends CI_Controller{
 	
 	private $url;
 	private $title;
@@ -13,10 +13,17 @@ class Home extends CI_Controller{
 	public final function __construct()
 	{
 		parent::__construct();
-		$this->url = '/home/';
+		
+		//$this->load->model('partner_model');
+		//$this->load->model('brand_model');
+		//$this->load->model('category_model');
+		//$this->load->model('state_model');
+		
+		$this->url = '/anuncios/';
 		
 		$this->limit = $this->parameter_model->get('rows_per_page');
-		$this->pag_segment = 3;
+		$this->pag_segment = 2;
+		//$this->total_rows	= $this->data_model->total();
 		
 		$this->title = array(
 			'index'		=> $this->lang->line($this->router->class . '_index'),
@@ -47,16 +54,26 @@ class Home extends CI_Controller{
 		$this->load->view('frontend/common/footer', $data);
 	}
 	
-	public final function index()
+	//public final function index()
+	//{
+	//	$data['url_title']	= $this->parameter_model->get('system_title');
+	//	$data['scr_title']	= 'Home';
+	//	
+	//	$data['brand']		= $this->brand_model->by(array('status_id' => 1));
+	//	$data['partners']	= $this->partner_model->by(array('status_id' => 1));
+	//	$data['category']	= $this->category_model->by(array('status_id' => 1));
+	//	$data['state']		= $this->state_model->by(array('status_id' => 1));
+	//	
+	//	$this->render($this->router->method, $data);
+	//}
+	
+	public final function create()
 	{
-		$data['url_title']	= $this->parameter_model->get('system_title');
-		$data['scr_title']	= 'Home';
+		$this->security_model->logged();
 		
-		$data['brand']		= $this->brand_model->by(array('status_id' => 1));
-		$data['partners']	= $this->partner_model->by(array('status_id' => 1));
-		$data['category']	= $this->category_model->by(array('status_id' => 1));
-		$data['state']		= $this->state_model->by(array('status_id' => 1));
 		
-		$this->render($this->router->method, $data);
+		die('agora precisa verificar se o sujeito ta logado, caso não, fazer o login e nume!');
+		
+		
 	}
 }

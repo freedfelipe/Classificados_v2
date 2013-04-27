@@ -1,10 +1,10 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Controller da Home
+ * Controller de Login
  * @author Felipe <felipe@wadtecnologia.com.br>
  */
-class Home extends CI_Controller{
+class Login extends CI_Controller{
 	
 	private $url;
 	private $title;
@@ -13,16 +13,12 @@ class Home extends CI_Controller{
 	public final function __construct()
 	{
 		parent::__construct();
-		$this->url = '/home/';
+		
+		$this->url = '/entrar/';
 		
 		$this->limit = $this->parameter_model->get('rows_per_page');
-		$this->pag_segment = 3;
-		
-		$this->title = array(
-			'index'		=> $this->lang->line($this->router->class . '_index'),
-			'create'	=> $this->lang->line($this->router->class . '_create'),
-			'update'	=> $this->lang->line($this->router->class . '_update')
-		);
+		$this->pag_segment = 2;
+		//$this->total_rows	= $this->data_model->total();
 	}
 	
 	private final function log($method)
@@ -34,7 +30,7 @@ class Home extends CI_Controller{
 		return false;
 	}
 	
-	private final function render($method, $data)
+	private final function render($method, $data = array())
 	{
 		$this->log($method);
 		
@@ -49,14 +45,11 @@ class Home extends CI_Controller{
 	
 	public final function index()
 	{
-		$data['url_title']	= $this->parameter_model->get('system_title');
-		$data['scr_title']	= 'Home';
-		
 		$data['brand']		= $this->brand_model->by(array('status_id' => 1));
 		$data['partners']	= $this->partner_model->by(array('status_id' => 1));
 		$data['category']	= $this->category_model->by(array('status_id' => 1));
 		$data['state']		= $this->state_model->by(array('status_id' => 1));
 		
-		$this->render($this->router->method, $data);
+		$this->render($this->router->method, @$data);
 	}
 }

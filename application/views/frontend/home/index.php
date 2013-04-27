@@ -1,5 +1,5 @@
 <div id="margin">
-			<div class="navegacao">Você está: <a href="#">Home</a></div>
+			<div class="navegacao">Você está: <a href="<?=site_url();?>">Home</a></div>
 			<div class="title-content">Todos <font size="5">(1.000) Resultados</font></div>
 			
 			<div class="widget-left">
