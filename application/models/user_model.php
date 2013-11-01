@@ -192,6 +192,8 @@ class User_model extends CI_Model{
 		if($query->num_rows() > 0){
 			$user_data = $query->result_array();
 			
+			printr($user_data);
+			
 			$this->session->set_userdata('user_logged',	true);
 			$this->session->set_userdata('user_id',	$user_data[0]['id']);
 			$this->session->set_userdata('user_name', $user_data[0]['name']);

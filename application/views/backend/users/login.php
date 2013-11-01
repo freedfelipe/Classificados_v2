@@ -1,47 +1,79 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 
-<html lang="en">
+  <!--[if lt IE 7]>
+    <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+  <![endif]-->
+
+  <!--[if IE 7]>
+    <html class="lt-ie9 lt-ie8" lang="en">
+  <![endif]-->
+
+  <!--[if IE 8]>
+    <html class="lt-ie9" lang="en">
+  <![endif]-->
+
+  <!--[if gt IE 8]>
+    <!-->
+    <html lang="en">
+    <!--
+  <![endif]-->
+  
 <head>
-	<!-- Meta Tags -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>Administração - Meu Carro Turbo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="generator" content="Komodo">
 	<meta name="author" content="<?=$this->parameter_model->get('author');?>">
+    <script src="<?=site_url('resources/backend/js/html5-trunk.js');?>"></script>
+	<script src="<?=site_url('resources/backend/js/jquery.min.js');?>"></script>
+    <script src="<?=site_url('resources/backend/js/bootstrap.js');?>"></script>
+    <script src="<?=site_url('resources/backend/js/jquery-ui-1.8.23.custom.min.js');?>"></script>
+	<script src="<?=site_url('resources/backend/js/jquery.easy-pie-chart.js');?>"></script>
+	<script src="<?=site_url('resources/backend/js/custom.js');?>"></script>
+    <link href="<?=site_url('resources/backend/icomoon/style.css');?>" rel="stylesheet">
+    <!--[if lte IE 7]>
+    <script src="<?=site_url('resources/backend/css/icomoon-font/lte-ie7.js');?>"></script>
+    <![endif]-->
+    <link href="<?=site_url('resources/backend/css/bootstrap.css');?>" rel="stylesheet">
+    <link href="<?=site_url('resources/backend/css/main.css');?>" rel="stylesheet">
 	
-	<!-- Título da Página -->
-	<title><?=$url_title?></title>
-	
-	<!-- Estilos CSS -->
-	<link rel="stylesheet" type="text/css" href="<?=site_url();?>resources/css/jquery-ui/ui-darkness/jquery-ui-1.8.16.custom.css">
-	<link rel="stylesheet" type="text/css" href="<?=site_url();?>resources/css/styles.css" />
-	
-	<!-- Javascripts -->
-	<script type="text/javascript" src="<?=site_url();?>resources/js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="<?=site_url();?>resources/js/functions.js"></script>
-</head>
-<body onload="init();" class="login_bg">
-	<div class="login_base">><?=$this->parameter_model->get('company_name');?></div>
-	
-	<div class="login_container">
-		<div>
-			<h1><?=$scr_title?></h1>
+  </head>
 
-			<form method="post">
-				<div>
-					<label for="email"><?=$this->lang->line('login_email');?>:</label>
-					<input ytpe="text" name="email" id="email" class="input"/>
-				</div>
-	
-				<div>
-					<label for="password"><?=$this->lang->line('login_password');?>:</label>
-					<input type="password" name="password" id="password" class="input"/>
-				</div>
-					
-				<div>
-					<label for="submit"></label>
-					<input type="submit" name="submit" id="submit" value="<?=$this->lang->line('button_proceed');?>" class="button" />
-				</div>
-			</form>
+	<body>
+		<div class="main-container">
+			<div class="row">
+				<form action="<?=site_url('admin/login');?>" class="login-wrapper" method="post">
+					<div class="header">
+						<div class="row">
+							<div class="col-md-12">
+								<h3>Login<img src="<?=site_url('resources/backend/img/logo.png');?>" alt="Logo" class="pull-right"></h3>
+								<p>Preencha o formulário abaixo para efetuar login.</p>
+							</div>
+						</div>
+					</div>
+					<div class="content">
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<input class="input col-md-12 col-sm-12 email" id="" name="email" placeholder="seu@email.com" required="required" type="email" value="">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<input class="input col-md-12 col-sm-12 password" id="" name="password" placeholder="********" required="required" type="password">
+						</div>
+					</div>
+					</div>
+					<div class="actions">
+						<input type="submit" class="btn btn-danger" value="Login" />
+						<? if(isset($error)){?>
+						<span class="label label-danger">
+							<?=$error;?>
+						</span>
+						<? } ?>
+						<div class="clearfix"></div>
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
-</body>
+	</body>
 </html>

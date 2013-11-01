@@ -165,18 +165,15 @@ class Users extends CI_Controller{
 	{
 		if(!$_POST){
 			$this->log('login');
-
-			$data['url']			= $this->url;
-			$data['dir']			= $this->router->class.'/';
-			$data['url_title']		= $this->parameter_model->get('system_title');
-			$data['scr_title']		= $this->title['login'];
-			
-			$this->load->view('backend/users/login', $data);
+			$this->load->view('backend/users/login');
 		} else {
+			
 			if($this->user_model->login($_POST['email'], $_POST['password'])){
 				redirect('/admin/usuarios');
 			} else {
-				redirect('/admin/login');
+				
+				$data['error'] = 'Usuário / Senha inválidos!';
+				$this->load->view('backend/users/login', $data);
 			}
 		}
 	}
