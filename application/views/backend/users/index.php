@@ -17,9 +17,18 @@
 		<div class="widget">
 			<div class="widget-header">
 				<div class="title">
-					<span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span> Dados
+					<span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span>
 				</div>
 			</div>
+			
+			<div class="widget-body">
+				<div class="row">
+					<div class="col-md-4 col-sm-4">
+						<a href="<?=site_url('admin/usuarios/adicionar');?>" class="btn btn-primary btn-block">Adicionar Novo Registro</a>
+					</div>
+				</div>
+			</div>
+			
 			<div class="widget-body">
 				<div id="dt_example" class="example_alt_pagination">
 					<table class="table table-condensed table-striped table-hover table-bordered pull-left" id="data-table">    
@@ -42,12 +51,12 @@
 								<td><?=$user['group_name'];?></td>
 								<td class="hidden-phone"><?=$user['email'];?></td>
 								<td class="hidden-phone"><?=format_date($user['created_in']);?></td>
-								<td><?=status($user['status_id']);?></td>
+								<td><?=status_select($user['status_id']);?></td>
 								<td>
-									<a href="<?=site_url('usuarios/editar/'.$user['id'].'/'.$user['idHash']);?>" class="actions-icons">
+									<a href="<?=site_url('admin/usuarios/editar/'.$user['id'].'/'.$user['idHash']);?>" class="actions-icons">
 										<img src="<?=site_url('resources/backend/img/edit-icon.png');?>" alt="editar" class="icons">
 									</a>
-									<a href="<?=site_url('usuarios/remover/'.$user['id'].'/'.$user['idHash']);?>" class="delete-row" data-original-title="Delete">
+									<a href="<?=site_url('admin/usuarios/remover/'.$user['id'].'/'.$user['idHash']);?>" class="delete-row" data-original-title="Delete">
 										<img src="<?=site_url('resources/backend/img/trash-icon.png');?>" alt="Remover">
 									</a>
 								</td>

@@ -94,7 +94,7 @@ class User_group_model extends CI_Model{
 		$query = $this->db->get_where($this->tablename, array('status_id' => 1));
 		
 		if($query->num_rows() > 0){
-			return $query->result();
+			return $query->result_array();
 		}
 		
 		return false;

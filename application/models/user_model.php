@@ -51,6 +51,28 @@ class User_model extends CI_Model{
 		return false;
 	}
 	
+	public final function update($id, $hash_id, $data)
+	{
+		//Array de dados do usuário
+		$data1 = array(
+			'group_id'		=> $data["group_id"],
+			'name'			=> $data["name"],
+			'email'			=> $data["email"],
+			'password'		=> md5($data["password"]),
+			'status_id'		=> $data["status_id"]
+		);
+		
+		//Condição para não dar merda
+		$this->db->where(array('id' => $id, 'idHash' => $hash_id));
+		
+		//Update do usuário
+		if($this->db->update($this->tablename, $data1)){
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public final function total($start=0)
 	{
 		$this->db->where(array('status_id' => 1));
@@ -78,28 +100,6 @@ class User_model extends CI_Model{
 		
 		if($query->num_rows() > 0){
 			return $query->result_array();
-		}
-		
-		return false;
-	}
-	
-	public final function update($id, $hash_id, $data)
-	{
-		//Array de dados do usuário
-		$data1 = array(
-			'group_id'		=> $data["group_id"],
-			'name'			=> $data["name"],
-			'email'			=> $data["email"],
-			'password'		=> md5($data["password"]),
-			'status_id'		=> $data["status_id"]
-		);
-		
-		//Condição para não dar merda
-		$this->db->where(array('id' => $id, 'idHash' => $hash_id));
-		
-		//Update do usuário
-		if($this->db->update($this->tablename, $data1)){
-			return true;
 		}
 		
 		return false;

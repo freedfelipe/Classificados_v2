@@ -1,52 +1,51 @@
-<form class="edt-form" method="post" action="<?=$_SERVER['REQUEST_URI'];?>" accept-charset="utf-8">
-	<fieldset>
-		<legend>Dados do Usuário</legend>
-		
-		<div class="field_row <?php if(form_error('group_id')){print('validation_error');}?>">
-			<div class="field_label">Grupo / Cargo:</div>
-			<div>
-			<select name="group_id" id="group_id" class="form_input">
-				<option value="0">Selecione...</option>
-				<?data_select(@$row[0]->group_id, $groups)?>
-			</select>
-			</div>
-		</div>
-		
-		<div class="field_row <?php if(form_error('name')){print('validation_error');}?>">
-			<div class="field_label">Nome do Usuário:</div>
-			<div><input type="text" name="name" id="name" class="form_input" <?php if($this->router->method == 'update'){print(" value='".@$row[0]->name."'");}?> /></div>
-		</div>
-		
-		<div class="field_row <?php if(form_error('email')){print('validation_error');}?>">
-			<div class="field_label">Email / Login:</div>
-			<div><input type="text" name="email" id="email" class="form_input" <?php if($this->router->method == 'update'){print(" value='".@$row[0]->email."'");}?> /></div>
-		</div>
-		
-		<div class="field_row <?php if(form_error('password')){print('validation_error');}?>">
-			<div class="field_label">Senha:</div>
-			<div><input type="password" name="password" id="password" class="form_input" /></div>
-		</div>
-		
-		<div class="field_row <?php if(form_error('status_id')){print('validation_error');}?>">
-			<div class="field_label">Status:</div>
-			<div>
-				<select name="status_id" id="status_id" class="form_input">
-					<option value="-1">Selecione...</option>
-					<? if($this->router->method == 'update'){ $data_select =  $row[0]->status_id; }else{ $data_select = set_value('status_id'); } status_select($data_select);?>
-				</select>
-			</div>
-		</div>
-		
-		<?php if($this->router->method == 'update'){ ?>
-		<div>
-			<input type="hidden" name="hash_id" value="<?php echo @$row[0]->hash_id;?>" />
-		</div>
-		<?php } ?>
-	</fieldset>
-	
-	<br />
-	
-	<input type="submit" class="button" value="<?=$this->lang->line('button_save');?>" />
-	<input type="reset" class="button" value="<?=$this->lang->line('button_clear');?>" />
-	<input type="button" class="button" value="<?=$this->lang->line('button_back');?>" onclick="javascript:history.back();" />
-</form>
+<div class="row">
+    <div class="col-md-6">
+        <div class="widget">
+            <div class="widget-body">
+                <form class="form-horizontal" role="form" method="post" action="<?=site_url($_SERVER['REQUEST_URI']);?>" accept-charset="utf-8">
+				
+					<div class="form-group">
+                        <label class="col-lg-2 control-label">Grupo</label>
+                        <div class="col-lg-10">
+							<?php echo form_dropdown('group_id', construct_select($groups), set_value('group_id', @$row['group_id'], $this->input->post('group_id')), 'class="form-control"'); ?>
+                        </div>
+                    </div>
+					
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Nome</label>
+                        <div class="col-lg-10">
+                            <input type="Text" class="form-control" placeholder="Nome" name="name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-10">
+                            <input type="email" class="form-control" placeholder="Email" name="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Senha</label>
+                        <div class="col-lg-10">
+                            <input type="password" class="form-control" placeholder="Password" name="password">
+                        </div>
+                    </div>
+					
+					<div class="form-group">
+                        <label class="col-lg-2 control-label">Status</label>
+                        <div class="col-lg-10">
+							<?php echo form_dropdown('status_id', construct_select(status()), set_value('status_id', @$row['status_id'], $this->input->post('status_id')), 'class="form-control"'); ?>
+                        </div>
+                    </div>
+					
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-success">Salvar</button>
+							<button type="reset" class="btn btn-warning">Limpar</button>
+							<button type="button" class="btn btn-default" onclick="javascript:history.back();" >Voltar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

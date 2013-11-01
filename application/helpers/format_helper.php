@@ -41,7 +41,21 @@ function yesno($id)
 	return $yesno[$id];
 }
 
-function status($id)
+function status($id = false)
+{
+	$status = array(
+		array('id' => '1', 'name'=> 'Ativo'),
+		array('id' => '0', 'name'=> 'Inativo')
+	);
+	
+	if($id)
+		return $status[$id];
+	
+	return $status;
+	
+}
+
+function status_select($id)
 {
 	$status = array(
 		0 => 'Inativo',
@@ -51,26 +65,6 @@ function status($id)
 	);
 	
 	return $status[$id];
-}
-
-function status_select($selected)
-{
-	$status = array(
-		0 => 'Inativo',
-		1 => 'Ativo',
-		2 => 'Pendente',
-		3 => 'Aguardando Aprovação'
-	);
-	
-	for($i = 0; $i < count($status); $i++){
-		if($i == $selected){
-			print('<option value="'.$i.'" selected="selected">'.$status[$i].'</option>');
-		} else {
-			print('<option value="'.$i.'">'.$status[$i].'</option>');
-		}
-	}
-	
-	return true;
 }
 
 function data_select($rows, $selected)
@@ -202,4 +196,20 @@ function invertData($tData = '00/00/0000')
 	
 	
 	return $nData;
+}
+
+function construct_select($wf)
+{
+	if($wf){
+		$sel = array('-1' => 'Selecione');
+		
+		foreach($wf AS $k=>$v)
+		{
+			$sel[$v['id']] = $v['name'];
+		}
+		
+		return $sel;
+	}
+	
+	return false;
 }

@@ -33,7 +33,7 @@ class Users extends CI_Controller{
 			array(
 				'field'	=> 'group_id', 
 				'label'	=> 'group', 
-				'rules'	=> 'greater_than[0]'
+				'rules'	=> 'greater_than[-1]'
 			),
 			array(
 				'field'	=> 'name', 
@@ -71,10 +71,7 @@ class Users extends CI_Controller{
 	{
 		$this->log($method);
 		
-		$data['url']			= $this->url;
 		$data['dir']			= 'backend/'.$this->router->class.'/';
-		$data['url_title']		= $this->parameter_model->get('system_title');
-		$data['scr_title']		= $this->title[$method];
 		
 		$this->load->view('backend/common/header', $data);
 		$this->load->view('backend/'.$this->router->class . '/' . $method, $data);
@@ -97,8 +94,6 @@ class Users extends CI_Controller{
 		$this->user_model->is_logged();
 		$this->log($this->router->method);
 		
-		$data['url_title']		= $this->parameter_model->get('system_title');
-		$data['scr_title']		= $this->title[$this->router->method];
 		$data['groups']			= $this->user_group_model->all();
 		
 		$this->form_validation->set_rules($this->validation);		
