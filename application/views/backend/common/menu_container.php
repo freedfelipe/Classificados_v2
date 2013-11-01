@@ -3,7 +3,7 @@
 
     <!-- User pic start -->
     <div class="user-profile-pic">
-        <img src="img/avatar-1.png" alt="Admin">
+        <img src="<?=site_url('resources/backend/img/avatar-1.png');?>" alt="Admin">
     </div>
     <!-- User pic end -->
     

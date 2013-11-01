@@ -85,15 +85,9 @@ class Users extends CI_Controller{
 	{
 		$this->user_model->is_logged();	
 		
-		$this->log($this->router->method);		
+		$this->log($this->router->method);
 		
-		$data['config'] = pagination_args($this->limit, $this->pag_segment, $this->uri->segment_array());
-		$data['users'] =  $this->user_model->read_pag($this->limit, @$data['config']['page_now'], @$data['config']['search_args']);
-		$data['total'] =  $this->user_model->read_pag(NULL, @$data['config']['page_now'], @$data['config']['search_args']);
-		$data['config'] = pagination_search($this->limit, $data['total']['count'], $this->pag_segment, $this->uri->segment_array(),$this->url, $data['config']);
-		
-		$this->pagination->initialize($data['config']);        
-        $data['pag'] = $this->pagination->create_links();
+		$data['dados'] = $this->user_model->all();
 		
 		$this->render($this->router->method, $data);
 	}

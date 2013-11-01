@@ -77,14 +77,14 @@
 	<ul>
 	  
 		<li>
-			<a href="login.html">
+			<a href="javascript:">
 				<span class="text-label">Nome DO usuário</span><span class="fs1" aria-hidden="true" data-icon="&#xe088;"></span>
 			</a>
 			<ul class="user-summary">
 				<li>
 					<div class="summary">
 						<div class="user-pic">
-							<img src="<?=site_url('resoures/backend/img/avatar-1.png');?>" alt="Admin"/>
+							<img src="<?=site_url('resources/backend/img/avatar-1.png');?>" alt="Admin"/>
 						</div>
 						<div class="basic-details">
 							<h4 class="no-margin">Nome DO usuário</h4>

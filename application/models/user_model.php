@@ -58,77 +58,26 @@ class User_model extends CI_Model{
 		return $this->db->count_all_results($this->tablename);
 	}
 	
-	public final function read($start=0)
-	{
-		$this->db->select('
-			sys_user.id,
-			sys_user.idHash,
-			sys_user.name,
-			sys_user.email,
-			sys_group.name as group_name,
-			sys_user.created_in,
-			sys_user.status_id
-		');
-		
-		$this->db->from($this->tablename);
-		$this->db->join('sys_group', 'sys_group.id = sys_user.group_id');
-		$this->db->where(array('sys_user.status_id >' => 0));
-		$this->db->order_by('sys_user.name');
-		$this->db->limit($this->per_page, $start);
-		
-		$query = $this->db->get();
-		
-		if($query->num_rows() > 0){
-			return array($query->result(), $query->num_rows());
-		}
-		
-		return false;
-	}
-	
-	public final function read_pag($limit = 0, $page_now = 0, $search = null)
-	{
-		$result = array(
-                'count' => 0,
-                'rows' => array()
-            );
-		 
-		$this->db->select('
-			sys_user.id,
-			sys_user.idHash,
-			sys_user.name,
-			sys_user.email,
-			sys_group.name as group_name,
-			sys_user.created_in,
-			sys_user.status_id
-		');
-		
-		$this->db->from($this->tablename);
-		$this->db->join('sys_group', 'sys_group.id = sys_user.group_id');
-		//$this->db->where(array('sys_user.status_id' => 1));
-		if($search){ $this->db->like(array('sys_user.name' => $search['seeking'])); }
-		$this->db->order_by('sys_user.name');
-		if(isset($limit))
-		{
-			 $this->db->limit($limit, $page_now);
-		}
-		
-		$query = $this->db->get();
-		
-		if($query->num_rows() > 0){			
-					$result['rows'] = $query->result_array();
-				    $result['count'] = $query->num_rows();
-				   return $result;
-		}
-		
-		return false;
-	}
-	
 	public final function all()
 	{
-		$query = $this->db->get($this->tablename);
+		$this->db->select('
+			sys_user.id,
+			sys_user.idHash,
+			sys_user.name,
+			sys_user.email,
+			sys_group.name as group_name,
+			sys_user.created_in,
+			sys_user.status_id
+		');
+		
+		$this->db->from($this->tablename);
+		$this->db->join('sys_group', 'sys_group.id = sys_user.group_id');
+		$this->db->order_by('sys_user.name');
+		
+		$query = $this->db->get();
 		
 		if($query->num_rows() > 0){
-			return $query->result();
+			return $query->result_array();
 		}
 		
 		return false;
