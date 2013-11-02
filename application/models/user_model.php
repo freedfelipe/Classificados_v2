@@ -17,18 +17,12 @@ class User_model extends CI_Model{
 		$this->per_page		= $this->parameter_model->get('rows_per_page');
 	}
 	
-	public final function by($by, $value)
+	public final function by($where = array())
 	{
-		$query = $this->db->get_where(
-			$this->tablename,
-			array(
-				'status_id' => 1,
-				$by => $value
-			)
-		);
+		$query = $this->db->get_where($this->tablename,$where);
 		
 		if($query->num_rows() > 0){
-			return $query->result();
+			return $query->row_array();
 		}
 		
 		return false;
@@ -51,22 +45,20 @@ class User_model extends CI_Model{
 		return false;
 	}
 	
-	public final function update($id, $hash_id, $data)
+	public final function update($id, $idHash)
 	{
-		//Array de dados do usuário
-		$data1 = array(
-			'group_id'		=> $data["group_id"],
-			'name'			=> $data["name"],
-			'email'			=> $data["email"],
-			'password'		=> md5($data["password"]),
-			'status_id'		=> $data["status_id"]
+		$data = array(
+			'group_id'		=> $this->input->post('group_id', TRUE),
+			'name'			=> $this->input->post('name', TRUE),
+			'email'			=> $this->input->post('email', TRUE),
+			'password'		=> md5($this->input->post('password', TRUE)),
+			'update_in'		=> date('Y-m-d H:i:s'),
+			'status_id'		=> $this->input->post('status_id', TRUE)
 		);
 		
-		//Condição para não dar merda
-		$this->db->where(array('id' => $id, 'idHash' => $hash_id));
+		$this->db->where(array('id' => $id, 'idHash' => $idHash));
 		
-		//Update do usuário
-		if($this->db->update($this->tablename, $data1)){
+		if($this->db->update($this->tablename, $data)){
 			return true;
 		}
 		

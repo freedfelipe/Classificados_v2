@@ -11,6 +11,18 @@
     </h2>
 </div>
 
+<? if($this->session->flashdata('message')){ ?>
+<div class="row">
+	<div class="col-md-4 col-sm-4">
+		<div class="alert alert-block alert-success go-green-bg no-margin">
+			<button data-dismiss="alert" class="close" type="button">×</button>
+			<h3 class="text-white">Atenção!</h3>
+			<?=$this->session->flashdata('message'); ?>
+		</div>
+	</div>
+</div>
+<? } ?>
+
 <!-- Row start -->
 <div class="row">
 	<div class="col-md-12">

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url']	= 'http://'.$_SERVER["HTTP_HOST"].'/';
 
 
 /*
@@ -26,7 +26,7 @@ $config['base_url']	= '';
 |
 */
 
-DEFINE('EMAIL','freedfelipe@gmail.com');
+DEFINE('EMAIL','felipe@wadtecnologia.com.br');
 
 /*
 |--------------------------------------------------------------------------

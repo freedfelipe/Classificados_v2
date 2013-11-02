@@ -96,55 +96,69 @@ class Users extends CI_Controller{
 		
 		$data['groups']			= $this->user_group_model->all();
 		
-		$this->form_validation->set_rules($this->validation);		
+		$this->form_validation->set_rules($this->validation);
+		
 		if($this->form_validation->run() == FALSE){
-			$this->render($this->router->method, $data);
-			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_error') . '</p>');
+			if($_POST){
+				
+				$text = '';
+				foreach($this->form_validation->error_array() as $k => $error){				
+					$text .= '<p class="text-white">'.$error.'</p>';
+				}
+				
+				$data['error'] = $text;
+			}
 		} else {
 			if($this->user_model->create()){
-				$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_insert_success') . '</p>');
+				$this->session->set_flashdata('message', '<p class="text-white">' . $this->lang->line('crud_insert_success') . '</p>');
 				redirect($this->url);
 			}
 		}
+		
+		$this->render($this->router->method, $data);
 	}
 	
-	public final function update($id, $hash_id)
+	public final function update($id, $idHash)
 	{
 		$this->user_model->is_logged();
 		$this->log($this->router->method);
 		
-		$data['id']				= $id;
-		$data['hash_id']		= $hash_id;
-		$data['url_title']		= $this->parameter_model->get('system_title');
-		$data['scr_title']		= $this->title[$this->router->method];
-		$data['row']			= $this->user_model->by('id', $id);
+		$data['row']			= $this->user_model->by(array('id' => $id, 'idHash' => $idHash));
 		$data['groups']			= $this->user_group_model->all();
 		
-		$this->validation[2]['rules'] = 'required|valid_email';
+		if($_POST){
+			if($_POST['email'] == $data['row']['email']){
+				$this->validation[2]['rules'] = 'required|valid_email';
+			}
+		}
 		
 		$this->form_validation->set_rules($this->validation);
 		
 		if($this->form_validation->run() == FALSE){
-			$this->render($this->router->method, $data);
-			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_error') . '</p>');
+			if($_POST){
+				
+				$text = '';
+				foreach($this->form_validation->error_array() as $k => $error){				
+					$text .= '<p class="text-white">'.$error.'</p>';
+				}
+				
+				$data['error'] = $text;
+			}
 		} else {
-			
-			if($this->user_model->update($id, $hash_id, $_POST)){
-				$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_update_success') . '</p>');
-			} else {
-				$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_update_fail') . '</p>');
+			if($this->user_model->update($id, $idHash)){
+				$this->session->set_flashdata('message', '<p class="text-white">' . $this->lang->line('crud_update_success') . '</p>');
 			}
 			
 			redirect($this->url);
 		}
+		
+		$this->render($this->router->method, $data);
 	}
 	
 	public final function delete($id, $hash_id)
 	{
 		if($this->user_model->delete($id, $hash_id)){
-			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_delete_success') . '</p>');
-		} else {
-			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_delete_fail') . '</p>');
+			$this->session->set_flashdata('message', '<p class="text-white">' . $this->lang->line('crud_delete_success') . '</p>');
 		}
 		
 		redirect($this->url);
