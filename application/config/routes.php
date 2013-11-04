@@ -29,8 +29,8 @@ $route['admin/grupos/(:any)']						                = 'backend/user_groups/index/
 //Rotas de Parâmetros
 $route['admin/parametros']						                    = 'backend/parameters';
 $route['admin/parametros/adicionar']			    	            = 'backend/parameters/create';
-$route['admin/parametros/editar/(:num)']		    	            = 'backend/parameters/update/$1';
-$route['admin/parametros/remover/(:num)']		    	            = 'backend/parameters/delete/$1';
+$route['admin/parametros/editar/(:num)/(:any)']                     = 'backend/parameters/update/$1/$2';
+$route['admin/parametros/remover/(:num)/(:any)']                    = 'backend/parameters/delete/$1/$2';
 $route['admin/parametros/(:any)']				    	            = 'backend/parameters/index/$1';
 
 //Rotas de Módulos do Sistema

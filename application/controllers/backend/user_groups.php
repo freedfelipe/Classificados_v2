@@ -96,7 +96,7 @@ class User_groups extends CI_Controller{
 			}
 		}
 		
-		$this->render($this->router->method, $data);
+		$this->render($this->router->method, @$data);
 	}
 	
 	public final function update($id, $idHash)

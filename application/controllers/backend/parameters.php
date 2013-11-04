@@ -15,18 +15,10 @@ class Parameters extends CI_Controller{
 		parent::__construct();
 		
 		$this->user_model->is_logged();
-		$this->load->model('parameter_model', 'data_model');
+		$this->load->model('parameter_model', 'dm');
 		$this->url = '/admin/parametros/';
 		
-		$this->limit = $this->parameter_model->get('rows_per_page');
 		$this->pag_segment = 3;
-		$this->total_rows	= $this->parameter_model->total();
-		
-		$this->title = array(
-			'index'		=> $this->lang->line($this->router->class . '_index'),
-			'create'	=> $this->lang->line($this->router->class . '_create'),
-			'update'	=> $this->lang->line($this->router->class . '_update')
-		);
 		
 		$this->validation = array(
 			array(
@@ -42,7 +34,7 @@ class Parameters extends CI_Controller{
 			array(
 				'field'	=> 'status_id', 
 				'label'	=> 'Status', 
-				'rules'	=> 'required'
+				'rules'	=> 'greater_than[-1]'
 			)
 		);
 	}
@@ -62,8 +54,6 @@ class Parameters extends CI_Controller{
 		
 		$data['url']			= $this->url;
 		$data['dir']			= 'backend/'.$this->router->class.'/';
-		$data['url_title']		= $this->parameter_model->get('system_title');
-		$data['scr_title']		= $this->title[$method];
 		
 		$this->load->view('backend/common/header', $data);
 		$this->load->view('backend/'.$this->router->class . '/' . $method, $data);
@@ -72,16 +62,9 @@ class Parameters extends CI_Controller{
 	
 	public final function index()
 	{
-		$data['url_title']	= $this->parameter_model->get('system_title');
-		$data['scr_title']	= $this->title[$this->router->method];
+		$this->log($this->router->method);
 		
-		$data['config']		= pagination_args($this->limit, $this->pag_segment, $this->uri->segment_array());
-		$data['dados'] 		= $this->parameter_model->read_pag($this->limit, @$data['config']['page_now'], @$data['config']['search_args']);
-		$data['total'] 		= $this->parameter_model->read_pag(NULL, @$data['config']['page_now'], @$data['config']['search_args']);
-		$data['config']		= pagination_search($this->limit, $data['total']['count'], $this->pag_segment, $this->uri->segment_array(),$this->url, $data['config']);
-		
-		$this->pagination->initialize($data['config']);        
-        $data['pag'] 		= $this->pagination->create_links();
+		$data['dados'] = $this->dm->all();
 		
 		$this->render($this->router->method, $data);
 	}
@@ -90,52 +73,61 @@ class Parameters extends CI_Controller{
 	{
 		$this->log($this->router->method);
 		
-		$data['url_title']	= $this->parameter_model->get('system_title');
-		$data['scr_title']	= $this->title[$this->router->method];
-		
 		$this->form_validation->set_rules($this->validation);
 		
 		if($this->form_validation->run() == FALSE){
-			$this->render($this->router->method, $data);
-			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_error') . '</p>');
+			if($_POST){
+				
+				$text = '';
+				foreach($this->form_validation->error_array() as $k => $error){				
+					$text .= '<p class="text-white">'.$error.'</p>';
+				}
+				
+				$data['error'] = $text;
+			}
 		} else {
-			if($this->data_model->create($_POST)){
-				$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_insert_success') . '</p>');
+			if($this->dm->create()){
+				$this->session->set_flashdata('message', '<p class="text-white">' . $this->lang->line('crud_insert_success') . '</p>');
 				redirect($this->url);
 			}
 		}
+		
+		$this->render($this->router->method, @$data);
 	}
 	
-	public final function update($id)
+	public final function update($id, $idHash)
 	{
 		$this->log($this->router->method);
 		
-		$data['url_title']	= $this->parameter_model->get('system_title');
-		$data['scr_title']	= $this->title[$this->router->method];
-		$data['row']		= $this->data_model->by('id', $id);
+		$data['row']			= $this->dm->by(array('id' => $id, 'idHash' => $idHash));
 		
 		$this->form_validation->set_rules($this->validation);
 		
 		if($this->form_validation->run() == FALSE){
-			$this->render($this->router->method, $data);
-			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_error') . '</p>');
+			if($_POST){
+				
+				$text = '';
+				foreach($this->form_validation->error_array() as $k => $error){				
+					$text .= '<p class="text-white">'.$error.'</p>';
+				}
+				
+				$data['error'] = $text;
+			}
 		} else {
-			if($this->data_model->update($id, $_POST)){
-				$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_update_success') . '</p>');
-			} else {
-				$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_update_fail') . '</p>');
+			if($this->dm->update($id, $idHash)){
+				$this->session->set_flashdata('message', '<p class="text-white">' . $this->lang->line('crud_update_success') . '</p>');
 			}
 			
 			redirect($this->url);
 		}
+		
+		$this->render($this->router->method, $data);
 	}
 	
-	public final function delete($id)
+	public final function delete($id, $hash_id)
 	{
-		if($this->data_model->delete($id)){
-			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_delete_success') . '</p>');
-		} else {
-			$this->session->set_flashdata('message', '<p>' . $this->lang->line('crud_delete_fail') . '</p>');
+		if($this->dm->delete($id, $hash_id)){
+			$this->session->set_flashdata('message', '<p class="text-white">' . $this->lang->line('crud_delete_success') . '</p>');
 		}
 		
 		redirect($this->url);
