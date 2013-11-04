@@ -61,8 +61,8 @@ $route['admin/categorias/(:any)']					                = 'backend/categories/inde
 //Rotas de Marcas
 $route['admin/marcas']                                              = 'backend/brands';
 $route['admin/marcas/adicionar']                                    = 'backend/brands/create';
-$route['admin/marcas/editar/(:num)']                                = 'backend/brands/update/$1';
-$route['admin/marcas/remover/(:num)']                               = 'backend/brands/delete/$1';
+$route['admin/marcas/editar/(:num)/(:any)']                         = 'backend/brands/update/$1/$2';
+$route['admin/marcas/remover/(:num)/(:any)']                        = 'backend/brands/delete/$1/$2';
 $route['admin/marcas/(:any)']					                    = 'backend/brands/index/$1';
 
 //Rotas de Modelos
