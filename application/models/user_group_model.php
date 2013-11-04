@@ -14,7 +14,6 @@ class User_group_model extends CI_Model{
 		parent::__construct();
 		
 		$this->tablename	= 'sys_group';
-		$this->per_page		= $this->parameter_model->get('rows_per_page');
 	}
 	
 	public final function by($by = array())

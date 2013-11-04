@@ -18,7 +18,6 @@ class User_groups extends CI_Controller{
 		$this->load->model('user_group_model', 'dm');
 		$this->url = '/admin/grupos/';
 		
-		$this->limit = $this->parameter_model->get('rows_per_page');
 		$this->pag_segment = 3;
 		
 		$this->title = array(
