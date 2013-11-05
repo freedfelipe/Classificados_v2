@@ -18,9 +18,6 @@ class Plans extends CI_Controller{
 		$this->load->model('plan_model', 'dm');
 		$this->url = '/admin/planos/';
 		
-		$this->limit = $this->parameter_model->get('rows_per_page');
-		$this->pag_segment = 3;
-		
 		$this->title = array(
 			'index'		=> $this->lang->line($this->router->class . '_index'),
 			'create'	=> $this->lang->line($this->router->class . '_create'),
