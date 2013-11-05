@@ -71,6 +71,8 @@ class Models extends CI_Controller{
 	{
 		$this->log($this->router->method);
 		
+		$data['brands'] = $this->brand_model->all(array('status_id' => 1, 'category_id' => 1));
+		
 		$this->form_validation->set_rules($this->validation);
 		
 		if($this->form_validation->run() == FALSE){
@@ -97,7 +99,8 @@ class Models extends CI_Controller{
 	{
 		$this->log($this->router->method);
 		
-		$data['row']			= $this->dm->by(array('id' => $id, 'idHash' => $idHash));
+		$data['row']	= $this->dm->by(array('id' => $id, 'idHash' => $idHash));
+		$data['brands'] = $this->brand_model->all(array('status_id' => 1, 'category_id' => 1));
 		
 		$this->form_validation->set_rules($this->validation);
 		

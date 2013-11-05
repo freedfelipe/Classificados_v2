@@ -68,8 +68,8 @@ $route['admin/marcas/(:any)']					                    = 'backend/brands/index/$1
 //Rotas de Modelos
 $route['admin/modelos']                                             = 'backend/models';
 $route['admin/modelos/adicionar']                                   = 'backend/models/create';
-$route['admin/modelos/editar/(:num)']                               = 'backend/models/update/$1';
-$route['admin/modelos/remover/(:num)']                              = 'backend/models/delete/$1';
+$route['admin/modelos/editar/(:num)/(:any)']                        = 'backend/models/update/$1/$2';
+$route['admin/modelos/remover/(:num)/(:any)']                       = 'backend/models/delete/$1/$2';
 $route['admin/modelos/(:any)']					                    = 'backend/models/index/$1';
 
 //Rotas de Anuncios - Administrador

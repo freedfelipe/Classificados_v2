@@ -22,7 +22,7 @@ class Model_model extends CI_Model{
 		$query = $this->db->get_where($this->tablename, $by);
 		
 		if($query->num_rows() > 0){
-			return $query->result_array();
+			return $query->row_array();
 		}
 		
 		return false;
@@ -32,6 +32,7 @@ class Model_model extends CI_Model{
 	{
 		$data['idHash']			= getHash();
 		$data['name'] 			= $this->input->post('name', TRUE);
+		$data['brand_id'] 		= $this->input->post('brand_id', TRUE);
 		$data['created_in']		= date('Y-m-d H:i:s');
 		$data['status_id'] 		= $this->input->post('status_id', TRUE);
 		
@@ -45,6 +46,7 @@ class Model_model extends CI_Model{
 	public final function update($id = '', $idHash = '')
 	{
 		$data['name'] 			= $this->input->post('name', TRUE);
+		$data['brand_id'] 		= $this->input->post('brand_id', TRUE);
 		$data['update_in']		= date('Y-m-d H:i:s');
 		$data['status_id'] 		= $this->input->post('status_id', TRUE);
 		

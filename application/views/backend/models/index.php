@@ -36,7 +36,7 @@
 			<div class="widget-body">
 				<div class="row">
 					<div class="col-md-4 col-sm-4">
-						<a href="<?=site_url('admin/marcas/adicionar');?>" class="btn btn-primary btn-block">Adicionar Novo Registro</a>
+						<a href="<?=site_url('admin/modelos/adicionar');?>" class="btn btn-primary btn-block">Adicionar Novo Registro</a>
 					</div>
 				</div>
 			</div>
