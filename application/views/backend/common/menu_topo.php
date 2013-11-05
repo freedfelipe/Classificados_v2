@@ -28,9 +28,6 @@
 					<a href="<?=site_url('admin/grupos');?>">Grupos</a>
 				</li>
 				<li>
-					<a href="<?=site_url('admin/planos');?>">Planos</a>
-				</li>
-				<li>
 					<a href="<?=site_url('admin/categorias');?>">Categorias</a>
 				</li>
 				<li>

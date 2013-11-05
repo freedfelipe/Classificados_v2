@@ -53,15 +53,6 @@
                 Grupos
             </a>
         </li>
-        <li <? if($this->uri->segment(2) == 'planos'){ ?>class="active"<? } ?>>
-            <? if($this->uri->segment(2) == 'planos'){ ?><span class="current-arrow">&nbsp;</span><? } ?>
-            <a href="<?=site_url('admin/planos');?>">
-                <div class="icon">
-                    <span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span>
-                </div>
-                Planos
-            </a>
-        </li>
         <li <? if($this->uri->segment(2) == 'categorias'){ ?>class="active"<? } ?>>
             <? if($this->uri->segment(2) == 'categorias'){ ?><span class="current-arrow">&nbsp;</span><? } ?>
             <a href="<?=site_url('admin/categorias');?>">
