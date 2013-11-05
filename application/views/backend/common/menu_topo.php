@@ -52,9 +52,6 @@
 					<a href="<?=site_url('admin/opcionais');?>">Opcionais</a>
 				</li>
 				<li>
-					<a href="<?=site_url('admin/anunciantes');?>">Anunciantes</a>
-				</li>
-				<li>
 					<a href="<?=site_url('admin/sair');?>">Sair</a>
 				</li>
 			</ul>

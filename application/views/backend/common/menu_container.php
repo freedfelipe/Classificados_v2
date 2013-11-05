@@ -124,15 +124,6 @@
                 Opcionais
             </a>
         </li>
-        <li <? if($this->uri->segment(2) == 'anunciantes'){ ?>class="active"<? } ?>>
-            <? if($this->uri->segment(2) == 'anunciantes'){ ?><span class="current-arrow">&nbsp;</span><? } ?>
-            <a href="<?=site_url('admin/anunciantes');?>">
-                <div class="icon">
-                    <span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span>
-                </div>
-                Anunciantes
-            </a>
-        </li>
         <li>
             <a href="<?=site_url('admin/sair');?>">
                 <div class="icon">
