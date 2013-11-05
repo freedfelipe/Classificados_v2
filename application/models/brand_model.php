@@ -41,6 +41,7 @@ class Brand_model extends CI_Model{
 	
 	public final function create($data = array())
 	{
+		$data['idHash']			= getHash();
 		$data['name'] 			= $this->input->post('name', TRUE);
 		$data['created_in']		= date('Y-m-d H:i:s');
 		$data['status_id'] 		= $this->input->post('status_id', TRUE);
@@ -58,7 +59,7 @@ class Brand_model extends CI_Model{
 		$data['update_in']		= date('Y-m-d H:i:s');
 		$data['status_id'] 		= $this->input->post('status_id', TRUE);
 		
-		$this->db->where(array('id' => $id));
+		$this->db->where(array('id' => $id, 'idHash' => $idHash));
 		
 		if($this->db->update($this->tablename, $data)){
 			return true;
