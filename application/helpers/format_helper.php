@@ -223,11 +223,20 @@ function showBanner($url)
 {
 	$urls = array('entrar', 'registrar');
 	
+	if(in_array($url, $urls)){
+		return false;
+	}
+	
+	return true;
+}
+
+function showLogin($url)
+{
+	$urls = array('entrar', 'registrar');
 	
 	if(in_array($url, $urls)){
 		return false;
 	}
 	
 	return true;
-	
 }

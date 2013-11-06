@@ -117,6 +117,15 @@ class User_model extends CI_Model{
 		redirect('admin/login/');
 	}
 	
+	public final function is_logged_front()
+	{
+		if($this->session->userdata('logado_front')){
+			return true;
+		}
+		
+		redirect('entrar/');
+	}
+	
 	public final function login($email, $password)
 	{
 		
@@ -125,6 +134,7 @@ class User_model extends CI_Model{
 		$this->db->where(array(
 			'email'			=> $email,
 			'password'		=> md5($password),
+			'is_admin'		=> 1,
 			'status_id'		=> 1
 		));
 		
@@ -138,6 +148,33 @@ class User_model extends CI_Model{
 			$this->session->set_userdata('user_name', $user_data[0]['name']);
 			$this->session->set_userdata('user_email', $user_data[0]['email']);
 			$this->session->set_userdata('user_admin', $user_data[0]['is_admin']);
+			
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public final function login_front()
+	{
+		$this->db->select('*');
+		$this->db->from($this->tablename);
+		$this->db->where(array(
+			'email'			=> $this->input->post('email', TRUE),
+			'password'		=> md5($this->input->post('password', TRUE)),
+			'status_id'		=> 1
+		));
+		
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0){
+			$user_data = $query->row_array();
+			
+			$this->session->set_userdata('logado_front', true);
+			$this->session->set_userdata('user_id', $user_data['id']);
+			$this->session->set_userdata('user_name', $user_data['name']);
+			$this->session->set_userdata('user_email', $user_data['email']);
+			$this->session->set_userdata('user_admin', $user_data['is_admin']);
 			
 			return true;
 		}

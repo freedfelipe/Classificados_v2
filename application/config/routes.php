@@ -123,42 +123,19 @@ $route['admin/opcionais/remover/(:num)/(:any)']                     = 'backend/o
 $route['admin/opcionais/consultar/(:num)']                          = 'backend/optional/search/$1';
 $route['admin/opcionais/(:any)']                                    = 'backend/optional/index/$1';
 
-//Rotas de FRONTEND
-
-
-
-//Rotas da home
+#######Rotas de FRONTEND
+#Rotas da home
 $route['home']                                                      = 'frontend/home/index';
 $route['modelos/consultar/(:num)']                                  = 'backend/models/search/$1';
 $route['cidades/consultar/(:num)']                                  = 'backend/cities/search/$1';
 
-
-// Anuncio
+#Anuncio
 $route['anuncio/cadastrar']                                         = 'frontend/ads/create';
 
-
-// tela de login
+#tela de login
 $route['entrar']                                                    = 'frontend/login/index';
+$route['sair']                                                      = 'frontend/login/logout';
 
 # tela de registro
 $route['registrar']                                                 = 'frontend/registrar/index';
 $route['registrar/facebook']                                        = 'frontend/registrar/facebook';
-
-//$route['admin/grupos/(:num)']					          = 'backend/groups/index/$1';
-//$route['admin/grupos/adicionar']				          = 'backend/groups/create';
-//$route['admin/grupos/editar/(:num)/(:any)']               = 'backend/groups/update/$1/$2';
-//$route['admin/grupos/remover/(:num)/(:any)']              = 'backend/groups/delete/$1/$2';
-
-//Rotas de Bancos
-//$route['bancos']                                    = 'banks';
-//$route['bancos/(:num)']					            = 'banks/index/$1';
-//$route['bancos/adicionar']				            = 'banks/create';
-//$route['bancos/editar/(:num)/(:any)']               = 'banks/update/$1/$2';
-//$route['bancos/remover/(:num)/(:any)']              = 'banks/delete/$1/$2';
-//$route['bancos/importar']                           = 'banks/import';
-
-//Rota de consulta de CEP
-//$route['_cep/(:any)']                               = 'distributors/cep/$1';
-
-
-

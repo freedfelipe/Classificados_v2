@@ -14,8 +14,22 @@ class Login extends CI_Controller{
 	{
 		parent::__construct();
 		
+		$this->load->model('user_model', 'user');
+		
 		$this->url = '/entrar/';
 		
+		$this->validation = array(
+			array(
+				'field'	=> 'email', 
+				'label'	=> 'Email / Login', 
+				'rules'	=> 'trim|required|xss_clean|valid_email'
+			),
+			array(
+				'field'	=> 'password', 
+				'label'	=> 'Senha', 
+				'rules'	=> 'trim|required|xss_clean'
+			)
+		);
 	}
 	
 	private final function log($method)
@@ -33,7 +47,6 @@ class Login extends CI_Controller{
 		
 		$data['url']			= $this->url;
 		$data['dir']			= 'frontend/'.$this->router->class.'/';
-		$data['url_title']		= $this->parameter_model->get('system_title');
 		
 		$this->load->view('frontend/common/header', $data);
 		$this->load->view('frontend/'.$this->router->class . '/' . $method, $data);
@@ -42,11 +55,40 @@ class Login extends CI_Controller{
 	
 	public final function index()
 	{
-		//$data['brand']		= $this->brand_model->by(array('status_id' => 1));
-		//$data['partners']	= $this->partner_model->by(array('status_id' => 1));
-		//$data['category']	= $this->category_model->by(array('status_id' => 1));
-		//$data['state']		= $this->state_model->by(array('status_id' => 1));
+		$data['url_title']		= 'Login';
+		
+		$this->log($this->router->method);
+		
+		$this->form_validation->set_rules($this->validation);
+		
+		if($this->form_validation->run() == FALSE){
+			if($_POST){
+				
+				$text = '';
+				foreach($this->form_validation->error_array() as $k => $error){				
+					$text .= '<p class="text-white">'.$error.'</p>';
+				}
+				
+				$data['alert']['error'] = $text;
+			}
+		} else {
+			if($this->user->login_front()){
+				$this->session->set_flashdata('message', '<p class="text-white">Login Efetuado com Sucesso</p>');
+				redirect('/');
+			}else{
+				$data['alert']['error'] = '<p class="text-white">Login / Senha incorretos!</p>';
+			}
+		}
 		
 		$this->render($this->router->method, @$data);
+	}
+	
+	public final function logout()
+	{
+		$this->user->is_logged_front();
+		$this->session->unset_userdata('logado_front');
+		$this->session->sess_destroy();
+		
+		redirect('/');
 	}
 }

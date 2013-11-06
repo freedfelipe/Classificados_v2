@@ -1,13 +1,14 @@
 <div id="faixa-banner" class="clearfix">
 	<div id="margin">
-		<div class="title-anuncio">Registrar</div>
-		<div class="navegacao"><a href="<?=site_url();?>">Home</a> >> Registrar</div>
+		<div class="title-anuncio">Login</div>
+		<div class="navegacao"><a href="<?=site_url();?>">Home</a> >> Login</div>
 	</div>
-	
 </div>
-<div id="margin">
-	<!--<div id="title-login"><b>Login</b> de Acesso</div>-->
-	<div id="linha">
+<!-- Inicio do conteudo login -->
+<div id="content-login" class="clearfix">
+	<div id="margin">
+		<div id="title-login"><b>Login</b> de Acesso</div>
+		<div id="linha">
 		<form action="<?=site_url($_SERVER['REQUEST_URI']);?>" method="post">
 			<div id="box-login">
 				<div id="line-box-line">
@@ -56,4 +57,5 @@
 			</div>
 		</form>
 	</div>
+</div>
 </div>

@@ -42,11 +42,6 @@
 	<script type="text/javascript" src="<?=site_url('resources/frontend/js/functions.js');?>"></script>
 </head>
 <body>
-	<!-- Mensagens do Sistema -->
-	<?php if($this->session->flashdata('message')){?>
-	<div id="messages"><?=$this->session->flashdata('message');?></div>
-	<?php } ?>
-	
 	<header>
 		<div id="margin">
 			<div id="logo"><a href="<?=site_url();?>"><img src="<?=site_url('resources/frontend/images/logo.png');?>" width="100%" /></a></div>
@@ -54,24 +49,24 @@
 				<a href="<?=site_url();?>">HOME</a>  |  <a href="<?=site_url('quem-somos');?>">QUEM SOMOS</a>  | <a href="#">PUBLICIDADE</a>  |  <a href="<?=site_url('planos');?>">PLANOS</a>  |  <a href="<?=site_url('parceiros');?>">PARCEIROS</a>  |  <a href="<?=site_url('contato');?>">CONTATO</a>
 			</div>
 			<div class="login">
+				<? if($this->session->userdata('logado_front') == false){ ?>
 				<a href="<?=site_url('registrar');?>"><div class="user-novo">Usuário Novo</div></a>
-				
+				<? } ?>
 				<div class="info-user">
 					<div id="right-div">
+						<? if($this->session->userdata('logado_front') == false){ ?>
 						<a href="<?=site_url('entrar');?>"><div id="login-btn">Login</div></a>
-						<? if($this->session->userdata('logado_front')){?>
-						<a href="#"><div id="logout-btn">Logout</div></a>
+						<? }else{ ?>
+						<a href="<?=site_url('sair');?>"><div id="logout-btn">Logout</div></a>
 						<? } ?>
 					</div>
 					
 					<? if($this->session->userdata('logado_front')){?>
-					
 					<div id="left-div">
-						<a href="#"><div class="logado">Diogo Pedro dos Santos</div></a>
+						<a href="javascript:"><div class="logado"><?=$this->session->userdata('user_name');?></div></a>
 						<a href="#"><div class="my-anuncios">Meus Anúncios</div></a>
 						<a href="#"><div class="my-conta">Minha conta</div></a>
 					</div>
-					
 					<? } ?>
 				</div>
 			</div>
@@ -80,16 +75,19 @@
 	
 	<?$this->load->view('frontend/common/menu');?>
 	
-	<?if(showBanner($this->uri->segment(1))){?>
+	<? if(showBanner($this->uri->segment(1))){?>
 	<?$this->load->view('frontend/common/banner');?>
 	<? } ?>
 	
+	<? if(showLogin($this->uri->segment(1))){?>
 	<!-- Inicio do conteudo -->
 	<div id="content" class="clearfix">
+	<? } ?>
 		
-		<? if(isset($alert)){?>
+		<? if(isset($alert) or $this->session->flashdata('message')){?>
 		<div>
 			<? if(isset($alert['error'])){ echo $alert['error']; }?>
 			<? if(isset($alert['sucess'])){ echo $alert['sucess']; }?>
+			<?=$this->session->flashdata('message'); ?>
 		</div>
 		<? } ?>
