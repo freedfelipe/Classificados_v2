@@ -46,6 +46,9 @@
         <!-- Masked Input -->
         <script src="<?=site_url('resources/backend/js/masked.input.js');?>"></script>
         
+        <!-- Numeric Input -->
+        <script src="<?=site_url('resources/backend/js/jquery.numeric.js');?>"></script>
+        
         <!-- Functions -->
         <script src="<?=site_url('resources/backend/js/functions.js');?>"></script>
         

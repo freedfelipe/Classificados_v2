@@ -23,13 +23,13 @@
 					<div class="form-group <?php if(form_error('height')){echo 'has-error';}?>">
                         <label class="col-lg-2 control-label">Altura (height)</label>
                         <div class="col-lg-10">
-                            <input type="Text" class="form-control" placeholder="Altura" name="height" value="<?=set_value('height', @$row['height'], $this->input->post('height')); ?>">
+                            <input type="Text" class="form-control numeric" placeholder="Altura" name="height" value="<?=set_value('height', @$row['height'], $this->input->post('height')); ?>">
                         </div>
                     </div>
 					<div class="form-group <?php if(form_error('width')){echo 'has-error';}?>">
                         <label class="col-lg-2 control-label">Largura (width)</label>
                         <div class="col-lg-10">
-                            <input type="Text" class="form-control" placeholder="Largura" name="width" value="<?=set_value('width', @$row['width'], $this->input->post('width')); ?>">
+                            <input type="Text" class="form-control numeric" placeholder="Largura" name="width" value="<?=set_value('width', @$row['width'], $this->input->post('width')); ?>">
                         </div>
                     </div>
 					<div class="form-group <?php if(form_error('status_id')){echo 'has-error';}?>">

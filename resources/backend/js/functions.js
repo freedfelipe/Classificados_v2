@@ -30,4 +30,7 @@ $(document).ready(function(){
         checkout.hide();
     }).data('datepicker');
    
+   // campos numericos
+   $(".numeric").numeric();
+   
 });
