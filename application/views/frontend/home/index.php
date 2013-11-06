@@ -19,7 +19,7 @@
 				<div class="parceiros">
 					<div id="title">Parceiros</div>
 					
-					<? /*printr($partners);*/ foreach($partners as $k=>$v){?>
+					<? foreach($partners as $k=>$v){?>
 					<div id="banner">
 						<a href="<?=$v['link'];?>">
 							<img src="<?=site_url('resources/upload/parceiros/'.$v['file']);?>" />

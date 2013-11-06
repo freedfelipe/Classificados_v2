@@ -54,18 +54,25 @@
 				<a href="<?=site_url();?>">HOME</a>  |  <a href="<?=site_url('quem-somos');?>">QUEM SOMOS</a>  | <a href="#">PUBLICIDADE</a>  |  <a href="<?=site_url('planos');?>">PLANOS</a>  |  <a href="<?=site_url('parceiros');?>">PARCEIROS</a>  |  <a href="<?=site_url('contato');?>">CONTATO</a>
 			</div>
 			<div class="login">
-				<a href="#"><div class="user-novo">Usuário Novo</div></a>
+				<a href="<?=site_url('registrar');?>"><div class="user-novo">Usuário Novo</div></a>
 				
 				<div class="info-user">
 					<div id="right-div">
-						<a href="#"><div id="login-btn">Login</div></a>
+						<a href="<?=site_url('entrar');?>"><div id="login-btn">Login</div></a>
+						<? if($this->session->userdata('logado_front')){?>
 						<a href="#"><div id="logout-btn">Logout</div></a>
+						<? } ?>
 					</div>
+					
+					<? if($this->session->userdata('logado_front')){?>
+					
 					<div id="left-div">
 						<a href="#"><div class="logado">Diogo Pedro dos Santos</div></a>
 						<a href="#"><div class="my-anuncios">Meus Anúncios</div></a>
 						<a href="#"><div class="my-conta">Minha conta</div></a>
 					</div>
+					
+					<? } ?>
 				</div>
 			</div>
 		</div>
