@@ -218,3 +218,16 @@ function br_mysql_date($date = '00/00/0000')
 {
 	return implode('-', array_reverse(explode('/', $date)));
 }
+
+function showBanner($url)
+{
+	$urls = array('entrar', 'registrar');
+	
+	
+	if(in_array($url, $urls)){
+		return false;
+	}
+	
+	return true;
+	
+}

@@ -16,9 +16,6 @@ class Login extends CI_Controller{
 		
 		$this->url = '/entrar/';
 		
-		$this->limit = $this->parameter_model->get('rows_per_page');
-		$this->pag_segment = 2;
-		//$this->total_rows	= $this->data_model->total();
 	}
 	
 	private final function log($method)
@@ -45,10 +42,10 @@ class Login extends CI_Controller{
 	
 	public final function index()
 	{
-		$data['brand']		= $this->brand_model->by(array('status_id' => 1));
-		$data['partners']	= $this->partner_model->by(array('status_id' => 1));
-		$data['category']	= $this->category_model->by(array('status_id' => 1));
-		$data['state']		= $this->state_model->by(array('status_id' => 1));
+		//$data['brand']		= $this->brand_model->by(array('status_id' => 1));
+		//$data['partners']	= $this->partner_model->by(array('status_id' => 1));
+		//$data['category']	= $this->category_model->by(array('status_id' => 1));
+		//$data['state']		= $this->state_model->by(array('status_id' => 1));
 		
 		$this->render($this->router->method, @$data);
 	}

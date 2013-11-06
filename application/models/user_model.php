@@ -31,12 +31,12 @@ class User_model extends CI_Model{
 	public final function create($data = array())
 	{
 		$data['idHash']			= getHash();
-		$data['group_id'] 		= $this->input->post('group_id', TRUE);
+		$data['group_id'] 		= ($this->input->post('group_id') != '') ? $this->input->post('group_id', TRUE) : 2;
 		$data['name'] 			= $this->input->post('name', TRUE);
 		$data['email'] 			= $this->input->post('email', TRUE);
 		$data['password'] 		= md5($this->input->post('password', TRUE));
 		$data['created_in']		= date('Y-m-d H:i:s');
-		$data['status_id'] 		= $this->input->post('status_id', TRUE);
+		$data['status_id'] 		= ($this->input->post('status_id', TRUE) != '') ? $this->input->post('status_id', TRUE) : 1;
 		
 		if($this->db->insert($this->tablename, $data)){
 			return true;

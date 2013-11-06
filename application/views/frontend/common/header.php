@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
 
 <!--[if IE 7]>                  <html class="ie7 no-js" lang="pt">     <![endif]-->
@@ -10,7 +9,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
-	<title><?=$url_title?></title>
+	<title><?=$this->parameter_model->get('system_title').' | '.$url_title?></title>
 	
 	<meta name="description" content="Meu Carro Turbo - O seu classificados turbinado!" />
 	<meta name="keywords" content="Carro Turbo, Aspirado, Rebaixado, Classificados" />
@@ -74,9 +73,16 @@
 	
 	<?$this->load->view('frontend/common/menu');?>
 	
-	<?if($this->uri->segment(1) != 'entrar'){?>
+	<?if(showBanner($this->uri->segment(1))){?>
 	<?$this->load->view('frontend/common/banner');?>
 	<? } ?>
 	
 	<!-- Inicio do conteudo -->
 	<div id="content" class="clearfix">
+		
+		<? if(isset($alert)){?>
+		<div>
+			<? if(isset($alert['error'])){ echo $alert['error']; }?>
+			<? if(isset($alert['sucess'])){ echo $alert['sucess']; }?>
+		</div>
+		<? } ?>

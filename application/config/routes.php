@@ -140,7 +140,9 @@ $route['anuncio/cadastrar']                                         = 'frontend/
 // tela de login
 $route['entrar']                                                    = 'frontend/login/index';
 
-
+# tela de registro
+$route['registrar']                                                 = 'frontend/registrar/index';
+$route['registrar/facebook']                                        = 'frontend/registrar/facebook';
 
 //$route['admin/grupos/(:num)']					          = 'backend/groups/index/$1';
 //$route['admin/grupos/adicionar']				          = 'backend/groups/create';

@@ -147,7 +147,7 @@
 			if (substr_count($field, '.')==3)
 			{
 				list($table,$field,$id_field,$id_val) = explode('.', $field);
-				$query = $this->CI->db->limit(1)->where('status_id',1)->where($field,$str)->where($id_field.' != ',$id_val)->get($table);
+				$query = $this->CI->db->limit(1)->where($field,$str)->where($id_field.' != ',$id_val)->get($table);
 			}
 			else
 			{
