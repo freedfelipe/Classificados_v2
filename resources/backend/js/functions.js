@@ -33,4 +33,12 @@ $(document).ready(function(){
    // campos numericos
    $(".numeric").numeric();
    
+   //campos de valores
+   
+   $('.price').priceFormat({
+        prefix: 'R$ ',
+        centsSeparator: ',',
+        thousandsSeparator: '.'
+    });
+   
 });

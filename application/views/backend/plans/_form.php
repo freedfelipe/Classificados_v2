@@ -29,19 +29,19 @@
 					<div class="form-group <?php if(form_error('num_pics')){echo 'has-error';}?>">
                         <label class="col-lg-2 control-label">Quantidade de Fotos:</label>
                         <div class="col-lg-10">
-                            <input type="Text" class="form-control" placeholder="Quantidade de Fotos" name="num_pics" value="<?=set_value('num_pics', @$row['num_pics'], $this->input->post('num_pics')); ?>">
+                            <input type="Text" class="form-control numeric" placeholder="Quantidade de Fotos" name="num_pics" value="<?=set_value('num_pics', @$row['num_pics'], $this->input->post('num_pics')); ?>">
                         </div>
                     </div>
 					<div class="form-group <?php if(form_error('price')){echo 'has-error';}?>">
                         <label class="col-lg-2 control-label">Valor:</label>
                         <div class="col-lg-10">
-                            <input type="Text" class="form-control" placeholder="Valor" name="price" value="<?=set_value('price', @$row['price'], $this->input->post('price')); ?>">
+                            <input type="Text" class="form-control price" placeholder="Valor" name="price" value="<?=set_value('price', @$row['price'], $this->input->post('price')); ?>">
                         </div>
                     </div>
 					<div class="form-group <?php if(form_error('period')){echo 'has-error';}?>">
                         <label class="col-lg-2 control-label">Dias de Publicação:</label>
                         <div class="col-lg-10">
-                            <input type="Text" class="form-control" placeholder="Dias de Publicação" name="period" value="<?=set_value('period', @$row['period'], $this->input->post('period')); ?>">
+                            <input type="Text" class="form-control numeric" placeholder="Dias de Publicação" name="period" value="<?=set_value('period', @$row['period'], $this->input->post('period')); ?>">
                         </div>
                     </div>
 					<div class="form-group <?php if(form_error('status_id')){echo 'has-error';}?>">

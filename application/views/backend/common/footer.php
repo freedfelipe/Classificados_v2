@@ -49,6 +49,9 @@
         <!-- Numeric Input -->
         <script src="<?=site_url('resources/backend/js/jquery.numeric.js');?>"></script>
         
+        <!-- Price Format Input -->
+        <script src="<?=site_url('resources/backend/js/jquery.price_format.min.js');?>"></script>
+        
         <!-- Functions -->
         <script src="<?=site_url('resources/backend/js/functions.js');?>"></script>
         
