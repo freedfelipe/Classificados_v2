@@ -8,7 +8,7 @@
     <!-- User pic end -->
     
     <ul>
-        <li <? if($this->uri->segment(2) == 'painel'){ ?>class="active"<? } ?>>
+        <!--<li <? if($this->uri->segment(2) == 'painel'){ ?>class="active"<? } ?>>
             <? if($this->uri->segment(2) == 'painel'){ ?><span class="current-arrow">&nbsp;</span><? } ?>
             <a href="<?=site_url('admin/painel');?>">
                 <div class="icon">
@@ -16,7 +16,7 @@
                 </div>
                 Painel
             </a>
-        </li>
+        </li>-->
         <li <? if($this->uri->segment(2) == 'parametros'){ ?>class="active"<? } ?>>
             <? if($this->uri->segment(2) == 'parametros'){ ?><span class="current-arrow">&nbsp;</span><? } ?>
             <a href="<?=site_url('admin/parametros');?>">

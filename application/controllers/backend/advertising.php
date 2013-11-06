@@ -33,7 +33,7 @@ class Advertising extends CI_Controller{
 			array(
 				'field'	=> 'start_date', 
 				'label'	=> 'Data Início', 
-				'rules'	=> 'trim|required|xss_clean'
+				'rules'	=> 'trim|required|xss_clean|validator_data_between['.$this->input->post('end_date').']'
 			),
 			array(
 				'field'	=> 'end_date', 

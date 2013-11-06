@@ -35,6 +35,9 @@
 
     <!-- custom css -->
     <link href="<?=site_url('resources/backend/css/main.css');?>" rel="stylesheet">
+	
+	<!-- datepiker css -->
+    <link href="<?=site_url('resources/backend/css/datepicker.css');?>" rel="stylesheet">
 
 </head>
 <body>

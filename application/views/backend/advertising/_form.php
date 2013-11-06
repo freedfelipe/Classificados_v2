@@ -35,13 +35,13 @@
 					<div class="form-group <?php if(form_error('start_date')){echo 'has-error';}?>">
                         <label class="col-lg-2 control-label">Data Início</label>
                         <div class="col-lg-10">
-                            <input type="Text" class="form-control" placeholder="Data Inicio" name="start_date" value="<?=set_value('start_date', @$row['start_date'], $this->input->post('start_date')); ?>">
+                            <input type="Text" id="dpd1" class="form-control dateMask" placeholder="Data Inicio" name="start_date" value="<?=set_value('start_date', @$row['start_date'], $this->input->post('start_date')); ?>">
                         </div>
                     </div>
 					<div class="form-group <?php if(form_error('end_date')){echo 'has-error';}?>">
                         <label class="col-lg-2 control-label">Data Fim</label>
                         <div class="col-lg-10">
-                            <input type="Text" class="form-control" placeholder="Data Fim" name="end_date" value="<?=set_value('end_date', @$row['end_date'], $this->input->post('end_date')); ?>">
+                            <input type="Text" id="dpd2" class="form-control dateMask" placeholder="Data Fim" name="end_date" value="<?=set_value('end_date', @$row['end_date'], $this->input->post('end_date')); ?>">
                         </div>
                     </div>
 					<div class="form-group <?php if(form_error('link')){echo 'has-error';}?>">

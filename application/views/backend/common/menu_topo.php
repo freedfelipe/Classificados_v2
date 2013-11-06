@@ -12,9 +12,9 @@
 				<span class="count-label"></span>
 			</a>
 			<ul>
-				<li>
+				<!--<li>
 					<a href="<?=site_url('admin/painel');?>">Painel</a>
-				</li>
+				</li>-->
 				<li>
 					<a href="<?=site_url('admin/parametros');?>">Parametros do Sistema</a>
 				</li>

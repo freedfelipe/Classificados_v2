@@ -38,5 +38,16 @@
         
         <!-- Data tables -->
         <script src="<?=site_url('resources/backend/js/jquery.dataTables.js');?>"></script>
+        
+        <!-- Datepiker -->
+        <script src="<?=site_url('resources/backend/js/bootstrap-datepicker.js');?>"></script>
+        <!--<script src="<?=site_url('resources/backend/js/locales/bootstrap-datepicker.pt-BR.js');?>"></script>-->
+        
+        <!-- Masked Input -->
+        <script src="<?=site_url('resources/backend/js/masked.input.js');?>"></script>
+        
+        <!-- Functions -->
+        <script src="<?=site_url('resources/backend/js/functions.js');?>"></script>
+        
     </body>
 </html>

@@ -213,3 +213,8 @@ function construct_select($wf)
 	
 	return false;
 }
+
+function br_mysql_date($date = '00/00/0000')
+{
+	return implode('-', array_reverse(explode('/', $date)));
+}
