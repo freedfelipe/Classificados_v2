@@ -69,10 +69,9 @@
 <!-- Mini navigation start -->
 <div id="mini-nav" class="hidden-phone">
 	<ul>
-	  
 		<li>
 			<a href="javascript:">
-				<span class="text-label">Nome DO usuário</span><span class="fs1" aria-hidden="true" data-icon="&#xe088;"></span>
+				<span class="text-label"><?=$this->session->userdata('user_name');?></span><span class="fs1" aria-hidden="true" data-icon="&#xe088;"></span>
 			</a>
 			<ul class="user-summary">
 				<li>
@@ -81,7 +80,7 @@
 							<img src="<?=site_url('resources/backend/img/avatar-1.png');?>" alt="Admin"/>
 						</div>
 						<div class="basic-details">
-							<h4 class="no-margin">Nome DO usuário</h4>
+							<h4 class="no-margin"><?=$this->session->userdata('user_name');?></h4>
 						</div>
 						<div class="clearfix"></div>
 					</div>
