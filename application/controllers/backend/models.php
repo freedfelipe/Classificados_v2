@@ -136,7 +136,7 @@ class Models extends CI_Controller{
 	
 	public final function search($brand_id = '')
 	{
-		$data = $this->dm->by(array('brand_id' => $brand_id, 'status_id' => 1));
+		$data = $this->dm->all(array('brand_id' => $brand_id, 'status_id' => 1));
 		
 		if($data){
 			
