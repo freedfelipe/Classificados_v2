@@ -23,7 +23,7 @@
 						<div id="form-login"><input type="password" name="password" id="login"></div>
 					</div>
 					<div id="line-box-adicional">
-						<a href="#">Esqueceu o login?</a>
+						<a href="<?=site_url('recuperar');?>">Esqueceu o login?</a>
 					</div>
 					<div id="line-box-line">
 						<div id="line-face">

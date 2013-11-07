@@ -197,4 +197,29 @@ class User_model extends CI_Model{
 		
 		return false;
 	}
+	
+	public final function recuperar()
+	{
+		$dados = $this->db->get_where($this->tablename, array('email' => $this->input->post('email', TRUE)))->row_array();
+		
+		if(count($dados) > 0){
+			
+			$link = site_url('recuperar/nova-senha/'.$dados['idHash'].'-'.md5($dados['email']));
+			
+			$texto = 'Olá, esse email é para recuperar a senha, clique no link para recuperar a senha, ou ignore esse email caso não tenha solicitado a alteração. Link: '.$link;
+			
+			$this->email->clear();
+			
+			$this->email->to($dados['email']);
+			$this->email->from('contato@meucarroturbo.com.br', 'Meu Carro Turbo');
+			$this->email->subject('Recuperar Senha');
+			$this->email->message($texto);
+			
+			if($this->email->send()){
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }

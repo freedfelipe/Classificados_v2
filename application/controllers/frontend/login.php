@@ -30,6 +30,14 @@ class Login extends CI_Controller{
 				'rules'	=> 'trim|required|xss_clean'
 			)
 		);
+		
+		$this->validation_recuperar = array(
+			array(
+				'field'	=> 'email', 
+				'label'	=> 'Email', 
+				'rules'	=> 'trim|required|xss_clean|valid_email'
+			)
+		);
 	}
 	
 	private final function log($method)
@@ -90,5 +98,37 @@ class Login extends CI_Controller{
 		$this->session->sess_destroy();
 		
 		redirect('/');
+	}
+	
+	public final function recuperar()
+	{
+		
+		$data['url_title']		= 'Login';
+		
+		$this->log($this->router->method);
+		
+		$this->form_validation->set_rules($this->validation_recuperar);
+		
+		if($this->form_validation->run() == FALSE){
+			if($_POST){
+				
+				$text = '';
+				foreach($this->form_validation->error_array() as $k => $error){				
+					$text .= '<p class="text-white">'.$error.'</p>';
+				}
+				
+				$data['alert']['error'] = $text;
+			}
+		} else {
+			
+			if($this->user->recuperar()){
+				$this->session->set_flashdata('message', '<p class="text-white">Email com Orientaçõs de Recuperação de Senha Enviado com Sucesso</p>');
+				redirect('/');
+			}else{
+				$data['alert']['error'] = '<p class="text-white">Email não Encontrado na Base de Dados!</p>';
+			}
+		}
+		
+		$this->render($this->router->method, @$data);
 	}
 }

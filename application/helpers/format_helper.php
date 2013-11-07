@@ -221,9 +221,9 @@ function br_mysql_date($date = '00/00/0000')
 
 function showBanner($url)
 {
-	$urls = array('entrar', 'registrar');
+	$urls = array('', 'home');
 	
-	if(in_array($url, $urls)){
+	if(!in_array($url, $urls)){
 		return false;
 	}
 	
@@ -232,7 +232,7 @@ function showBanner($url)
 
 function showLogin($url)
 {
-	$urls = array('entrar', 'registrar');
+	$urls = array('entrar', 'registrar', 'recuperar');
 	
 	if(in_array($url, $urls)){
 		return false;
