@@ -39,7 +39,7 @@ class Home extends CI_Controller{
 	
 	public final function index()
 	{
-		$data['url_title']	= 'Turbos, aspirados e peças!';
+		$data['url_title']	= 'O seu classificados turbinado!';
 		
 		$data['brand']		= $this->brand_model->all(array('status_id' => 1));
 		$data['partners']	= $this->partner_model->all(array('status_id' => 1));

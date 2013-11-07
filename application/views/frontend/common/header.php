@@ -16,11 +16,11 @@
 	<meta name="author" content="<?=$this->parameter_model->get('author');?> ">
 	
 	<!-- Smartphone -->
-	<link href="<?=site_url('resources/frontend/css/phone.css');?>" rel="stylesheet" type="text/css" media="only screen and (max-width:320px)" class="cssfx" />
+	<!--<link href="<?=site_url('resources/frontend/css/phone.css');?>" rel="stylesheet" type="text/css" media="only screen and (max-width:320px)" class="cssfx" />-->
 	<!-- Phone Wide -->
-	<link href="<?=site_url('resources/frontend/css/phone-landscape.css');?>" rel="stylesheet" type="text/css" media="only screen and (min-width:321px) and (max-width:480px)" class="cssfx" />
+	<!--<link href="<?=site_url('resources/frontend/css/phone-landscape.css');?>" rel="stylesheet" type="text/css" media="only screen and (min-width:321px) and (max-width:480px)" class="cssfx" />-->
 	<!-- Tablet -->
-	<link href="<?=site_url('resources/frontend/css/tablet.css');?>" rel="stylesheet" type="text/css" media="only screen and (min-width:481px) and (max-width:768px)" class="cssfx" />
+	<!--<link href="<?=site_url('resources/frontend/css/tablet.css');?>" rel="stylesheet" type="text/css" media="only screen and (min-width:481px) and (max-width:768px)" class="cssfx" />-->
 	<!--[if !lte IE 6]><!-->
 		<link rel="stylesheet" href="<?=site_url('resources/frontend/css/style.css');?>" media="screen" />
 		<link rel="stylesheet" href="<?=site_url('resources/frontend/css/fancybox.min.css');?>" media="screen" />
