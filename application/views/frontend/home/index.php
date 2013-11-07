@@ -49,7 +49,7 @@
 		
 		<!-- Anuncios -->
 		<div class="line_anuncio">
-			<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="anuncio/foto1.jpg" width="150"/></div></a>
+			<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="<?=site_url('resources/frontend/anuncio/foto1.jpg');?>" width="150"/></div></a>
 			<div id="cabecalho">
 				<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
 				<a href="#"><div id="preco">R$ 80.000,00</div></a>
@@ -65,7 +65,7 @@
 		</div>
 		
 		<div class="line_anuncio">
-			<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+			<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="<?=site_url('resources/frontend/anuncio/sem-foto.jpg');?>" width="150"/></div></a>
 			<div id="cabecalho">
 				<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
 				<a href="#"><div id="preco">R$ 80.000,00</div></a>
@@ -81,7 +81,7 @@
 		</div>
 		
 		<div class="line_anuncio">
-			<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+			<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="<?=site_url('resources/frontend/anuncio/sem-foto.jpg');?>" width="150"/></div></a>
 			<div id="cabecalho">
 				<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
 				<a href="#"><div id="preco">R$ 80.000,00</div></a>
@@ -97,7 +97,7 @@
 		</div>
 		
 		<div class="line_anuncio">
-			<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+			<a href="#"><div id="foto"><div id="fotodestaque"></div><img src="<?=site_url('resources/frontend/anuncio/sem-foto.jpg');?>" width="150"/></div></a>
 			<div id="cabecalho">
 				<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
 				<a href="#"><div id="preco">R$ 80.000,00</div></a>
@@ -119,7 +119,7 @@
 		</div>
 		
 		<div class="line_anuncio">
-			<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+			<a href="#"><div id="foto"><img src="<?=site_url('resources/frontend/anuncio/sem-foto.jpg');?>" width="150"/></div></a>
 			<div id="cabecalho">
 				<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
 				<a href="#"><div id="preco">R$ 80.000,00</div></a>
@@ -135,7 +135,7 @@
 		</div>
 		
 		<div class="line_anuncio">
-			<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+			<a href="#"><div id="foto"><img src="<?=site_url('resources/frontend/anuncio/sem-foto.jpg');?>" width="150"/></div></a>
 			<div id="cabecalho">
 				<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
 				<a href="#"><div id="preco">R$ 80.000,00</div></a>
@@ -151,7 +151,7 @@
 		</div>
 		
 		<div class="line_anuncio">
-			<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+			<a href="#"><div id="foto"><img src="<?=site_url('resources/frontend/anuncio/sem-foto.jpg');?>" width="150"/></div></a>
 			<div id="cabecalho">
 				<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
 				<a href="#"><div id="preco">R$ 80.000,00</div></a>
@@ -173,7 +173,7 @@
 		</div>
 		
 		<div class="line_anuncio">
-			<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+			<a href="#"><div id="foto"><img src="<?=site_url('resources/frontend/anuncio/sem-foto.jpg');?>" width="150"/></div></a>
 			<div id="cabecalho">
 				<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
 				<a href="#"><div id="preco">R$ 80.000,00</div></a>
@@ -189,7 +189,7 @@
 		</div>
 		
 		<div class="line_anuncio">
-			<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+			<a href="#"><div id="foto"><img src="<?=site_url('resources/frontend/anuncio/sem-foto.jpg');?>" width="150"/></div></a>
 			<div id="cabecalho">
 				<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
 				<a href="#"><div id="preco">R$ 80.000,00</div></a>
@@ -205,7 +205,7 @@
 		</div>
 		
 		<div class="line_anuncio">
-			<a href="#"><div id="foto"><img src="anuncio/sem-foto.jpg" width="150"/></div></a>
+			<a href="#"><div id="foto"><img src="<?=site_url('resources/frontend/anuncio/sem-foto.jpg');?>" width="150"/></div></a>
 			<div id="cabecalho">
 				<a href="#"><div id="titulo">Subaru Impreza STI</div></a>
 				<a href="#"><div id="preco">R$ 80.000,00</div></a>
