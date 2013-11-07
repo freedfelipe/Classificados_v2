@@ -4,10 +4,7 @@
         <form name="filtros">
         <div id="texto">Marca</div>
         <div id="campo">
-            <select name="brand_id" id="brand_id" >
-                <option value="0">Todas</option>
-                <? data_select($brand, @$_POST['brand_id']);?>
-            </select>
+            <?=form_dropdown('brand_id', construct_select($brand), set_value('brand_id', $this->input->post('brand_id'), $this->input->post('brand_id')), 'id="brand_id"'); ?>
         </div>
         
         <div id="texto">Modelo</div>
@@ -19,10 +16,7 @@
         
         <div id="texto">Categoria</div>
         <div id="campo">
-            <select name="category_id" id="category_id" >
-                <option value="0">All</option>
-                <? data_select($category, @$_POST['category_id']);?>
-            </select>
+            <?=form_dropdown('category_id', construct_select($category), set_value('category_id', $this->input->post('category_id'), $this->input->post('category_id')), 'id="category_id"'); ?>
         </div>
         
         <div id="texto">Faixa de Preço</div>
@@ -46,9 +40,10 @@
         
         <div id="texto">Estado</div>
         <div id="campo">
-            <select name="state_id" id="state_id" >
-                <? data_select($state, @$_POST['state_id']);?>
-            </select>
+            <!--<select name="state_id" id="state_id" >-->
+                <? //data_select($state, @$_POST['state_id']);?>
+                <?=form_dropdown('state_id', construct_select($state), set_value('state_id', $this->input->post('state_id'), $this->input->post('state_id')), 'id="state_id"'); ?>
+            <!--</select>-->
         </div>
         
         <div id="texto">Cidade</div>
