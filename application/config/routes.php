@@ -136,6 +136,7 @@ $route['anuncio/cadastrar']                                         = 'frontend/
 $route['entrar']                                                    = 'frontend/login/index';
 $route['sair']                                                      = 'frontend/login/logout';
 $route['recuperar']                                                 = 'frontend/login/recuperar';
+$route['gerar-senha/(:any)/(:any)']                                 = 'frontend/login/gerar_senha/$1/$2';
 
 
 # tela de registro

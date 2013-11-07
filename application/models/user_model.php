@@ -204,7 +204,7 @@ class User_model extends CI_Model{
 		
 		if(count($dados) > 0){
 			
-			$link = site_url('recuperar/nova-senha/'.$dados['idHash'].'-'.md5($dados['email']));
+			$link = site_url('gerar-senha/'.$dados['idHash'].'/'.md5($dados['email']));
 			
 			$texto = 'Olá, esse email é para recuperar a senha, clique no link para recuperar a senha, ou ignore esse email caso não tenha solicitado a alteração. Link: '.$link;
 			
@@ -216,6 +216,33 @@ class User_model extends CI_Model{
 			$this->email->message($texto);
 			
 			if($this->email->send()){
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public final function verifica_dados($idHash = false, $email = false)
+	{
+		if($idHash and $email){
+			
+			$dados = $this->db->get_where($this->tablename, array('idHash' => $idHash))->row_array();
+			
+			if(count($dados) > 0){
+				if($email == md5($dados['email'])){
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+	
+	public final function gerar_senha($idHash = false)
+	{
+		if($idHash){
+			if($this->db->where(array('idHash' => $idHash, 'email' => $this->input->post('email', TRUE)))->update($this->tablename, array('password' => md5($this->input->post('password', TRUE))))){
 				return true;
 			}
 		}

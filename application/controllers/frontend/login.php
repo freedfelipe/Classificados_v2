@@ -38,6 +38,24 @@ class Login extends CI_Controller{
 				'rules'	=> 'trim|required|xss_clean|valid_email'
 			)
 		);
+		
+		$this->validation_gerar = array(
+			array(
+				'field'	=> 'email', 
+				'label'	=> 'Email', 
+				'rules'	=> 'trim|required|xss_clean|valid_email'
+			),
+			array(
+				'field'	=> 'password', 
+				'label'	=> 'Senha', 
+				'rules'	=> 'trim|required|xss_clean'
+			),
+			array(
+				'field'	=> 'confirm_password', 
+				'label'	=> 'Confirmar Senha', 
+				'rules'	=> 'trim|required|xss_clean|matches[password]'
+			)
+		);
 	}
 	
 	private final function log($method)
@@ -102,8 +120,7 @@ class Login extends CI_Controller{
 	
 	public final function recuperar()
 	{
-		
-		$data['url_title']		= 'Login';
+		$data['url_title']		= 'Recuperar Senha';
 		
 		$this->log($this->router->method);
 		
@@ -122,11 +139,53 @@ class Login extends CI_Controller{
 		} else {
 			
 			if($this->user->recuperar()){
-				$this->session->set_flashdata('message', '<p class="text-white">Email com Orientaçõs de Recuperação de Senha Enviado com Sucesso</p>');
+				$this->session->set_flashdata('message', '<p class="text-white">Email com Orientações de Recuperação de Senha Enviado com Sucesso</p>');
 				redirect('/');
 			}else{
 				$data['alert']['error'] = '<p class="text-white">Email não Encontrado na Base de Dados!</p>';
 			}
+		}
+		
+		$this->render($this->router->method, @$data);
+	}
+	
+	public final function gerar_senha($idHash, $email)
+	{
+		$data['url_title']	= 'Gerando Senha';
+		
+		$this->log($this->router->method);
+		
+		if($this->user->verifica_dados($idHash, $email)){
+			
+			$this->form_validation->set_rules($this->validation_gerar);
+			
+			$data['form']	= TRUE;
+			
+			if($this->form_validation->run() == FALSE){
+				if($_POST){
+					
+					$text = '';
+					foreach($this->form_validation->error_array() as $k => $error){				
+						$text .= '<p class="text-white">'.$error.'</p>';
+					}
+					
+					$data['alert']['error'] = $text;
+				}
+			} else {
+				if($email == md5($this->input->post('email', TRUE))){
+					if($this->user->gerar_senha($idHash)){
+						$this->session->set_flashdata('message', '<p class="text-white">Senha Editada com Sucesso</p>');
+						redirect('/');
+					}else{
+						$data['alert']['error'] = '<p class="text-white">Erro ao Editar Senha!</p>';
+					}
+				}else{
+					$data['alert']['error'] = '<p class="text-white">Email não Confere com o Cadastrado!</p>';
+				}
+			}
+		}else{
+			$data['alert']['error']	= '<p class="text-white">Dados para verificação está com erros, entre em contato com o administrador!</p>';
+			$data['form'] 			= FALSE;
 		}
 		
 		$this->render($this->router->method, @$data);
