@@ -1,4 +1,106 @@
 $(document).ready(function(){
+	/* script - pagina anuncio */
+	$("#r1").click(function(){
+		$("#anuncio_diverso").css("display", "block");
+		$("#anuncio_carro").css("display", "block");
+		$("#anuncio_acessorios").css("display", "none");
+		$("#anuncio_mecanica").css("display", "none");
+		$("#anuncio_rodas").css("display", "none");
+		$(".borda-escolheu #aspirados").css("display", "block");
+		$(".borda-escolheu #rebaixados").css("display", "none");
+		$(".borda-escolheu #stock").css("display", "none");
+		$(".borda-escolheu #turbo").css("display", "none");
+		$(".borda-escolheu #acessorios").css("display", "none");
+		$(".borda-escolheu #mecanica").css("display", "none");
+		$(".borda-escolheu #rodas").css("display", "none");
+	});
+	$("#r2").click(function(){
+		$("#anuncio_diverso").css("display", "block");
+		$("#anuncio_carro").css("display", "block");
+		$("#anuncio_acessorios").css("display", "none");
+		$("#anuncio_mecanica").css("display", "none");
+		$("#anuncio_rodas").css("display", "none");
+		$(".borda-escolheu #aspirados").css("display", "none");
+		$(".borda-escolheu #rebaixados").css("display", "block");
+		$(".borda-escolheu #stock").css("display", "none");
+		$(".borda-escolheu #turbo").css("display", "none");
+		$(".borda-escolheu #acessorios").css("display", "none");
+		$(".borda-escolheu #mecanica").css("display", "none");
+		$(".borda-escolheu #rodas").css("display", "none");
+	});
+	$("#r3").click(function(){
+		$("#anuncio_diverso").css("display", "block");
+		$("#anuncio_carro").css("display", "block");
+		$("#anuncio_acessorios").css("display", "none");
+		$("#anuncio_mecanica").css("display", "none");
+		$("#anuncio_rodas").css("display", "none");
+		$(".borda-escolheu #aspirados").css("display", "none");
+		$(".borda-escolheu #rebaixados").css("display", "none");
+		$(".borda-escolheu #stock").css("display", "block");
+		$(".borda-escolheu #turbo").css("display", "none");
+		$(".borda-escolheu #acessorios").css("display", "none");
+		$(".borda-escolheu #mecanica").css("display", "none");
+		$(".borda-escolheu #rodas").css("display", "none");
+	});
+	$("#r4").click(function(){
+		$("#anuncio_diverso").css("display", "block");
+		$("#anuncio_carro").css("display", "block");
+		$("#anuncio_acessorios").css("display", "none");
+		$("#anuncio_mecanica").css("display", "none");
+		$("#anuncio_rodas").css("display", "none");
+		$(".borda-escolheu #aspirados").css("display", "none");
+		$(".borda-escolheu #rebaixados").css("display", "none");
+		$(".borda-escolheu #stock").css("display", "none");
+		$(".borda-escolheu #turbo").css("display", "block");
+		$(".borda-escolheu #acessorios").css("display", "none");
+		$(".borda-escolheu #mecanica").css("display", "none");
+		$(".borda-escolheu #rodas").css("display", "none");
+	});
+	$("#r5").click(function(){
+		$("#anuncio_diverso").css("display", "block");
+		$("#anuncio_carro").css("display", "none");
+		$("#anuncio_acessorios").css("display", "block");
+		$("#anuncio_mecanica").css("display", "none");
+		$("#anuncio_rodas").css("display", "none");
+		$(".borda-escolheu #aspirados").css("display", "none");
+		$(".borda-escolheu #rebaixados").css("display", "none");
+		$(".borda-escolheu #stock").css("display", "none");
+		$(".borda-escolheu #turbo").css("display", "none");
+		$(".borda-escolheu #acessorios").css("display", "block");
+		$(".borda-escolheu #mecanica").css("display", "none");
+		$(".borda-escolheu #rodas").css("display", "none");
+	});
+	$("#r6").click(function(){
+		$("#anuncio_diverso").css("display", "block");
+		$("#anuncio_carro").css("display", "none");
+		$("#anuncio_acessorios").css("display", "none");
+		$("#anuncio_mecanica").css("display", "block");
+		$("#anuncio_rodas").css("display", "none");
+		$(".borda-escolheu #aspirados").css("display", "none");
+		$(".borda-escolheu #rebaixados").css("display", "none");
+		$(".borda-escolheu #stock").css("display", "none");
+		$(".borda-escolheu #turbo").css("display", "none");
+		$(".borda-escolheu #acessorios").css("display", "none");
+		$(".borda-escolheu #mecanica").css("display", "block");
+		$(".borda-escolheu #rodas").css("display", "none");
+	});
+	$("#r7").click(function(){
+		$("#anuncio_diverso").css("display", "block");
+		$("#anuncio_carro").css("display", "none");
+		$("#anuncio_acessorios").css("display", "none");
+		$("#anuncio_mecanica").css("display", "none");
+		$("#anuncio_rodas").css("display", "block");
+		$(".borda-escolheu #aspirados").css("display", "none");
+		$(".borda-escolheu #rebaixados").css("display", "none");
+		$(".borda-escolheu #stock").css("display", "none");
+		$(".borda-escolheu #turbo").css("display", "none");
+		$(".borda-escolheu #acessorios").css("display", "none");
+		$(".borda-escolheu #mecanica").css("display", "none");
+		$(".borda-escolheu #rodas").css("display", "block");
+	});
+});
+
+$(document).ready(function(){
 	/* This code is executed after the DOM has been completely loaded */
 	
 	var totWidth=0;
