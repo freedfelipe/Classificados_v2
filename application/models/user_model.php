@@ -208,12 +208,25 @@ class User_model extends CI_Model{
 			
 			$texto = 'Olá, esse email é para recuperar a senha, clique no link para recuperar a senha, ou ignore esse email caso não tenha solicitado a alteração. Link: '.$link;
 			
-			$this->email->clear();
+			$texto['cliente']	= $dados['name'];
+			$texto['titulo']	= 'Recupere sua Senha';
+			$texto['texto'] 	= 'Seus dados de acesso no <b>Meu Carro Turbo:</b><br /><br /><a href="'.$link.'" target="_blank">Meu Carro Turbo - Recuperar Senha</a>';
 			
+			$message = $this->load->view('email/template', $texto, true);
+			
+			$config = array (
+				'mailtype' => 'html',
+				'charset'  => 'utf-8',
+				'priority' => '1'
+            );
+			
+			$this->email->initialize($config);
+			
+			$this->email->clear();
 			$this->email->to($dados['email']);
 			$this->email->from('contato@meucarroturbo.com.br', 'Meu Carro Turbo');
 			$this->email->subject('Recuperar Senha');
-			$this->email->message($texto);
+			$this->email->message($message);
 			
 			if($this->email->send()){
 				return true;

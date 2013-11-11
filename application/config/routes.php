@@ -138,7 +138,11 @@ $route['sair']                                                      = 'frontend/
 $route['recuperar']                                                 = 'frontend/login/recuperar';
 $route['gerar-senha/(:any)/(:any)']                                 = 'frontend/login/gerar_senha/$1/$2';
 
-
 # tela de registro
 $route['registrar']                                                 = 'frontend/registrar/index';
 $route['registrar/facebook']                                        = 'frontend/registrar/facebook';
+
+
+
+# rota para teste
+$route['teste']                                                     = 'frontend/home/teste';
