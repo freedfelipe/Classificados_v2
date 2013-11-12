@@ -34,9 +34,8 @@ $(document).ready(function(){
    $(".numeric").numeric();
    
    //campos de valores
-   
    $('.price').priceFormat({
-        prefix: 'R$ ',
+        prefix: '',
         centsSeparator: ',',
         thousandsSeparator: '.'
     });

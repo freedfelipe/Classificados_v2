@@ -256,3 +256,18 @@ function money($value = 0.00)
 	}
 
 }
+
+function comma_period($value = null)
+{
+	if($value)
+	{
+		$value = str_replace(array('.',','), array('','.'), $value);
+
+		return $value;
+	}
+	else
+	{
+		return 0;
+	}
+
+}

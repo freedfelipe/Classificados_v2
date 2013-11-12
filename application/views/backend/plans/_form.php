@@ -44,6 +44,47 @@
                             <input type="Text" class="form-control numeric" placeholder="Dias de Publicação" name="period" value="<?=set_value('period', @$row['period'], $this->input->post('period')); ?>">
                         </div>
                     </div>
+					
+					<div class="form-group <?php if(form_error('video')){echo 'has-error';}?>">
+						<label class="col-lg-2 control-label">Video:</label>
+						<div class="onoffswitch">
+							<input type="checkbox" name="video" class="onoffswitch-checkbox" id="video" <? if(@$_POST['video'] or @$row['video'] == 1){ ?>checked <? } ?>>
+							<label class="onoffswitch-label" for="video">
+								<div class="onoffswitch-inner"></div>
+								<div class="onoffswitch-switch"></div>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group <?php if(form_error('destaque')){echo 'has-error';}?>">
+						<label class="col-lg-2 control-label">Destaque:</label>
+						<div class="onoffswitch">
+							<input type="checkbox" name="destaque" class="onoffswitch-checkbox" id="destaque" <? if(@$_POST['destaque'] or @$row['destaque'] == 1){ ?>checked <? } ?>>
+							<label class="onoffswitch-label" for="destaque">
+								<div class="onoffswitch-inner"></div>
+								<div class="onoffswitch-switch"></div>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group <?php if(form_error('newsletter')){echo 'has-error';}?>">
+						<label class="col-lg-2 control-label">Newsletter Mensal:</label>
+						<div class="onoffswitch">
+							<input type="checkbox" name="newsletter" class="onoffswitch-checkbox" id="newsletter" <? if(@$_POST['newsletter'] or @$row['newsletter'] == 1){ ?>checked <? } ?>>
+							<label class="onoffswitch-label" for="newsletter">
+								<div class="onoffswitch-inner"></div>
+								<div class="onoffswitch-switch"></div>
+							</label>
+						</div>
+					</div>
+					
+					<div class="form-group <?php if(form_error('icone')){echo 'has-error';}?>">
+                        <label class="col-lg-2 control-label">Icone:</label>
+                        <div class="col-lg-10">
+                            <input type="Text" class="form-control" placeholder="icone" name="icone" value="<?=set_value('icone', @$row['icone'], $this->input->post('icone')); ?>">
+                        </div>
+                    </div>
+					
 					<div class="form-group <?php if(form_error('status_id')){echo 'has-error';}?>">
                         <label class="col-lg-2 control-label">Status</label>
                         <div class="col-lg-10">
