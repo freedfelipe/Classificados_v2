@@ -95,4 +95,27 @@ class Advertisement_model extends CI_Model{
 		
 		return false;
 	}
+	
+	public final function verifica_passo1()
+	{
+		$erro = false;
+		
+		
+		if(!$this->input->post('plano', TRUE)){
+			$erro[] = 'Selecione um plano!';
+		}
+		
+		if($erro){
+			return $erro;
+		}
+		
+		$sessao = array(
+			'user_id' 	=> $this->session->userdata('user_id'),
+			'plan_id'	=> $this->input->post('plano', TRUE)
+		);
+		
+		$this->session->set_userdata('anuncio', $sessao);
+		
+		redirect('anuncio/cadastrar/passo-2');
+	}
 }

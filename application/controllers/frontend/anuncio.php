@@ -15,8 +15,8 @@ class Anuncio extends CI_Controller{
 		parent::__construct();
 		
 		$this->load->model('plan_model', 'plan');
-		//$this->load->model('category_model');
-		//$this->load->model('state_model');
+		$this->load->model('advertisement_model', 'anuncio');
+		
 		
 		$this->url = '/anuncios/';
 		
@@ -50,6 +50,27 @@ class Anuncio extends CI_Controller{
 		$data['url_title']	= 'O seu classificados turbinado!';
 		$data['planos']		= $this->plan->all(array('status_id' => 1));
 		
+		if($_POST){
+			
+			$retorno = $this->anuncio->verifica_passo1();
+			
+			if($retorno){
+				$text = '';
+				foreach($retorno as $k => $error){				
+					$text .= '<p class="text-white">'.$error.'</p>';
+				}
+				
+				$data['alert']['error'] = $text;
+			}
+		}
+		
 		$this->render($this->router->method, $data);
+	}
+	
+	public final function passo2()
+	{
+		
+		die('passo 2');
+		
 	}
 }

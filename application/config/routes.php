@@ -131,6 +131,7 @@ $route['cidades/consultar/(:num)']                                  = 'backend/c
 
 #Anuncio
 $route['anuncio/cadastrar']                                         = 'frontend/anuncio/passo1';
+$route['anuncio/cadastrar/passo-2']                                 = 'frontend/anuncio/passo2';
 
 #tela de login
 $route['entrar']                                                    = 'frontend/login/index';

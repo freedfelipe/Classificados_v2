@@ -19,7 +19,7 @@
 		<div id="title-plano">Escolha seu Plano</div>
 		<div id="sub-title-plano">Escolha um dos nossos planos de anúncio.</div>
 		
-		<form name="planos" action="#" method="POST">
+		<form name="planos" method="post" action="<?=site_url($_SERVER['REQUEST_URI']);?>" accept-charset="utf-8">
 			
 			<div id="line-planos">
 				
