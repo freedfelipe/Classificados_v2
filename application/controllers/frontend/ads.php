@@ -14,22 +14,15 @@ class Ads extends CI_Controller{
 	{
 		parent::__construct();
 		
-		//$this->load->model('partner_model');
+		$this->load->model('user_model', 'user');
 		//$this->load->model('brand_model');
 		//$this->load->model('category_model');
 		//$this->load->model('state_model');
 		
 		$this->url = '/anuncios/';
 		
-		$this->limit = $this->parameter_model->get('rows_per_page');
-		$this->pag_segment = 2;
-		//$this->total_rows	= $this->data_model->total();
 		
-		$this->title = array(
-			'index'		=> $this->lang->line($this->router->class . '_index'),
-			'create'	=> $this->lang->line($this->router->class . '_create'),
-			'update'	=> $this->lang->line($this->router->class . '_update')
-		);
+		$this->user->is_logged_front();
 	}
 	
 	private final function log($method)
@@ -47,7 +40,6 @@ class Ads extends CI_Controller{
 		
 		$data['url']			= $this->url;
 		$data['dir']			= 'frontend/'.$this->router->class.'/';
-		$data['url_title']		= $this->parameter_model->get('system_title');
 		
 		$this->load->view('frontend/common/header', $data);
 		$this->load->view('frontend/'.$this->router->class . '/' . $method, $data);
@@ -69,7 +61,7 @@ class Ads extends CI_Controller{
 	
 	public final function create()
 	{
-		$this->security_model->logged();
+		
 		
 		
 		die('agora precisa verificar se o sujeito ta logado, caso não, fazer o login e nume!');
