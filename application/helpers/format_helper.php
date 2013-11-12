@@ -240,3 +240,19 @@ function showLogin($url)
 	
 	return true;
 }
+
+function money($value = 0.00)
+{
+
+	if(is_numeric($value))
+	{
+		return number_format($value,2,',','.');
+	}
+
+	else
+
+	{
+		return 0;
+	}
+
+}

@@ -4,7 +4,7 @@
  * Controller de Anuncios
  * @author Felipe <felipe@wadtecnologia.com.br>
  */
-class Ads extends CI_Controller{
+class Anuncio extends CI_Controller{
 	
 	private $url;
 	private $title;
@@ -14,15 +14,14 @@ class Ads extends CI_Controller{
 	{
 		parent::__construct();
 		
-		$this->load->model('user_model', 'user');
-		//$this->load->model('brand_model');
+		$this->load->model('plan_model', 'plan');
 		//$this->load->model('category_model');
 		//$this->load->model('state_model');
 		
 		$this->url = '/anuncios/';
 		
 		
-		$this->user->is_logged_front();
+		$this->user_model->is_logged_front();
 	}
 	
 	private final function log($method)
@@ -46,26 +45,11 @@ class Ads extends CI_Controller{
 		$this->load->view('frontend/common/footer', $data);
 	}
 	
-	//public final function index()
-	//{
-	//	$data['url_title']	= $this->parameter_model->get('system_title');
-	//	$data['scr_title']	= 'Home';
-	//	
-	//	$data['brand']		= $this->brand_model->by(array('status_id' => 1));
-	//	$data['partners']	= $this->partner_model->by(array('status_id' => 1));
-	//	$data['category']	= $this->category_model->by(array('status_id' => 1));
-	//	$data['state']		= $this->state_model->by(array('status_id' => 1));
-	//	
-	//	$this->render($this->router->method, $data);
-	//}
-	
-	public final function create()
+	public final function passo1()
 	{
+		$data['url_title']	= 'O seu classificados turbinado!';
+		$data['planos']		= $this->plan->all(array('status_id' => 1));
 		
-		
-		
-		die('agora precisa verificar se o sujeito ta logado, caso não, fazer o login e nume!');
-		
-		
+		$this->render($this->router->method, $data);
 	}
 }
