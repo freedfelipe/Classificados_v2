@@ -34,8 +34,12 @@ class Plan_model extends CI_Model{
 		$data['name'] 			= $this->input->post('name', TRUE);
 		$data['description']	= $this->input->post('description', TRUE);
 		$data['num_pics'] 		= $this->input->post('num_pics', TRUE);
-		$data['price'] 			= $this->input->post('price', TRUE);
+		$data['price'] 			= comma_period($this->input->post('price', TRUE));
 		$data['period']			= $this->input->post('period', TRUE);
+		$data['video']			= ($this->input->post('video', TRUE) == 'on') ? 1: 0;
+		$data['destaque']		= ($this->input->post('destaque', TRUE) == 'on') ? 1: 0;
+		$data['newsletter']		= ($this->input->post('newsletter', TRUE) == 'on') ? 1: 0;
+		$data['icone']			= $this->input->post('icone', TRUE);
 		$data['created_in']		= date('Y-m-d H:i:s');
 		$data['status_id'] 		= $this->input->post('status_id', TRUE);
 		
@@ -53,9 +57,9 @@ class Plan_model extends CI_Model{
 		return $this->db->count_all_results($this->tablename);
 	}
 	
-	public final function all()
+	public final function all($where = array())
 	{
-		$query = $this->db->get_where($this->tablename);
+		$query = $this->db->get_where($this->tablename, $where);
 		
 		if($query->num_rows() > 0){
 			return $query->result_array();
@@ -71,6 +75,10 @@ class Plan_model extends CI_Model{
 		$data['num_pics'] 		= $this->input->post('num_pics', TRUE);
 		$data['price'] 			= $this->input->post('price', TRUE);
 		$data['period']			= $this->input->post('period', TRUE);
+		$data['video']			= ($this->input->post('video', TRUE) == 'on') ? 1: 0;
+		$data['destaque']		= ($this->input->post('destaque', TRUE) == 'on') ? 1: 0;
+		$data['newsletter']		= ($this->input->post('newsletter', TRUE) == 'on') ? 1: 0;
+		$data['icone']			= $this->input->post('icone', TRUE);
 		$data['update_in']		= date('Y-m-d H:i:s');
 		$data['status_id'] 		= $this->input->post('status_id', TRUE);
 		

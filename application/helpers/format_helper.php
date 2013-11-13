@@ -240,3 +240,34 @@ function showLogin($url)
 	
 	return true;
 }
+
+function money($value = 0.00)
+{
+
+	if(is_numeric($value))
+	{
+		return number_format($value,2,',','.');
+	}
+
+	else
+
+	{
+		return 0;
+	}
+
+}
+
+function comma_period($value = null)
+{
+	if($value)
+	{
+		$value = str_replace(array('.',','), array('','.'), $value);
+
+		return $value;
+	}
+	else
+	{
+		return 0;
+	}
+
+}

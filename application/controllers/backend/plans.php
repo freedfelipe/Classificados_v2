@@ -18,12 +18,6 @@ class Plans extends CI_Controller{
 		$this->load->model('plan_model', 'dm');
 		$this->url = '/admin/planos/';
 		
-		$this->title = array(
-			'index'		=> $this->lang->line($this->router->class . '_index'),
-			'create'	=> $this->lang->line($this->router->class . '_create'),
-			'update'	=> $this->lang->line($this->router->class . '_update')
-		);
-		
 		$this->validation = array(
 			array(
 				'field'	=> 'name', 
@@ -50,6 +44,12 @@ class Plans extends CI_Controller{
 				'label'	=> 'Dias de Publicação', 
 				'rules'	=> 'trim|required|xss_clean'
 			),
+			array(
+				'field'	=> 'icone', 
+				'label'	=> 'Icone', 
+				'rules'	=> 'trim|required|xss_clean'
+			),
+			
 			array(
 				'field'	=> 'status_id', 
 				'label'	=> 'Status', 
