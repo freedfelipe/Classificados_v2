@@ -71,16 +71,77 @@ class Anuncio extends CI_Controller{
 	public final function passo2()
 	{
 		# verificar se na sessão tem a variavel anuncio
+		$sessao = $this->session->userdata('anuncio');
 		
-		//die('passo 2');
+		if($sessao){
+			
+			# pegando dados do plano selecionado
+			$data['plano'] 		= $this->plan->by(array('id' => $sessao['plan_id']));
+			$data['url_title']	= 'Passo 2';
+			$data['categorias']	= $this->categoria->all(array('status_id' => 1));
+			$data['brand']		= $this->brand_model->all(array('status_id' => 1));
+			$data['opcionais']	= $this->opcional->all(array('status_id' => 1));
+			
+			$this->render($this->router->method, $data);
+		}else{
+			redirect('anuncio/cadastrar');
+		}
+	}
+	
+	public final function ajax($metodo, $input)
+	{
 		
-		$data['url_title']	= 'Passo 2';
-		$data['categorias']	= $this->categoria->all(array('status_id' => 1));
-		$data['brand']		= $this->brand_model->all(array('status_id' => 1));
-		$data['opcionais']	= $this->opcional->all(array('status_id' => 1));
+		switch($metodo){
+			
+			case 'upload':
+				
+				//printr($_FILES);
+				
+				$upload_path = 'resources/upload/anuncios/';
+				
+				$file_new_name = '';
+				
+				$config['upload_path'] 		= $upload_path;
+				$config['allowed_types']	= 'gif|jpg|png';
+				$config['max_size'] 		= '2048';
+				$config['overwrite']  		= FALSE;
+				$config['encrypt_name'] 	= TRUE;
+				
+				$this->load->library('upload', $config);
+				
+				//Faz o upload
+				if($this->upload->do_upload($input)){
+					
+					$upload_data 	= $this->upload->data();
+					$file_new_name	= $upload_data['file_name'];
+					
+					//redimenciona a imagem
+					$config['image_library']	= 'GD2';
+					$config['source_image']		= $upload_path.$file_new_name;
+					$config['create_thumb'] 	= TRUE;
+					$config['maintain_ratio']	= TRUE;
+					$config['width']	 		= 300;
+					$config['height']			= 190;
+					
+					$this->load->library('image_lib', $config); 
+					
+					$this->image_lib->resize();
+					
+					$data['sucesso']	= true;
+					$data['msg'] 		= $upload_path.$file_new_name;
+				}else{
+					$data['sucesso'] 	= false;
+					$data['msg'] 		= $this->upload->display_errors();
+				}
+				
+				echo json_encode($data);
+			break;
+			
+		}
 		
-		//printr($data['opcionais']);
-//		
-		$this->render($this->router->method, $data);
+		
+		
+		//die('lol');
+		
 	}
 }

@@ -20,7 +20,7 @@
 				Os campos obrigatórios sao indicados por um <font color="#990000">*</font>.
 				Voce terá a oportunidade de rever o seu anúncio antes de ser publicado.
 			</div>
-			<form name="planos" action="#" method="POST">
+			<form id="anuncio" name="anuncio" action="<?=site_url('anuncio/ajax');?>" method="POST">
 			
 			<div id="linha-planos-2">
 				
@@ -71,20 +71,13 @@
 					<div id="form-linha">
 						<div id="texto-form">Ano<font color="#990000">*</font></div>
 						<div id="formulario-line">
-							<select name="form-ano" id="form-categoria" >
-								<option value="1">item 1</option>
-								<option value="2">item 2</option>
-								<option value="3">item 3</option>
-								<option value="4">item 4</option>
-								<option value="0">All</option>
-							</select>
+							<?=form_dropdown('ano', ano(), set_value('ano', $this->input->post('ano'), $this->input->post('ano')), 'id="ano"'); ?>
 						</div>
 						<div id="texto-form">Placa</div>
 						<div id="formulario-line">
 							<input type="text" name="Placa" id="placa">
 						</div>
 					</div>
-					
 				</div>
 				
 				<div id="linha-planos-2">
@@ -114,7 +107,7 @@
 					<div id="title"><b>Preço</b> do Veículo</div>
 					<div id="texto-form">Preço<font color="#990000">*</font></div>
 					<div id="formulario-line">
-						<input type="text" name="preco" id="preco">
+						<input type="text" name="preco" id="preco" class="price">
 					</div>
 					<div id="line-preco">
 							<input type="checkbox" name="preconegociavel" value="preconegociavel" id="c17">
@@ -126,49 +119,27 @@
 				<div id="linha-planos-2">
 					<div id="title"><b>Imagens</b> do Veículo</div>
 					
+					<progress value="0" max="100"></progress><span id="porcentagem">0%</span>
+					
+					<div id="resposta"></div>
+					
 					<div id="line-fotos">
-						
-					
-					<ul class="field-content">
-						<li class="select-six">
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-									</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-									
-						</li>
-					</ul>
+						<ul class="field-content">
+							<li class="select-six">
+								
+								<? if(isset($plano['num_pics']) and $plano['num_pics'] > 0){ for($foto = 1; $foto <= $plano['num_pics']; $foto++){ ?>
+								<div class="upload-file-container">
+									<span>
+										<input type="file" id="fileupload" name="file" rel="<?=$foto;?>"/>
+									</span>
+								</div>
+								<? } } ?>
+							</li>
+						</ul>
 					</div>
-					
-					
 				</div>
 				
+				<? if(isset($plano['video']) and $plano['video'] == 1){ ?>
 				<div id="linha-planos-2">
 					<div id="title"><b>Vídeo</b> do Veículo</div>
 					<div id="texto-form1">Link do Vídeo (youtube)</div>
@@ -176,6 +147,7 @@
 						<input type="text" name="video" id="video">
 					</div>
 				</div>
+				<? } ?>
 			</div>
 			<!-- Fim Anuncio de carros -->
 			
@@ -276,8 +248,6 @@
 					
 					
 				</div>
-				
-				
 			</div>
 			<!-- Fim Anuncio de acessorios -->
 			
@@ -556,13 +526,10 @@
 				</div>
 				
 				<div id="seguranca-planos">
-					
-				
-				Ao clicar no botao Próximo abaixo, voce <b>concorda</b> com nossos termos e condiçoes. <br /><br />
-				Seu endereço IP foi registrado para fins de segurança: <b>189.54.8.227</b>
+					Ao clicar no botao Próximo abaixo, voce <b>concorda</b> com nossos termos e condiçoes. <br /><br />
+					Seu endereço IP foi registrado para fins de segurança: <b>189.54.8.227</b>
 				</div>
 				
-	
 				<div id="line-btns">
 					<input type="submit" name="proximo" id="proximo" value="Proximo >>">
 					<input type="submit" name="anterior" id="anterior" value="<< Anterior">

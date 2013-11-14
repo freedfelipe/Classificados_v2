@@ -271,3 +271,14 @@ function comma_period($value = null)
 	}
 
 }
+
+function ano()
+{
+	$ano = array();
+	
+	for($i = date('Y'); $i >= 1950; $i--){
+		$ano[$i] = $i;
+	}
+	
+	return $ano;
+}
