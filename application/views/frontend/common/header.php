@@ -38,8 +38,9 @@
 	<!-- Banner -->
 	<link rel="stylesheet" type="text/css" href="<?=site_url('resources/frontend/css/destaque.css');?>">
 	<script type="text/javascript" src="<?=site_url('resources/frontend/js/jquery-1.7.1.min.js');?>"></script>
-	<!-- js de genialidade -->
+	
 	<script type="text/javascript" src="<?=site_url('resources/frontend/js/functions.js');?>"></script>
+	<script type="text/javascript" src="<?=site_url('resources/frontend/js/script.js');?>"></script>
 </head>
 <body>
 	<header>

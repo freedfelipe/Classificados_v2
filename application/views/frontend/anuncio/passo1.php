@@ -1,8 +1,8 @@
 <!-- Divisao -->
 <div id="faixa-banner" class="clearfix">
 	<div id="margin">
-		<div class="title-anuncio">ADICIONAR NOVO ANÚNCIO</div>
-		<div class="navegacao"><a href="<?=site_url('/');?>">Home</a> >> <a href="<?=site_url('anuncio/cadastrar');?>">Novo Anúncio</a> >> Passo 1</div>
+		<div class="title-anuncio">ADICIONAR NOVO ANÚNCIO >> Passo 1</div>
+		<div class="navegacao"><a href="<?=site_url('home');?>">Home</a> >> <a href="<?=site_url('anuncio/cadastrar');?>">Novo Anúncio</a> >> Passo 1</div>
 		
 		<div class="aba-hover">1o Passo</div>
 		<div class="aba-simple">2o Passo</div>

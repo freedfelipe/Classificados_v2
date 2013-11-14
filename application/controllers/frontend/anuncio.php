@@ -16,6 +16,7 @@ class Anuncio extends CI_Controller{
 		
 		$this->load->model('plan_model', 'plan');
 		$this->load->model('advertisement_model', 'anuncio');
+		$this->load->model('category_model', 'categoria');
 		
 		
 		$this->url = '/anuncios/';
@@ -47,7 +48,7 @@ class Anuncio extends CI_Controller{
 	
 	public final function passo1()
 	{
-		$data['url_title']	= 'O seu classificados turbinado!';
+		$data['url_title']	= 'Passo 1';
 		$data['planos']		= $this->plan->all(array('status_id' => 1));
 		
 		if($_POST){
@@ -69,8 +70,15 @@ class Anuncio extends CI_Controller{
 	
 	public final function passo2()
 	{
+		# verificar se na sessão tem a variavel anuncio
 		
-		die('passo 2');
+		//die('passo 2');
 		
+		$data['url_title']	= 'Passo 2';
+		$data['categorias']	= $this->categoria->all(array('status_id' => 1));
+		
+		printr($data['categorias']);
+		
+		$this->render($this->router->method, $data);
 	}
 }
