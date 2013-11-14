@@ -36,7 +36,7 @@
 					<div id="icone"><img src="<?=site_url('resources/frontend/images/'.$plano['icone']);?>" border="0" /></div>
 					<div id="informacoes">
 						<div id="text-preco">
-							R$ <?=money($plano['price']);?>
+							<? if($plano['price'] == '0.00'){ echo 'Grátis'; }else{ echo 'R$ '.money($plano['price']); } ?>
 						</div>
 						<div id="detalhes-line-ativo">Dias - <?=$plano['period'];?></div>
 						<div id="detalhes-line-ativo">Imagens - <?=$plano['num_pics'];?></div>
