@@ -17,7 +17,7 @@ class Anuncio extends CI_Controller{
 		$this->load->model('plan_model', 'plan');
 		$this->load->model('advertisement_model', 'anuncio');
 		$this->load->model('category_model', 'categoria');
-		
+		$this->load->model('optional_model', 'opcional');
 		
 		$this->url = '/anuncios/';
 		
@@ -76,9 +76,11 @@ class Anuncio extends CI_Controller{
 		
 		$data['url_title']	= 'Passo 2';
 		$data['categorias']	= $this->categoria->all(array('status_id' => 1));
+		$data['brand']		= $this->brand_model->all(array('status_id' => 1));
+		$data['opcionais']	= $this->opcional->all(array('status_id' => 1));
 		
-		printr($data['categorias']);
-		
+		//printr($data['opcionais']);
+//		
 		$this->render($this->router->method, $data);
 	}
 }

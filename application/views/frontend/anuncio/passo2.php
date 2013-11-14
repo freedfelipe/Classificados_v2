@@ -27,36 +27,16 @@
 				<div id="texto-form">Categoria<font color="#990000">*</font></div>
 				<div id="formulario-line">
 					<div id="radio-categorias">
+						
+						<? if($categorias){ $count = 1; foreach($categorias as $categoria){ ?>
+						
 						<div id="linha">
-							<input type="radio" name="categoria" value="basico" id="r1">
-							<label for="r1">Aspirados<span></span></label>
+							<input type="radio" name="categoria" value="<?=$categoria['id'];?>" id="r<?=$count;?>">
+							<label for="r<?=$count;?>"><?=$categoria['name'];?><span></span></label>
 						</div>
-						<div id="linha">
-							<input type="radio" name="categoria" value="basico" id="r2">
-							<label for="r2">Rebaixados<span></span></label>
-						</div>
-						<div id="linha">
-							<input type="radio" name="categoria" value="basico" id="r3">
-							<label for="r3">Stock<span></span></label>
-						</div>
-						<div id="linha">
-							<input type="radio" name="categoria" value="basico" id="r4">
-							<label for="r4">Turbo<span></span></label>
-						</div>
-						<div id="linha">
-							<input type="radio" name="categoria" value="basico" id="r5">
-							<label for="r5">Peças Acessórios<span></span></label>
-						</div>
-						<div id="linha">
-							<input type="radio" name="categoria" value="basico" id="r6">
-							<label for="r6">Peças Mecânica<span></span></label>
-						</div>
-						<div id="linha">
-							<input type="radio" name="categoria" value="basico" id="r7">
-							<label for="r7">Rodas<span></span></label>
-						</div>
+						
+						<? ++$count;} } ?>
 					</div>
-					
 				</div>
 				<div id="texto-form">Voce escolheu: </div>
 				<div id="voce-escolheu">
@@ -69,8 +49,6 @@
 						<div id="mecanica"><div class="pecas">Peças</div> Mecânica</div>
 						<div id="rodas">Rodas</div>
 					</div>
-					
-					
 				</div>
 			</div>
 			
@@ -81,22 +59,12 @@
 					<div id="form-linha">
 						<div id="texto-form">Fabricante<font color="#990000">*</font></div>
 						<div id="formulario-line">
-							<select name="form-fabricante" id="form-categoria" >
-								<option value="1">item 1</option>
-								<option value="2">item 2</option>
-								<option value="3">item 3</option>
-								<option value="4">item 4</option>
-								<option value="0">All</option>
-							</select>
+							<?=form_dropdown('brand_id', construct_select($brand), set_value('brand_id', $this->input->post('brand_id'), $this->input->post('brand_id')), 'id="brand_id"'); ?>
 						</div>
 						<div id="texto-form">Modelo<font color="#990000">*</font></div>
 						<div id="formulario-line">
-							<select name="form-modelo" id="form-categoria" >
-								<option value="1">item 1</option>
-								<option value="2">item 2</option>
-								<option value="3">item 3</option>
-								<option value="4">item 4</option>
-								<option value="0">All</option>
+							<select name="model_id" id="model_id" >
+								<option value="-1">Selecione uma Marca</option>
 							</select>
 						</div>
 					</div>
@@ -121,101 +89,17 @@
 				
 				<div id="linha-planos-2">
 					<div id="title"><b>Opcionais</b> do Veículo</div>
-					<div id="opcionais">
-						<div id="linha">
-							<input type="checkbox" name="vidroseletricos" value="vidroseletricos" id="c1">
-							<label for="c1"><span></span></label>
-							<div id="texto">Vidros Elétricos</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="travaseletricas" value="travaseletricas" id="c2">
-							<label for="c2"><span></span></label>
-							<div id="texto">Travas Elétricas</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="direcaohidraulica" value="direcaohidraulica" id="c3">
-							<label for="c3"><span></span></label>
-							<div id="texto">Direçao Hidráulica</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="abs" value="abs" id="c4">
-							<label for="c4"><span></span></label>
-							<div id="texto">ABS</div>						
-						</div>
-											
-					</div>
+					
+					<? if($opcionais){ foreach($opcionais as $opcional){ ?>
 					
 					<div id="opcionais">
 						<div id="linha">
-							<input type="checkbox" name="airbag" value="airbag" id="c5">
-							<label for="c5"><span></span></label>
-							<div id="texto">Air-Bag</div>						
+							<input type="checkbox" name="opcional_id[]" value="<?=$opcional['id'];?>" id="c<?=$opcional['id'];?>">
+							<label for="c<?=$opcional['id'];?>"><span></span></label>
+							<div id="texto"><?=$opcional['name'];?></div>		
 						</div>
-						<div id="linha">
-							<input type="checkbox" name="alarme" value="alarme" id="c6">
-							<label for="c6"><span></span></label>
-							<div id="texto">Alarme</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="arcondicionado" value="arcondicionado" id="c7">
-							<label for="c7"><span></span></label>
-							<div id="texto">Ar Condicionado</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="cdplayer" value="cdplayer" id="c8">
-							<label for="c8"><span></span></label>
-							<div id="texto">CD-Player</div>						
-						</div>
-											
 					</div>
-					
-					<div id="opcionais">
-						<div id="linha">
-							<input type="checkbox" name="arquente" value="arquente" id="c9">
-							<label for="c9"><span></span></label>
-							<div id="texto">Ar Quente</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="bancosemcouro" value="bancosemcouro" id="c10">
-							<label for="c10"><span></span></label>
-							<div id="texto">Bancos em Couro</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="computadordebordo" value="computadordebordo" id="c11">
-							<label for="c11"><span></span></label>
-							<div id="texto">Computador de Bordo</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="retrovisoreseletricos" value="retrovisoreseletricos" id="c12">
-							<label for="c12"><span></span></label>
-							<div id="texto">Retrovisores Elétricos</div>						
-						</div>
-											
-					</div>
-					<div id="opcionais1">
-						<div id="linha">
-							<input type="checkbox" name="sensordechuva" value="sensordechuva" id="c13">
-							<label for="c13"><span></span></label>
-							<div id="texto">Sensor de Chuva</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="tetosolar" value="tetosolar" id="c14">
-							<label for="c14"><span></span></label>
-							<div id="texto">Teto Solar</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="tracao4x4" value="tracao4x4" id="c15">
-							<label for="c15"><span></span></label>
-							<div id="texto">Traçao 4x4</div>						
-						</div>
-						<div id="linha">
-							<input type="checkbox" name="farolxenonio" value="farolxenonio" id="c16">
-							<label for="c16"><span></span></label>
-							<div id="texto">Farol Xenônio</div>						
-						</div>
-											
-					</div>
-					
+					<? } } ?>
 				</div>
 				
 				<div id="linha-planos-2">
