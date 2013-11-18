@@ -36,7 +36,7 @@
 						
 <iframe src="https://www.facebook.com/plugins/registration?
              client_id=672514772788657&
-             redirect_uri=[YOUR_REDIRECT_URI]
+             redirect_uri=<?=site_url('registrar/ajax');?>
              fields=name,birthday,gender,location,email"
         scrolling="auto"
         frameborder="no"
