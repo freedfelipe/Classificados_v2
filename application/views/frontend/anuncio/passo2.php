@@ -75,7 +75,7 @@
 						</div>
 						<div id="texto-form">Placa</div>
 						<div id="formulario-line">
-							<input type="text" name="Placa" id="placa">
+							<input type="text" name="placa" id="placa" value="">
 						</div>
 					</div>
 				</div>
@@ -110,9 +110,9 @@
 						<input type="text" name="preco" id="preco" class="price">
 					</div>
 					<div id="line-preco">
-							<input type="checkbox" name="preconegociavel" value="preconegociavel" id="c17">
-							<label for="c17"><span></span></label>
-							<div id="texto">Preço Negociável?</div>						
+						<input type="checkbox" name="preconegociavel" value="1" id="c17">
+						<label for="c17"><span></span></label>
+						<div id="texto">Preço Negociável?</div>						
 					</div>
 				</div>
 				
@@ -158,27 +158,16 @@
 					<div id="form-linha">
 						<div id="texto-form">Nome Peça<font color="#990000">*</font></div>
 						<div id="formulario-line">
-							<input type="text" name="Placa" id="placa">
-						</div>
-						<div id="texto-form">Modelo<font color="#990000">*</font></div>
-						<div id="formulario-line">
-							<input type="text" name="Placa" id="placa">
+							<input type="text" name="nome" id="placa" value="">
 						</div>
 					</div>
-					<div id="form-linha">
-						<div id="texto-form">Ano<font color="#990000">*</font></div>
-						<div id="formulario-line">
-							<input type="text" name="Placa" id="placa">
-						</div>
-					</div>
-					
 				</div>
 				
 				<div id="linha-planos-2">
 					<div id="title"><b>Preço</b> da Peça - <b>Acessório</b></div>
 					<div id="texto-form">Preço<font color="#990000">*</font></div>
 					<div id="formulario-line">
-						<input type="text" name="preco" id="preco">
+						<input type="text" name="preco" id="preco" class="price">
 					</div>
 					<div id="line-preco">
 							<input type="checkbox" name="preconegociavel" value="preconegociavel" id="c18">
@@ -188,98 +177,66 @@
 				</div>
 				
 				<div id="linha-planos-2">
-					<div id="title"><b>Especificaçoes</b> da Peça - <b>Acessório</b></div>
-					<div id="texto-form">Especificaçoes</div>
+					<div id="title"><b>Descrição</b> da Peça - <b>Acessório</b></div>
+					<div id="texto-form">Descrição</div>
 						<div id="formulario-line">
-							<textarea id="especificacao-acessorios" name="especificacao-acessorios" rows="5" cols="30"></textarea>
-						</div>
-				</div>
-				
-				<div id="linha-planos-2">
-					<div id="title"><b>Caracteristicas</b> da Peça - <b>Acessório</b></div>
-					<div id="texto-form">Caracteristicas</div>
-						<div id="formulario-line">
-							<textarea id="caracteristicas-acessorios" name="caracteristicas-acessorios" rows="5" cols="30"></textarea>
+							<textarea id="descricao" name="descricao" rows="5" cols="30"></textarea>
 						</div>
 				</div>
 				
 				<div id="linha-planos-2">
 					<div id="title"><b>Imagens</b> da Peça - <b>Acessório</b></div>
 					
+					<progress value="0" max="100"></progress><span id="porcentagem">0%</span>
+					
+					<div id="resposta"></div>
+					
 					<div id="line-fotos">
-						
-					
-					<ul class="field-content">
-						<li class="select-six">
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-									</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-									
-						</li>
-					</ul>
+						<ul class="field-content">
+							<li class="select-six">
+								
+								<? if(isset($plano['num_pics']) and $plano['num_pics'] > 0){ for($foto = 1; $foto <= $plano['num_pics']; $foto++){ ?>
+								<div class="upload-file-container">
+									<span>
+										<input type="file" id="fileupload" name="file_<?=$foto;?>" rel="<?=$foto;?>"/>
+									</span>
+								</div>
+								<? } } ?>
+							</li>
+						</ul>
 					</div>
-					
-					
 				</div>
+				
+				<? if(isset($plano['video']) and $plano['video'] == 1){ ?>
+				<div id="linha-planos-2">
+					<div id="title"><b>Vídeo</b> da Peça - <b>Acessório</b></div>
+					<div id="texto-form1">Link do Vídeo (youtube)</div>
+					<div id="formulario-line">
+						<input type="text" name="video" id="video">
+					</div>
+				</div>
+				<? } ?>
+				
 			</div>
 			<!-- Fim Anuncio de acessorios -->
 			
-			
-			<!-- Anuncio de necabica -->
+			<!-- Anuncio de mecanica -->
 			<div id="anuncio_mecanica">
 				<div id="linha-planos-2">
 					<div id="title"><b>Dados</b> da Peça - <b>Mecânica</b></div>
 					<div id="form-linha">
 						<div id="texto-form">Nome Peça<font color="#990000">*</font></div>
 						<div id="formulario-line">
-							<input type="text" name="nome-mecanica" id="placa">
-						</div>
-						<div id="texto-form">Modelo<font color="#990000">*</font></div>
-						<div id="formulario-line">
-							<input type="text" name="modelo-mecanica" id="placa">
+							<input type="text" name="nome" id="placa" value="">
 						</div>
 					</div>
-					<div id="form-linha">
-						<div id="texto-form">Ano<font color="#990000">*</font></div>
-						<div id="formulario-line">
-							<input type="text" name="Ano-mecanica" id="placa">
-						</div>
-					</div>
-					
 				</div>
 				
 				<div id="linha-planos-2">
 					<div id="title"><b>Preço</b> da Peça - <b>Mecânica</b></div>
 					<div id="texto-form">Preço<font color="#990000">*</font></div>
 					<div id="formulario-line">
-						<input type="text" name="preco" id="preco">
+						<input type="text" name="preco" id="preco" class="price">
 					</div>
 					<div id="line-preco">
 							<input type="checkbox" name="preconegociavel" value="preconegociavel" id="c18">
@@ -289,67 +246,45 @@
 				</div>
 				
 				<div id="linha-planos-2">
-					<div id="title"><b>Especificaçoes</b> da Peça - <b>Mecânica</b></div>
-					<div id="texto-form">Especificaçoes</div>
-						<div id="formulario-line">
-							<textarea id="especificacao-acessorios" name="especificacao-acessorios" rows="5" cols="30"></textarea>
-						</div>
-				</div>
-				
-				<div id="linha-planos-2">
-					<div id="title"><b>Caracteristicas</b> da Peça - <b>Mecânica</b></div>
-					<div id="texto-form">Caracteristicas</div>
-						<div id="formulario-line">
-							<textarea id="caracteristicas-acessorios" name="caracteristicas-acessorios" rows="5" cols="30"></textarea>
-						</div>
+					<div id="title"><b>Descrição</b> da Peça - <b>Mecânica</b></div>
+					<div id="texto-form">Descrição</div>
+					<div id="formulario-line">
+						<textarea id="especificacao-acessorios" name="descricao" rows="5" cols="30"></textarea>
+					</div>
 				</div>
 				
 				<div id="linha-planos-2">
 					<div id="title"><b>Imagens</b> da Peça - <b>Mecânica</b></div>
 					
+					<progress value="0" max="100"></progress><span id="porcentagem">0%</span>
+					
+					<div id="resposta"></div>
+					
 					<div id="line-fotos">
-						
-					
-					<ul class="field-content">
-						<li class="select-six">
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-									</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-									
-						</li>
-					</ul>
+						<ul class="field-content">
+							<li class="select-six">
+								
+								<? if(isset($plano['num_pics']) and $plano['num_pics'] > 0){ for($foto = 1; $foto <= $plano['num_pics']; $foto++){ ?>
+								<div class="upload-file-container">
+									<span>
+										<input type="file" id="fileupload" name="file_<?=$foto;?>" rel="<?=$foto;?>"/>
+									</span>
+								</div>
+								<? } } ?>
+							</li>
+						</ul>
 					</div>
-					
-					
 				</div>
 				
+				<? if(isset($plano['video']) and $plano['video'] == 1){ ?>
+				<div id="linha-planos-2">
+					<div id="title"><b>Vídeo</b> da Peça - <b>Mecânica</b></div>
+					<div id="texto-form1">Link do Vídeo (youtube)</div>
+					<div id="formulario-line">
+						<input type="text" name="video" id="video">
+					</div>
+				</div>
+				<? } ?>
 				
 			</div>
 			<!-- Fim Anuncio de mecanica -->
@@ -361,97 +296,64 @@
 					<div id="form-linha">
 						<div id="texto-form">Nome Roda<font color="#990000">*</font></div>
 						<div id="formulario-line">
-							<input type="text" name="nome-mecanica" id="placa">
-						</div>
-						<div id="texto-form">Modelo<font color="#990000">*</font></div>
-						<div id="formulario-line">
-							<input type="text" name="modelo-mecanica" id="placa">
+							<input type="text" name="nome" id="placa">
 						</div>
 					</div>
-					<div id="form-linha">
-						<div id="texto-form">Ano<font color="#990000">*</font></div>
-						<div id="formulario-line">
-							<input type="text" name="Ano-mecanica" id="placa">
-						</div>
-					</div>
-					
 				</div>
 				
 				<div id="linha-planos-2">
 					<div id="title"><b>Preço</b> da Roda</div>
 					<div id="texto-form">Preço<font color="#990000">*</font></div>
 					<div id="formulario-line">
-						<input type="text" name="preco" id="preco">
+						<input type="text" name="preco" id="preco" class="price">
 					</div>
 					<div id="line-preco">
-							<input type="checkbox" name="preconegociavel" value="preconegociavel" id="c18">
-							<label for="c18"><span></span></label>
-							<div id="texto">Preço Negociável?</div>						
+						<input type="checkbox" name="preconegociavel" value="preconegociavel" id="c18">
+						<label for="c18"><span></span></label>
+						<div id="texto">Preço Negociável?</div>						
 					</div>
 				</div>
 				
 				<div id="linha-planos-2">
-					<div id="title"><b>Especificaçoes</b> da Roda</div>
-					<div id="texto-form">Especificaçoes</div>
-						<div id="formulario-line">
-							<textarea id="especificacao-acessorios" name="especificacao-acessorios" rows="5" cols="30"></textarea>
-						</div>
-				</div>
-				
-				<div id="linha-planos-2">
-					<div id="title"><b>Caracteristicas</b> da Roda</div>
-					<div id="texto-form">Caracteristicas</div>
-						<div id="formulario-line">
-							<textarea id="caracteristicas-acessorios" name="caracteristicas-acessorios" rows="5" cols="30"></textarea>
-						</div>
+					<div id="title"><b>Descrição</b> da Roda</div>
+					<div id="texto-form">Descrição</div>
+					<div id="formulario-line">
+						<textarea id="especificacao-acessorios" name="descricao" rows="5" cols="30"></textarea>
+					</div>
 				</div>
 				
 				<div id="linha-planos-2">
 					<div id="title"><b>Imagens</b> da Roda</div>
 					
+					<progress value="0" max="100"></progress><span id="porcentagem">0%</span>
+					
+					<div id="resposta"></div>
+					
 					<div id="line-fotos">
-						
-					
-					<ul class="field-content">
-						<li class="select-six">
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-									</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-							<div class="upload-file-container">
-								<span>
-									<input type="file" name="files[]" />
-								</span>
-							</div>
-									
-						</li>
-					</ul>
+						<ul class="field-content">
+							<li class="select-six">
+								
+								<? if(isset($plano['num_pics']) and $plano['num_pics'] > 0){ for($foto = 1; $foto <= $plano['num_pics']; $foto++){ ?>
+								<div class="upload-file-container">
+									<span>
+										<input type="file" id="fileupload" name="file_<?=$foto;?>" rel="<?=$foto;?>"/>
+									</span>
+								</div>
+								<? } } ?>
+							</li>
+						</ul>
 					</div>
-					
-					
 				</div>
 				
+				<? if(isset($plano['video']) and $plano['video'] == 1){ ?>
+				<div id="linha-planos-2">
+					<div id="title"><b>Vídeo</b> da Roda</div>
+					<div id="texto-form1">Link do Vídeo (youtube)</div>
+					<div id="formulario-line">
+						<input type="text" name="video" id="video">
+					</div>
+				</div>
+				<? } ?>
 				
 			</div>
 			<!-- Fim Anuncio de Rodas -->
@@ -462,57 +364,45 @@
 					<div id="title"><b>Detalhes</b> do Vendedor</div>
 					
 					<div id="linha-user">
-					<div id="texto-form-user">Nome<font color="#990000">*</font></div>
-					<div id="formulario-line-user">
-						<input type="text" name="nome-user" id="nome-user">
-					</div>
-					
-					<div id="texto-form-user">E-mail<font color="#990000">*</font></div>
-					<div id="formulario-line-user">
-						<input type="text" name="nome-email" id="nome-user">
-					</div>
-					
-					<div id="texto-form-user">E-mail 2</div>
-					<div id="formulario-line-user">
-						<input type="text" name="nome-email2" id="nome-user">
-					</div>
+						<div id="texto-form-user">E-mail<font color="#990000">*</font></div>
+						<div id="formulario-line-user">
+							<input type="text" name="email" id="nome-user" value="<?=$this->session->userdata('user_email');?>">
+						</div>
+						
+						<div id="texto-form-user">E-mail 2</div>
+						<div id="formulario-line-user">
+							<input type="text" name="email2" id="nome-user" value="">
+						</div>
 					</div>
 					
 					<div id="linha-tel">
-					<div id="texto-form-user">Telefone1<font color="#990000">*</font></div>
-					<div id="formulario-line-tel">
-						<input type="text" name="nome-tel1" id="nome-tel">
-					</div>
-					
-					<div id="texto-form-user">Telefone2</div>
-					<div id="formulario-line-tel">
-						<input type="text" name="nome-tel2" id="nome-tel">
-					</div>
-					
-					<div id="texto-form-user">Telefone3</div>
-					<div id="formulario-line-tel">
-						<input type="text" name="nome-tel3" id="nome-tel">
-					</div>
+						<div id="texto-form-user">Telefone1<font color="#990000">*</font></div>
+						<div id="formulario-line-tel">
+							<input type="text" name="telefone1" id="nome-tel">
+						</div>
+						
+						<div id="texto-form-user">Telefone2</div>
+						<div id="formulario-line-tel">
+							<input type="text" name="telefone2" id="nome-tel">
+						</div>
 					</div>
 					
 					<div id="linha-regiao">
-					<div id="texto-form-user">Estado<font color="#990000">*</font></div>
-					<div id="formulario-line-regiao">
-						<input type="text" name="nome-tel1" id="nome-regiao">
+						<div id="texto-form-user">CEP<font color="#990000">*</font></div>
+						<div id="formulario-line-regiao">
+							<input type="text" name="nome-tel3" id="nome-regiao">
+						</div>
+						
+						<div id="texto-form-user">Estado<font color="#990000">*</font></div>
+						<div id="formulario-line-regiao">
+							<input type="text" name="nome-tel1" id="nome-regiao">
+						</div>
+						
+						<div id="texto-form-user">Cidade<font color="#990000">*</font></div>
+						<div id="formulario-line-regiao">
+							<input type="text" name="nome-tel2" id="nome-regiao">
+						</div>
 					</div>
-					
-					<div id="texto-form-user">Cidade<font color="#990000">*</font></div>
-					<div id="formulario-line-regiao">
-						<input type="text" name="nome-tel2" id="nome-regiao">
-					</div>
-					
-					<div id="texto-form-user">CEP<font color="#990000">*</font></div>
-					<div id="formulario-line-regiao">
-						<input type="text" name="nome-tel3" id="nome-regiao">
-					</div>
-					</div>
-					
-					
 				</div>
 				
 				<div id="informacoes-planos">
