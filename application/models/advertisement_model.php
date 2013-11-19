@@ -100,7 +100,6 @@ class Advertisement_model extends CI_Model{
 	{
 		$erro = false;
 		
-		
 		if(!$this->input->post('plano', TRUE)){
 			$erro[] = 'Selecione um plano!';
 		}

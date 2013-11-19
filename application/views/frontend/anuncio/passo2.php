@@ -20,7 +20,7 @@
 				Os campos obrigatórios sao indicados por um <font color="#990000">*</font>.
 				Voce terá a oportunidade de rever o seu anúncio antes de ser publicado.
 			</div>
-			<form id="anuncio" name="anuncio" action="<?=site_url('anuncio/ajax');?>" method="POST">
+			<form id="anuncio" name="anuncio" action="<?=site_url('');?>" method="POST">
 			
 			<div id="linha-planos-2">
 				

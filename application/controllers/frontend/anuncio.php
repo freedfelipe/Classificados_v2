@@ -21,7 +21,7 @@ class Anuncio extends CI_Controller{
 		
 		$this->url = '/anuncios/';
 		
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		
 		$this->user_model->is_logged_front();
 	}
@@ -89,7 +89,7 @@ class Anuncio extends CI_Controller{
 		}
 	}
 	
-	public final function ajax($metodo, $input)
+	public final function ajax($metodo, $input = '')
 	{
 		
 		switch($metodo){
@@ -143,6 +143,11 @@ class Anuncio extends CI_Controller{
 				echo json_encode($data);
 			break;
 			
+			case 'verifica-passo-2':
+				
+				printr($_POST);
+				
+			break;
 		}
 		
 		

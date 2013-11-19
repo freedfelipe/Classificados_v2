@@ -60,9 +60,29 @@ $(document).ready(function(){
             },
             dataType: 'json',
             url: url_base + '/anuncio/ajax/upload/file_' + id,
-            resetForm: true
+            resetForm: false
         }).submit();
 		
     });
+	
+	$('#proximo').live('click', function(){
+		
+		$('#anuncio').ajaxForm({
+			dataType: 'post',
+            url: url_base + '/anuncio/ajax/verifica-passo-2',
+            resetForm: false,
+			success: function(data) {
+				
+				console.log(data);
+				
+			},
+            error : function(){
+				
+				alert('Erro ao processar dados');
+				
+			}
+		});
+		
+	});
 	
 });
