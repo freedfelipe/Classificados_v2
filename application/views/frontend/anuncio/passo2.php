@@ -1,3 +1,13 @@
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="<?=site_url('resources/frontend/js/gmaps.js');?>"></script>
+<script type="text/javascript" src="<?=site_url('resources/frontend/js/cep.js');?>"></script>
+<!--<script>
+	$(function(){
+		wscep({map: 'map1',auto:true});
+		wsmap('08615-000','555','map2');
+	})
+</script>-->
+
 <!-- Divisao -->
 	<div id="faixa-banner" class="clearfix">
 		<div id="margin">
@@ -390,19 +400,32 @@
 					<div id="linha-regiao">
 						<div id="texto-form-user">CEP<font color="#990000">*</font></div>
 						<div id="formulario-line-regiao">
-							<input type="text" name="nome-tel3" id="nome-regiao">
+							<input type="text" name="cep" id="nome-regiao" class="cep">
 						</div>
 						
 						<div id="texto-form-user">Estado<font color="#990000">*</font></div>
 						<div id="formulario-line-regiao">
-							<input type="text" name="nome-tel1" id="nome-regiao">
+							<input type="text" name="uf" id="nome-regiao" class="uf">
 						</div>
 						
 						<div id="texto-form-user">Cidade<font color="#990000">*</font></div>
 						<div id="formulario-line-regiao">
-							<input type="text" name="nome-tel2" id="nome-regiao">
+							<input type="text" name="cidade" id="nome-regiao" class="cidade">
+						</div>
+						
+						<div id="texto-form-user">Bairro<font color="#990000">*</font></div>
+						<div id="formulario-line-regiao">
+							<input type="text" name="bairro" id="nome-regiao" class="bairro">
+						</div>
+						
+						<div id="texto-form-user">Rua<font color="#990000">*</font></div>
+						<div id="formulario-line-regiao">
+							<input type="text" name="rua" id="nome-regiao" class="rua">
 						</div>
 					</div>
+				</div>
+				<div id="linha-planos-2">
+					<div id="map2"></div>
 				</div>
 				
 				<div id="informacoes-planos">

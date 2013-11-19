@@ -21,6 +21,7 @@ $(document).ready(function(){
 	// mascara de placa
 	$.mask.definitions['L'] = "[a-zA-Z]";
 	$("#placa").mask("LLL-9999");
+	$("#cep").mask("99999-999");
 	
 	$('.price').priceFormat({
         prefix: '',
