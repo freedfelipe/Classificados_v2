@@ -130,7 +130,7 @@
 								<? if(isset($plano['num_pics']) and $plano['num_pics'] > 0){ for($foto = 1; $foto <= $plano['num_pics']; $foto++){ ?>
 								<div class="upload-file-container">
 									<span>
-										<input type="file" id="fileupload" name="file" rel="<?=$foto;?>"/>
+										<input type="file" id="fileupload" name="file_<?=$foto;?>" rel="<?=$foto;?>"/>
 									</span>
 								</div>
 								<? } } ?>

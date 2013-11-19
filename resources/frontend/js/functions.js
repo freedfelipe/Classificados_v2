@@ -40,22 +40,28 @@ $(document).ready(function(){
             },        
             success: function(data) {
                 $('progress').attr('value','100');
-                $('#porcentagem').html('100%');                
+                $('#porcentagem').html('100%');  
                 if(data.sucesso == true){
-                    $('#resposta').html('<img src="'+ data.msg +'" />');
+					$('#resposta').html('Imagem ' + id +' enviada!');
+					$('input[name="file_' + id + '"]').parent().parent().css("background-image", "url('" + url_base + "/resources/upload/anuncios/" + data.thumbnail);
+					$('input[name="file_' + id + '"]').attr('disabled','disabled');
                 }
                 else{
                     $('#resposta').html(data.msg);
-                }                
+                }
+				
+				$('progress').attr('value','0');
+				$('#porcentagem').html('0%');
             },
             error : function(){
                 $('#resposta').html('Erro ao enviar Imagem!!!');
+				$('progress').attr('value','0');
+				$('#porcentagem').html('0%');
             },
             dataType: 'json',
-            url: url_base + '/anuncio/ajax/upload/' + id,
+            url: url_base + '/anuncio/ajax/upload/file_' + id,
             resetForm: true
         }).submit();
-    
 		
     });
 	

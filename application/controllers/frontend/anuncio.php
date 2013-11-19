@@ -129,6 +129,7 @@ class Anuncio extends CI_Controller{
 					
 					$data['sucesso']	= true;
 					$data['msg'] 		= $upload_path.$file_new_name;
+					$data['thumbnail'] 	= $upload_data['raw_name'].'_thumb'.$upload_data['file_ext'];
 				}else{
 					$data['sucesso'] 	= false;
 					$data['msg'] 		= $this->upload->display_errors();
