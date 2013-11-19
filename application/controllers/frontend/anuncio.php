@@ -21,6 +21,7 @@ class Anuncio extends CI_Controller{
 		
 		$this->url = '/anuncios/';
 		
+		$this->output->enable_profiler(TRUE);
 		
 		$this->user_model->is_logged_front();
 	}
@@ -130,6 +131,10 @@ class Anuncio extends CI_Controller{
 					$data['sucesso']	= true;
 					$data['msg'] 		= $upload_path.$file_new_name;
 					$data['thumbnail'] 	= $upload_data['raw_name'].'_thumb'.$upload_data['file_ext'];
+					$data['input']		= $input;
+					
+					$this->anuncio->salva_imagens($data);
+					
 				}else{
 					$data['sucesso'] 	= false;
 					$data['msg'] 		= $this->upload->display_errors();

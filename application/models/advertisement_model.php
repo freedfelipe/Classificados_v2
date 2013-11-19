@@ -111,11 +111,23 @@ class Advertisement_model extends CI_Model{
 		
 		$sessao = array(
 			'user_id' 	=> $this->session->userdata('user_id'),
-			'plan_id'	=> $this->input->post('plano', TRUE)
+			'plan_id'	=> $this->input->post('plano', TRUE),
+			'imagem' 	=> array('')
 		);
 		
 		$this->session->set_userdata('anuncio', $sessao);
 		
 		redirect('anuncio/cadastrar/passo-2');
+	}
+	
+	public final function salva_imagens($imagem)
+	{
+		$sessao 			= $this->session->userdata('anuncio');
+		$dados				= array($imagem['input'] => $imagem);
+		$sessao['imagem']	= array_merge($sessao['imagem'], $dados);
+		
+		$this->session->set_userdata('anuncio', $sessao);
+		
+		return true;
 	}
 }
