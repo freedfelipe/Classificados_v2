@@ -148,6 +148,12 @@ class Anuncio extends CI_Controller{
 				$this->anuncio->verifica_passo2();
 				
 			break;
+			
+			case 'salva-passo-2':
+				
+				$this->anuncio->salva_passo2();
+				
+			break;
 		}
 		
 		

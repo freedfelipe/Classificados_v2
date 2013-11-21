@@ -99,11 +99,7 @@ $(document).ready(function(){
 					alert('erro na validacao');
 					
 				} else {
-					//$.unblockUI();
-					//window.location = base + '/exclusivo/produtos/'
-					
-					alert('ok');
-					
+					window.location = url_base + '/anuncio/ajax/salva-passo-2'
 				}
 			}
 		}

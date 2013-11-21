@@ -182,10 +182,21 @@ class Advertisement_model extends CI_Model{
 				$erro[] = 'Preencha o Telefone';
 			}
 			
-			if(!$this->input->post('telefone1', TRUE)){
-				$erro[] = 'Preencha o Telefone';
+			if(!$this->input->post('cep', TRUE)){
+				$erro[] = 'Preencha o CEP';
 			}
 			
+			if(!$this->input->post('uf', TRUE)){
+				$erro[] = 'Preencha o Estado';
+			}
+			
+			if(!$this->input->post('cidade', TRUE)){
+				$erro[] = 'Preencha a Cidade';
+			}
+			
+			if(!$this->input->post('rua', TRUE)){
+				$erro[] = 'Preencha a Rua';
+			}
 		}
 		
 		$sessao['erro'] = $erro;
@@ -204,6 +215,38 @@ class Advertisement_model extends CI_Model{
 		$sessao 			= $this->session->userdata('anuncio');
 		$dados				= array($imagem['input'] => $imagem);
 		$sessao['imagem']	= array_merge($sessao['imagem'], $dados);
+		
+		$this->session->set_userdata('anuncio', $sessao);
+		
+		return true;
+	}
+	
+	public final function salva_passo2()
+	{
+		$sessao	= $this->session->userdata('anuncio');
+		
+		$insert_passo_2 = array(
+			'user_id' 	=> $sessao['user_id'],
+			'plan_id'	=> $sessao['plano'],
+			'categoria' => $this->input->post('categoria', TRUE),
+			'brand_id' 	=> $this->input->post('brand_id', TRUE),
+			'model_id' 	=> $this->input->post('model_id', TRUE),
+			'ano' 		=> $this->input->post('ano', TRUE),
+			'placa' 	=> $this->input->post('placa', TRUE),
+			'nome' 		=> $this->input->post('nome', TRUE),
+			'descricao' => $this->input->post('descricao', TRUE),
+			'preco' 	=> $this->input->post('preco', TRUE),
+			'email' 	=> $this->input->post('email', TRUE),
+			'email2' 	=> $this->input->post('email2', TRUE),
+			'telefone1'	=> $this->input->post('telefone1', TRUE),
+			'telefone2'	=> $this->input->post('telefone2', TRUE),
+			'cep' 		=> $this->input->post('cep', TRUE),
+			'uf' 		=> $this->input->post('uf', TRUE),
+			'cidade' 	=> $this->input->post('cidade', TRUE),
+			'rua' 		=> $this->input->post('rua', TRUE)
+		);
+		
+		$sessao['dados'] = $insert_passo_2;
 		
 		$this->session->set_userdata('anuncio', $sessao);
 		
