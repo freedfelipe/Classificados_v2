@@ -145,7 +145,7 @@ class Anuncio extends CI_Controller{
 			
 			case 'verifica-passo-2':
 				
-				printr($_POST);
+				$this->anuncio->verifica_passo2();
 				
 			break;
 		}

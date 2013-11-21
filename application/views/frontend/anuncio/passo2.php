@@ -30,7 +30,7 @@
 				Os campos obrigatórios sao indicados por um <font color="#990000">*</font>.
 				Voce terá a oportunidade de rever o seu anúncio antes de ser publicado.
 			</div>
-			<form id="anuncio" name="anuncio" action="<?=site_url('');?>" method="POST">
+			<form class="submit_form" id="anuncio" name="anuncio" action="<?=site_url('anuncio/ajax/verifica-passo-2');?>" method="POST">
 			
 			<div id="linha-planos-2">
 				
@@ -109,7 +109,7 @@
 					<div id="title"><b>Descriçao</b> do Veículo</div>
 					<div id="texto-form">Descriçao</div>
 						<div id="formulario-line">
-							<textarea id="descricao" name="descricao" rows="5" cols="30"></textarea>
+							<textarea class="descricao-veiculo" id="descricao" name="descricao" rows="5" cols="30"></textarea>
 						</div>
 				</div>
 				
@@ -117,7 +117,7 @@
 					<div id="title"><b>Preço</b> do Veículo</div>
 					<div id="texto-form">Preço<font color="#990000">*</font></div>
 					<div id="formulario-line">
-						<input type="text" name="preco" id="preco" class="price">
+						<input type="text" name="preco" id="preco" class="price preco-veiculo">
 					</div>
 					<div id="line-preco">
 						<input type="checkbox" name="preconegociavel" value="1" id="c17">
@@ -168,7 +168,7 @@
 					<div id="form-linha">
 						<div id="texto-form">Nome Peça<font color="#990000">*</font></div>
 						<div id="formulario-line">
-							<input type="text" name="nome" id="placa" value="">
+							<input type="text" name="nome" id="placa" class="nome-acessorio" value="">
 						</div>
 					</div>
 				</div>
@@ -177,7 +177,7 @@
 					<div id="title"><b>Preço</b> da Peça - <b>Acessório</b></div>
 					<div id="texto-form">Preço<font color="#990000">*</font></div>
 					<div id="formulario-line">
-						<input type="text" name="preco" id="preco" class="price">
+						<input type="text" name="preco" id="preco" class="price preco-acessorio">
 					</div>
 					<div id="line-preco">
 							<input type="checkbox" name="preconegociavel" value="preconegociavel" id="c18">
@@ -190,7 +190,7 @@
 					<div id="title"><b>Descrição</b> da Peça - <b>Acessório</b></div>
 					<div id="texto-form">Descrição</div>
 						<div id="formulario-line">
-							<textarea id="descricao" name="descricao" rows="5" cols="30"></textarea>
+							<textarea id="descricao" class="descricao-acessorio" name="descricao" rows="5" cols="30"></textarea>
 						</div>
 				</div>
 				
@@ -237,7 +237,7 @@
 					<div id="form-linha">
 						<div id="texto-form">Nome Peça<font color="#990000">*</font></div>
 						<div id="formulario-line">
-							<input type="text" name="nome" id="placa" value="">
+							<input type="text" name="nome" id="placa" class="nome-mecanica" value="">
 						</div>
 					</div>
 				</div>
@@ -246,7 +246,7 @@
 					<div id="title"><b>Preço</b> da Peça - <b>Mecânica</b></div>
 					<div id="texto-form">Preço<font color="#990000">*</font></div>
 					<div id="formulario-line">
-						<input type="text" name="preco" id="preco" class="price">
+						<input type="text" name="preco" id="preco" class="price preco-mecanica">
 					</div>
 					<div id="line-preco">
 							<input type="checkbox" name="preconegociavel" value="preconegociavel" id="c18">
@@ -259,7 +259,7 @@
 					<div id="title"><b>Descrição</b> da Peça - <b>Mecânica</b></div>
 					<div id="texto-form">Descrição</div>
 					<div id="formulario-line">
-						<textarea id="especificacao-acessorios" name="descricao" rows="5" cols="30"></textarea>
+						<textarea id="descricao" class="descricao-mecanica" name="descricao" rows="5" cols="30"></textarea>
 					</div>
 				</div>
 				
@@ -306,7 +306,7 @@
 					<div id="form-linha">
 						<div id="texto-form">Nome Roda<font color="#990000">*</font></div>
 						<div id="formulario-line">
-							<input type="text" name="nome" id="placa">
+							<input type="text" name="nome" id="placa" class="nome-roda">
 						</div>
 					</div>
 				</div>
@@ -315,7 +315,7 @@
 					<div id="title"><b>Preço</b> da Roda</div>
 					<div id="texto-form">Preço<font color="#990000">*</font></div>
 					<div id="formulario-line">
-						<input type="text" name="preco" id="preco" class="price">
+						<input type="text" name="preco" id="preco" class="price preco-roda">
 					</div>
 					<div id="line-preco">
 						<input type="checkbox" name="preconegociavel" value="preconegociavel" id="c18">
@@ -328,7 +328,7 @@
 					<div id="title"><b>Descrição</b> da Roda</div>
 					<div id="texto-form">Descrição</div>
 					<div id="formulario-line">
-						<textarea id="especificacao-acessorios" name="descricao" rows="5" cols="30"></textarea>
+						<textarea id="descricao" class="descricao-roda" name="descricao" rows="5" cols="30"></textarea>
 					</div>
 				</div>
 				

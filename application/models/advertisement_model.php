@@ -119,6 +119,86 @@ class Advertisement_model extends CI_Model{
 		redirect('anuncio/cadastrar/passo-2');
 	}
 	
+	public final function verifica_passo2()
+	{
+		$sessao	= $this->session->userdata('anuncio');
+		$erro 	= false;
+		
+		if(!$this->input->post('categoria', TRUE)){
+			$erro[] = 'Selecione uma categoria';
+		}
+		
+		if($this->input->post('categoria', TRUE)){
+		
+			switch($this->input->post('categoria')){
+				
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+					
+					if(!$this->input->post('brand_id', TRUE)){
+						$erro[] = 'Selecione uma Marca';
+					}
+					
+					if(!$this->input->post('model_id', TRUE)){
+						$erro[] = 'Selecione um Modelo';
+					}
+					
+					if(!$this->input->post('ano', TRUE)){
+						$erro[] = 'Selecione um Ano';
+					}
+					
+					if(!$this->input->post('placa', TRUE)){
+						$erro[] = 'Preencha a Placa';
+					}
+					
+				break;
+				
+				case 7:
+				case 8:
+				case 9:
+					
+					if(!$this->input->post('nome', TRUE)){
+						$erro[] = 'Preencha o Nome';
+					}
+					
+				break;
+			}
+			
+			if(!$this->input->post('descricao', TRUE)){
+				$erro[] = 'Preencha a Descrição';
+			}
+			
+			if(!$this->input->post('preco', TRUE)){
+				$erro[] = 'Preencha o Preço';
+			}
+			
+			if(!$this->input->post('email', TRUE)){
+				$erro[] = 'Preencha o Email';
+			}
+			
+			if(!$this->input->post('telefone1', TRUE)){
+				$erro[] = 'Preencha o Telefone';
+			}
+			
+			if(!$this->input->post('telefone1', TRUE)){
+				$erro[] = 'Preencha o Telefone';
+			}
+			
+		}
+		
+		$sessao['erro'] = $erro;
+		
+		$this->session->set_userdata('anuncio', $sessao);
+		
+		if($erro){
+			echo json_encode(array('ok'=>'0'));
+		}else{
+			echo json_encode(array('ok'=>'1'));
+		}
+	}
+	
 	public final function salva_imagens($imagem)
 	{
 		$sessao 			= $this->session->userdata('anuncio');

@@ -67,23 +67,53 @@ $(document).ready(function(){
     });
 	
 	$('#proximo').live('click', function(){
+		window.scrollTo(0,0);
+		$('form.submit_form').submit();
+	});
+	
+	
+	$('form.submit_form').submit(function(){
 		
-		$('#anuncio').ajaxForm({
-			dataType: 'post',
-            url: url_base + '/anuncio/ajax/verifica-passo-2',
-            resetForm: false,
-			success: function(data) {
-				
-				console.log(data);
-				
-			},
-            error : function(){
-				
-				alert('Erro ao processar dados');
-				
+		//$.blockUI({ message: '<h1>Salvando informações..</h1>' });
+		
+		var options = {success:processJson,error:returnError,async:true,dataType:'json'};
+		$(this).ajaxSubmit(options);
+		
+		function processJson(data) {
+			if(isNaN(data.ok)) {
+				//$.unblockUI();
+				alert('Erro, tente novamente mais tarde.');
+			} else {
+				if(data.ok == '0') {
+					//$.unblockUI();
+					//$.fancybox.open({
+					//	href 		: base + '/exclusivo/ajax/exclusive-01-error/',
+					//	type 		: 'iframe',
+					//	autoSize 	: false,
+					//	width		: 840,
+					//	padding		: 0,
+					//	margin		: 0,
+					//	scrolling 	: 'no'
+					//});
+					
+					alert('erro na validacao');
+					
+				} else {
+					//$.unblockUI();
+					//window.location = base + '/exclusivo/produtos/'
+					
+					alert('ok');
+					
+				}
 			}
-		});
+		}
 		
+		function returnError() {
+			//$.unblockUI();
+			alert('returnError');
+		}
+		
+		return false;
 	});
 	
 });
