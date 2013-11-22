@@ -45,6 +45,26 @@ class User_model extends CI_Model{
 		return false;
 	}
 	
+	public final function create_fb($fb_user_data)
+	{
+		$data = array(
+			'idHash' => getHash(),
+			'group_id' 			=> 2,
+			'name' 				=> $fb_user_data['name'],
+			'email' 			=> $fb_user_data['email'],
+			'fb_id' 			=> $fb_user_data['id'],
+			'fb_access_token'	=> $fb_user_data['novo_token'],
+			'created_in' 		=> date('Y-m-d H:i:s'),
+			'status_id'			=> 1
+		);
+		
+		if($this->db->insert($this->tablename, $data)){
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public final function update($id, $idHash)
 	{
 		$data = array(

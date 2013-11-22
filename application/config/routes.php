@@ -141,7 +141,8 @@ $route['sair']                                                      = 'frontend/
 $route['recuperar']                                                 = 'frontend/login/recuperar';
 $route['gerar-senha/(:any)/(:any)']                                 = 'frontend/login/gerar_senha/$1/$2';
 
+# login e registro com o fb
+$route['login/facebook']                                            = 'frontend/login/fb_connect';
 
 # tela de registro
 $route['registrar']                                                 = 'frontend/registrar/index';
-$route['registrar/facebook']                                        = 'frontend/registrar/facebook';

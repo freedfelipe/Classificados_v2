@@ -112,4 +112,78 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '260391987448237',
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			xfbml      : true  // parse XFBML
+		});
+		
+		FB.getLoginStatus(function(response) {
+			
+			console.log(response);
+			
+			if (response.status === 'connected') {
+				var uid = response.authResponse.userID;
+				var accessToken = response.authResponse.accessToken;
+				
+				FB.api('/me', function(response) {
+				  if(response.name.length > 0){
+					
+					// logar o usuário...
+					
+					console.log(accessToken);
+				  }else{
+					alert("Verificado e nao logado");
+				  }
+				  
+				});
+			}
+		});
+	};
+	
+	// Load the SDK Asynchronously
+    (function(d){
+		var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement('script'); js.id = id; js.async = true;
+		js.src = "//connect.facebook.net/pt_BR/all.js";
+		ref.parentNode.insertBefore(js, ref);
+    }(document));
+	
+	$('#btn-facebook').on('click', function(){
+		FB.login(function(response) {
+			if (response.authResponse) {
+				
+				$.ajax({
+					url: url_base + '/login/facebook',
+					global: false,
+					cache: false,
+					type: "POST",
+					data: ({'id':response.authResponse.userID, 'token':response.authResponse.accessToken}),
+					dataType: "json",
+					async:false,
+					success: function(data){
+						
+						alert('uhu');
+						
+					},
+					error: function() {
+						alert('Erro do servidor');
+					}
+				});
+				
+				return false;
+				
+			} else {
+			  alert("Nao autorizou");
+			}
+		},{scope: 'email'});
+		
+		return false;
+	});
+	
+	
 });
+

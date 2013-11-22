@@ -15,6 +15,7 @@ class Login extends CI_Controller{
 		parent::__construct();
 		
 		$this->load->model('user_model', 'user');
+		$this->load->model('fb_connect_model', 'fb');
 		
 		$this->url = '/entrar/';
 		
@@ -189,5 +190,39 @@ class Login extends CI_Controller{
 		}
 		
 		$this->render($this->router->method, @$data);
+	}
+	
+	public final function fb_connect()
+	{
+		$fb_user_data = $this->fb->user_info($this->input->post('token', true)); 
+		
+		if($fb_user_data){
+			
+			//printr($fb_user_data);
+			
+			# verifica se esta cadastrado no sistema
+			if($this->user->by(array('email' => $fb_user_data['email']))){
+				
+				# verifica se os campos de fb_id e token tem valores, se não tiver atualiza esses valores e vincula as contas
+				
+				
+				# cadastrado --- faz o login
+				
+				die('rotina de login');
+				
+			}else{
+				# cadastra o user
+				
+				
+			}
+			
+			
+			# se o cara se o cara ta cadastrado, valida se o acess token é valido
+			// validar com o graf
+			
+		}
+		
+		
+		
 	}
 }
