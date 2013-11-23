@@ -86,18 +86,15 @@ $(document).ready(function(){
 			} else {
 				if(data.ok == '0') {
 					//$.unblockUI();
-					//$.fancybox.open({
-					//	href 		: base + '/exclusivo/ajax/exclusive-01-error/',
-					//	type 		: 'iframe',
-					//	autoSize 	: false,
-					//	width		: 840,
-					//	padding		: 0,
-					//	margin		: 0,
-					//	scrolling 	: 'no'
-					//});
-					
-					alert('erro na validacao');
-					
+					$.fancybox.open({
+						href 		: url_base + '/anuncio/ajax/erro-passo-2',
+						type 		: 'iframe',
+						autoSize 	: false,
+						width		: 840,
+						padding		: 0,
+						margin		: 0,
+						scrolling 	: 'no'
+					});
 				} else {
 					window.location = url_base + '/anuncio/ajax/salva-passo-2'
 				}

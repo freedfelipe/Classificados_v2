@@ -144,21 +144,23 @@ class Anuncio extends CI_Controller{
 			break;
 			
 			case 'verifica-passo-2':
-				
 				$this->anuncio->verifica_passo2();
-				
 			break;
 			
 			case 'salva-passo-2':
-				
 				$this->anuncio->salva_passo2();
-				
+			break;
+			
+			case 'erro-passo-2':
+				$session 		= $this->session->userdata('anuncio');
+				$data['erro'] 	= $session['erro'];
+				$this->alert($data);
 			break;
 		}
-		
-		
-		
-		//die('lol');
-		
+	}
+	
+	private final function alert($data = array())
+	{
+		$this->load->view('frontend/common/fancy_alert', $data);
 	}
 }

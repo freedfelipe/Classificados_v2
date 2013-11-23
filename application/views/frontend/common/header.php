@@ -38,23 +38,17 @@
 	<!-- Banner -->
 	<link rel="stylesheet" type="text/css" href="<?=site_url('resources/frontend/css/destaque.css');?>">
 	
-	<script src="<?=site_url('resources/backend/js/jquery.min.js');?>"></script>
-	
+	<script type="text/javascript" src="<?=site_url('resources/backend/js/jquery.min.js');?>"></script>
 	<!-- Masked Input -->
-	<script src="<?=site_url('resources/backend/js/masked.input.js');?>"></script>
-	
+	<script type="text/javascript" src="<?=site_url('resources/backend/js/masked.input.js');?>"></script>
 	<!-- Numeric Input -->
-	<script src="<?=site_url('resources/backend/js/jquery.numeric.js');?>"></script>
-	
+	<script type="text/javascript" src="<?=site_url('resources/backend/js/jquery.numeric.js');?>"></script>
 	<!-- Price Format Input -->
-	<script src="<?=site_url('resources/backend/js/jquery.price_format.min.js');?>"></script>
-	
+	<script type="text/javascript" src="<?=site_url('resources/backend/js/jquery.price_format.min.js');?>"></script>
 	<script type="text/javascript" src="<?=site_url('resources/frontend/js/jquery.form.js');?>"></script>
-	
+	<script type="text/javascript" src="<?=site_url('resources/frontend/js/jquery.fancybox.js');?>"></script>
 	<script type="text/javascript" src="<?=site_url('resources/frontend/js/functions.js');?>"></script>
-	
 	<script type="text/javascript" src="<?=site_url('resources/frontend/js/script.js');?>"></script>
-	
 </head>
 <body>
 	<header>

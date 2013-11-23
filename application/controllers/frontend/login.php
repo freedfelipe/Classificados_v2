@@ -231,10 +231,6 @@ class Login extends CI_Controller{
 				echo json_encode(array('retorno' => 'erro-login'));
 				die();
 			}
-			
-			
-			# se o cara se o cara ta cadastrado, valida se o acess token é valido
-			// validar com o graf
 		}
 		
 		echo json_encode(array('retorno' => 'erro'));
