@@ -200,18 +200,22 @@ class Login extends CI_Controller{
 		
 		if($fb_user_data){
 			
-			//printr($fb_user_data);
-			
 			# verifica se esta cadastrado no sistema
 			if($sys_user_data = $this->user->by(array('email' => $fb_user_data['email']))){
 				
-				# verifica se os campos de fb_id e token tem valores, se não tiver atualiza esses valores e vincula as contas
-				printr($sys_user_data);
+				# verificar esse daki, quando o user já ta cadastrado no sistema com email e depois entra com o fb
+				//if(empty($sys_user_data['fb_id']) and empty($sys_user_data['fb_access_token'])){
+				//	
+				//	
+				//	
+				//}
 				
-				# cadastrado --- faz o login
-				
-				die('rotina de login');
-				
+				if($this->fb->valida_token($sys_user_data, $fb_user_data)){
+					if($this->user->login_front($fb_user_data)){
+						echo json_encode(array('retorno' => 'ok'));
+						die();
+					}
+				}
 			}else{
 				# cadastra o user
 				

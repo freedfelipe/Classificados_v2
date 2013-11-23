@@ -45,4 +45,19 @@ class Fb_connect_model extends CI_Model{
 		$params = array('next' => site_url());
 		$this->fb->getLogoutUrl($params);
 	}
+	
+	public final function valida_token($sys_data = false, $fb_data = false)
+	{
+		if($sys_data and $fb_data){
+			
+			if($data = $this->user_info($fb_data['novo_token'])){
+				
+				if($sys_data['fb_id'] == $data['id'] and $sys_data['email'] == $data['email']){
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
 }

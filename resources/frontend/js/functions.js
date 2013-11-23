@@ -120,27 +120,6 @@ $(document).ready(function(){
 			xfbml      : true  // parse XFBML
 		});
 		
-		FB.getLoginStatus(function(response) {
-			
-			console.log(response);
-			
-			if (response.status === 'connected') {
-				var uid = response.authResponse.userID;
-				var accessToken = response.authResponse.accessToken;
-				
-				FB.api('/me', function(response) {
-				  if(response.name.length > 0){
-					
-					// logar o usuário...
-					
-					console.log(accessToken);
-				  }else{
-					alert("Verificado e nao logado");
-				  }
-				  
-				});
-			}
-		});
 	};
 	
 	// Load the SDK Asynchronously
@@ -166,30 +145,19 @@ $(document).ready(function(){
 					async:false,
 					success: function(data){
 						
-						console.log(data);
-						
-						//if (data.re == 1) {
-						//	//code
-						//}
-						
-						//switch (data.retorno) {
-						//	//case
-						//	
-						//	case 'ok':
-						//		window.location = url_base;
-						//	break;
-						//	
-						//	case 'erro-login':
-						//		alert('Login não encontrado');
-						//	break;
-						//	
-						//	case 'erro':
-						//		alert('Não foi possivel Logar com o Facebook');
-						//	break;
-						//}
-						//
-						//alert('uhu');
-						
+						switch (data.retorno) {
+							case 'ok':
+								window.location = url_base;
+							break;
+							
+							case 'erro-login':
+								alert('Login não encontrado');
+							break;
+							
+							case 'erro':
+								alert('Não foi possivel Logar com o Facebook');
+							break;
+						}
 					},
 					error: function() {
 						alert('Erro do servidor');
@@ -199,7 +167,7 @@ $(document).ready(function(){
 				return false;
 				
 			} else {
-			  alert("Nao autorizou");
+				alert("Nao autorizou");
 			}
 		},{scope: 'email'});
 		
