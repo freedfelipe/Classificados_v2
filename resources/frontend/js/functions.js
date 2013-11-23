@@ -166,7 +166,29 @@ $(document).ready(function(){
 					async:false,
 					success: function(data){
 						
-						alert('uhu');
+						console.log(data);
+						
+						//if (data.re == 1) {
+						//	//code
+						//}
+						
+						//switch (data.retorno) {
+						//	//case
+						//	
+						//	case 'ok':
+						//		window.location = url_base;
+						//	break;
+						//	
+						//	case 'erro-login':
+						//		alert('Login não encontrado');
+						//	break;
+						//	
+						//	case 'erro':
+						//		alert('Não foi possivel Logar com o Facebook');
+						//	break;
+						//}
+						//
+						//alert('uhu');
 						
 					},
 					error: function() {

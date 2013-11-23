@@ -201,10 +201,10 @@ class Login extends CI_Controller{
 			//printr($fb_user_data);
 			
 			# verifica se esta cadastrado no sistema
-			if($this->user->by(array('email' => $fb_user_data['email']))){
+			if($sys_user_data = $this->user->by(array('email' => $fb_user_data['email']))){
 				
 				# verifica se os campos de fb_id e token tem valores, se não tiver atualiza esses valores e vincula as contas
-				
+				printr($sys_user_data);
 				
 				# cadastrado --- faz o login
 				
@@ -213,16 +213,26 @@ class Login extends CI_Controller{
 			}else{
 				# cadastra o user
 				
+				//var_dump($this->user->create_fb($fb_user_data));
 				
+				if($this->user->create_fb($fb_user_data)){
+					if($this->user->login_front($fb_user_data)){
+						echo json_encode(array('retorno' => 'ok'));
+						die();
+					}
+				}
+				
+				echo json_encode(array('retorno' => 'erro-login'));
+				die();
 			}
 			
 			
 			# se o cara se o cara ta cadastrado, valida se o acess token é valido
 			// validar com o graf
-			
 		}
 		
-		
+		echo json_encode(array('retorno' => 'erro'));
+		die();
 		
 	}
 }
