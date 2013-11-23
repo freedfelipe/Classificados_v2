@@ -55,4 +55,11 @@ class Home extends CI_Controller{
 		
 		$this->render($this->router->method, $data);
 	}
+	
+	public final function publicidade()
+	{
+		$data['url_title']	= 'Publicidade';
+		
+		$this->render($this->router->method, $data);
+	}
 }

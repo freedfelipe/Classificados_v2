@@ -55,7 +55,12 @@
 		<div id="margin">
 			<div id="logo"><a href="<?=site_url();?>"><img src="<?=site_url('resources/frontend/images/logo.png');?>" width="100%" /></a></div>
 			<div id="menu_topo">
-				<a href="<?=site_url();?>">HOME</a>  |  <a href="<?=site_url('quem-somos');?>">QUEM SOMOS</a>  | <a href="#">PUBLICIDADE</a>  |  <a href="<?=site_url('planos');?>">PLANOS</a>  |  <a href="<?=site_url('parceiros');?>">PARCEIROS</a>  |  <a href="<?=site_url('contato');?>">CONTATO</a>
+				<a href="<?=site_url();?>">HOME</a>  |
+				<a href="<?=site_url('quem-somos');?>">QUEM SOMOS</a>  |
+				<a href="<?=site_url('publicidade');?>">PUBLICIDADE</a>  |
+				<a href="<?=site_url('planos');?>">PLANOS</a>  |
+				<a href="<?=site_url('parceiros');?>">PARCEIROS</a>  |
+				<a href="<?=site_url('contato');?>">CONTATO</a>
 			</div>
 			<div class="login">
 				<? if($this->session->userdata('logado_front') == false){ ?>

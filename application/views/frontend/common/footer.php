@@ -14,10 +14,10 @@
 				<b>Informações</b>
 			</div>
 			<div id="colunas">
-				<div id="links"><a href="#">Planos</a></div> 
-				<div id="links"><a href="#">Publicidade</a></div> 
-				<div id="links"><a href="#">Parceiros</a></div> 
-				<div id="links"><a href="#">Quem Somos</a></div> 
+				<div id="links"><a href="<?=site_url('planos');?>">Planos</a></div> 
+				<div id="links"><a href="<?=site_url('publicidade');?>">Publicidade</a></div> 
+				<div id="links"><a href="<?=site_url('parceiros');?>">Parceiros</a></div> 
+				<div id="links"><a href="<?=site_url('quem-somos');?>">Quem Somos</a></div> 
 			</div>
 			<div id="colunas">
 				<div id="links"><a href="#">Sugestão</a></div> 

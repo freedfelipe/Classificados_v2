@@ -149,3 +149,6 @@ $route['registrar']                                                 = 'frontend/
 
 # quem somos
 $route['quem-somos']                                                = 'frontend/home/quem_somos';
+
+# publicidade
+$route['publicidade']                                               = 'frontend/home/publicidade';
