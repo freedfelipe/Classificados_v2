@@ -146,3 +146,6 @@ $route['login/facebook']                                            = 'frontend/
 
 # tela de registro
 $route['registrar']                                                 = 'frontend/registrar/index';
+
+# quem somos
+$route['quem-somos']                                                = 'frontend/home/quem_somos';

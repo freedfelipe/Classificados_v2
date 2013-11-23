@@ -48,4 +48,11 @@ class Home extends CI_Controller{
 		
 		$this->render($this->router->method, $data);
 	}
+	
+	public final function quem_somos()
+	{
+		$data['url_title']	= 'Quem Somos';
+		
+		$this->render($this->router->method, $data);
+	}
 }
