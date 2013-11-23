@@ -39,4 +39,10 @@ class Fb_connect_model extends CI_Model{
 		
 		return $user_profile;
     }
+	
+	public final function fb_logout()
+	{
+		$params = array('next' => site_url());
+		$this->fb->getLogoutUrl($params);
+	}
 }

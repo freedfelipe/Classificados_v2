@@ -116,6 +116,8 @@ class Login extends CI_Controller{
 		$this->session->unset_userdata('logado_front');
 		$this->session->sess_destroy();
 		
+		$this->fb->fb_logout();
+		
 		redirect('/');
 	}
 	
