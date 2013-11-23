@@ -1,8 +1,8 @@
 <!-- Divisao -->
 <div id="faixa-banner" class="clearfix">
 	<div id="margin">
-		<div class="title-anuncio">ADICIONAR NOVO ANÚNCIO</div>
-		<div class="navegacao"><a href="<?=site_url('/');?>">Home</a> >> <a href="<?=site_url('anuncio/cadastrar');?>">Novo Anúncio</a> >> Passo 1</div>
+		<div class="title-anuncio">ADICIONAR NOVO ANÚNCIO >> Passo 1</div>
+		<div class="navegacao"><a href="<?=site_url('home');?>">Home</a> >> <a href="<?=site_url('anuncio/cadastrar');?>">Novo Anúncio</a> >> Passo 1</div>
 		
 		<div class="aba-hover">1o Passo</div>
 		<div class="aba-simple">2o Passo</div>
@@ -36,7 +36,7 @@
 					<div id="icone"><img src="<?=site_url('resources/frontend/images/'.$plano['icone']);?>" border="0" /></div>
 					<div id="informacoes">
 						<div id="text-preco">
-							R$ <?=money($plano['price']);?>
+							<? if($plano['price'] == '0.00'){ echo 'Grátis'; }else{ echo 'R$ '.money($plano['price']); } ?>
 						</div>
 						<div id="detalhes-line-ativo">Dias - <?=$plano['period'];?></div>
 						<div id="detalhes-line-ativo">Imagens - <?=$plano['num_pics'];?></div>

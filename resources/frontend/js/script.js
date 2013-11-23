@@ -13,6 +13,22 @@ $(document).ready(function(){
 		$(".borda-escolheu #acessorios").css("display", "none");
 		$(".borda-escolheu #mecanica").css("display", "none");
 		$(".borda-escolheu #rodas").css("display", "none");
+		
+		$('.preco-veiculo').prop('disabled', false);
+		$('.descricao-veiculo').prop('disabled', false);
+		
+		$('.nome-acessorio').prop('disabled', true);
+		$('.preco-acessorio').prop('disabled', true);
+		$('.descricao-acessorio').prop('disabled', true);
+		
+		$('.nome-mecanica').prop('disabled', true);
+		$('.preco-mecanica').prop('disabled', true);
+		$('.descricao-mecanica').prop('disabled', true);
+		
+		$('.nome-roda').prop('disabled', true);
+		$('.preco-roda').prop('disabled', true);
+		$('.descricao-roda').prop('disabled', true);
+		
 	});
 	$("#r2").click(function(){
 		$("#anuncio_diverso").css("display", "block");
@@ -27,6 +43,22 @@ $(document).ready(function(){
 		$(".borda-escolheu #acessorios").css("display", "none");
 		$(".borda-escolheu #mecanica").css("display", "none");
 		$(".borda-escolheu #rodas").css("display", "none");
+		
+		$('.preco-veiculo').prop('disabled', false);
+		$('.descricao-veiculo').prop('disabled', false);
+		
+		$('.nome-acessorio').prop('disabled', true);
+		$('.preco-acessorio').prop('disabled', true);
+		$('.descricao-acessorio').prop('disabled', true);
+		
+		$('.nome-mecanica').prop('disabled', true);
+		$('.preco-mecanica').prop('disabled', true);
+		$('.descricao-mecanica').prop('disabled', true);
+		
+		$('.nome-roda').prop('disabled', true);
+		$('.preco-roda').prop('disabled', true);
+		$('.descricao-roda').prop('disabled', true);
+		
 	});
 	$("#r3").click(function(){
 		$("#anuncio_diverso").css("display", "block");
@@ -41,6 +73,21 @@ $(document).ready(function(){
 		$(".borda-escolheu #acessorios").css("display", "none");
 		$(".borda-escolheu #mecanica").css("display", "none");
 		$(".borda-escolheu #rodas").css("display", "none");
+		
+		$('.preco-veiculo').prop('disabled', false);
+		$('.descricao-veiculo').prop('disabled', false);
+		
+		$('.nome-acessorio').prop('disabled', true);
+		$('.preco-acessorio').prop('disabled', true);
+		$('.descricao-acessorio').prop('disabled', true);
+		
+		$('.nome-mecanica').prop('disabled', true);
+		$('.preco-mecanica').prop('disabled', true);
+		$('.descricao-mecanica').prop('disabled', true);
+		
+		$('.nome-roda').prop('disabled', true);
+		$('.preco-roda').prop('disabled', true);
+		$('.descricao-roda').prop('disabled', true);
 	});
 	$("#r4").click(function(){
 		$("#anuncio_diverso").css("display", "block");
@@ -55,6 +102,21 @@ $(document).ready(function(){
 		$(".borda-escolheu #acessorios").css("display", "none");
 		$(".borda-escolheu #mecanica").css("display", "none");
 		$(".borda-escolheu #rodas").css("display", "none");
+		
+		$('.preco-veiculo').prop('disabled', false);
+		$('.descricao-veiculo').prop('disabled', false);
+		
+		$('.nome-acessorio').prop('disabled', true);
+		$('.preco-acessorio').prop('disabled', true);
+		$('.descricao-acessorio').prop('disabled', true);
+		
+		$('.nome-mecanica').prop('disabled', true);
+		$('.preco-mecanica').prop('disabled', true);
+		$('.descricao-mecanica').prop('disabled', true);
+		
+		$('.nome-roda').prop('disabled', true);
+		$('.preco-roda').prop('disabled', true);
+		$('.descricao-roda').prop('disabled', true);
 	});
 	$("#r5").click(function(){
 		$("#anuncio_diverso").css("display", "block");
@@ -69,6 +131,21 @@ $(document).ready(function(){
 		$(".borda-escolheu #acessorios").css("display", "block");
 		$(".borda-escolheu #mecanica").css("display", "none");
 		$(".borda-escolheu #rodas").css("display", "none");
+		
+		$('.preco-veiculo').prop('disabled', true);
+		$('.descricao-veiculo').prop('disabled', true);
+		
+		$('.nome-acessorio').prop('disabled', false);
+		$('.preco-acessorio').prop('disabled', false);
+		$('.descricao-acessorio').prop('disabled', false);
+		
+		$('.nome-mecanica').prop('disabled', true);
+		$('.preco-mecanica').prop('disabled', true);
+		$('.descricao-mecanica').prop('disabled', true);
+		
+		$('.nome-roda').prop('disabled', true);
+		$('.preco-roda').prop('disabled', true);
+		$('.descricao-roda').prop('disabled', true);
 	});
 	$("#r6").click(function(){
 		$("#anuncio_diverso").css("display", "block");
@@ -83,6 +160,21 @@ $(document).ready(function(){
 		$(".borda-escolheu #acessorios").css("display", "none");
 		$(".borda-escolheu #mecanica").css("display", "block");
 		$(".borda-escolheu #rodas").css("display", "none");
+		
+		$('.preco-veiculo').prop('disabled', true);
+		$('.descricao-veiculo').prop('disabled', true);
+		
+		$('.nome-acessorio').prop('disabled', true);
+		$('.preco-acessorio').prop('disabled', true);
+		$('.descricao-acessorio').prop('disabled', true);
+		
+		$('.nome-mecanica').prop('disabled', false);
+		$('.preco-mecanica').prop('disabled', false);
+		$('.descricao-mecanica').prop('disabled', false);
+		
+		$('.nome-roda').prop('disabled', true);
+		$('.preco-roda').prop('disabled', true);
+		$('.descricao-roda').prop('disabled', true);
 	});
 	$("#r7").click(function(){
 		$("#anuncio_diverso").css("display", "block");
@@ -97,6 +189,21 @@ $(document).ready(function(){
 		$(".borda-escolheu #acessorios").css("display", "none");
 		$(".borda-escolheu #mecanica").css("display", "none");
 		$(".borda-escolheu #rodas").css("display", "block");
+		
+		$('.preco-veiculo').prop('disabled', true);
+		$('.descricao-veiculo').prop('disabled', true);
+		
+		$('.nome-acessorio').prop('disabled', true);
+		$('.preco-acessorio').prop('disabled', true);
+		$('.descricao-acessorio').prop('disabled', true);
+		
+		$('.nome-mecanica').prop('disabled', true);
+		$('.preco-mecanica').prop('disabled', true);
+		$('.descricao-mecanica').prop('disabled', true);
+		
+		$('.nome-roda').prop('disabled', false);
+		$('.preco-roda').prop('disabled', false);
+		$('.descricao-roda').prop('disabled', false);
 	});
 });
 

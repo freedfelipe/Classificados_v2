@@ -45,6 +45,26 @@ class User_model extends CI_Model{
 		return false;
 	}
 	
+	public final function create_fb($fb_user_data)
+	{
+		$data = array(
+			'idHash' 			=> getHash(),
+			'group_id' 			=> 2,
+			'name' 				=> $fb_user_data['name'],
+			'email' 			=> $fb_user_data['email'],
+			'fb_id' 			=> $fb_user_data['id'],
+			'fb_access_token'	=> $fb_user_data['novo_token'],
+			'created_in' 		=> date('Y-m-d H:i:s'),
+			'status_id'			=> 1
+		);
+		
+		if($this->db->insert($this->tablename, $data)){
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public final function update($id, $idHash)
 	{
 		$data = array(
@@ -155,19 +175,29 @@ class User_model extends CI_Model{
 		return false;
 	}
 	
-	public final function login_front()
+	public final function login_front($fb = false)
 	{
 		$this->db->select('*');
 		$this->db->from($this->tablename);
-		$this->db->where(array(
-			'email'			=> $this->input->post('email', TRUE),
-			'password'		=> md5($this->input->post('password', TRUE)),
-			'status_id'		=> 1
-		));
+		
+		if($fb){
+			$this->db->where(array(
+				'email'			=> $fb['email'],
+				'fb_id'			=> $fb['id'],
+				'status_id'		=> 1
+			));
+		}else{
+			$this->db->where(array(
+				'email'			=> $this->input->post('email', TRUE),
+				'password'		=> md5($this->input->post('password', TRUE)),
+				'status_id'		=> 1
+			));
+		}
 		
 		$query = $this->db->get();
 		
 		if($query->num_rows() > 0){
+			
 			$user_data = $query->row_array();
 			
 			$this->session->set_userdata('logado_front', true);

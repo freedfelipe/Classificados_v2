@@ -15,6 +15,7 @@ class Login extends CI_Controller{
 		parent::__construct();
 		
 		$this->load->model('user_model', 'user');
+		$this->load->model('fb_connect_model', 'fb');
 		
 		$this->url = '/entrar/';
 		
@@ -115,6 +116,8 @@ class Login extends CI_Controller{
 		$this->session->unset_userdata('logado_front');
 		$this->session->sess_destroy();
 		
+		$this->fb->fb_logout();
+		
 		redirect('/');
 	}
 	
@@ -189,5 +192,49 @@ class Login extends CI_Controller{
 		}
 		
 		$this->render($this->router->method, @$data);
+	}
+	
+	public final function fb_connect()
+	{
+		$fb_user_data = $this->fb->user_info($this->input->post('token', true)); 
+		
+		if($fb_user_data){
+			
+			# verifica se esta cadastrado no sistema
+			if($sys_user_data = $this->user->by(array('email' => $fb_user_data['email']))){
+				
+				# verificar esse daki, quando o user já ta cadastrado no sistema com email e depois entra com o fb
+				//if(empty($sys_user_data['fb_id']) and empty($sys_user_data['fb_access_token'])){
+				//	
+				//	
+				//	
+				//}
+				
+				if($this->fb->valida_token($sys_user_data, $fb_user_data)){
+					if($this->user->login_front($fb_user_data)){
+						echo json_encode(array('retorno' => 'ok'));
+						die();
+					}
+				}
+			}else{
+				# cadastra o user
+				
+				//var_dump($this->user->create_fb($fb_user_data));
+				
+				if($this->user->create_fb($fb_user_data)){
+					if($this->user->login_front($fb_user_data)){
+						echo json_encode(array('retorno' => 'ok'));
+						die();
+					}
+				}
+				
+				echo json_encode(array('retorno' => 'erro-login'));
+				die();
+			}
+		}
+		
+		echo json_encode(array('retorno' => 'erro'));
+		die();
+		
 	}
 }

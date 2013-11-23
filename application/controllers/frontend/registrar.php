@@ -85,12 +85,4 @@ class Registrar extends CI_Controller{
 		
 		$this->render($this->router->method, @$data);
 	}
-	
-	public final function facebook()
-	{
-		
-		printr($_POST);
-		
-		
-	}
 }

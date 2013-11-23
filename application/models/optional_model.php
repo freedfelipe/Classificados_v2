@@ -45,7 +45,7 @@ class Optional_model extends CI_Model{
 	public final function update($id = '', $idHash = '', $data = array())
 	{
 		$data['name'] 			= $this->input->post('name', TRUE);
-		$data['updated_in']		= date('Y-m-d H:i:s');
+		$data['update_in']		= date('Y-m-d H:i:s');
 		$data['status_id'] 		= $this->input->post('status_id', TRUE);
 		
 		$this->db->where(array('id' => $id, 'idHash' => $idHash));

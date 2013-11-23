@@ -27,8 +27,9 @@
 					</div>
 					<div id="line-box-line">
 						<div id="line-face">
-							<a href="#"><div id="btn-facebook"></div></a>
+							<a href="javascript:"><div id="btn-facebook"></div></a>
 						</div>
+						<div id="fb-root"></div>
 					</div>
 					<div id="line-box-line">
 						<div id="btn-login">
