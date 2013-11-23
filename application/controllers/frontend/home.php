@@ -14,6 +14,8 @@ class Home extends CI_Controller{
 	{
 		parent::__construct();
 		$this->url = '/home/';
+		
+		$this->load->model('plan_model', 'plan');
 	}
 	
 	private final function log($method)
@@ -59,6 +61,14 @@ class Home extends CI_Controller{
 	public final function publicidade()
 	{
 		$data['url_title']	= 'Publicidade';
+		
+		$this->render($this->router->method, $data);
+	}
+	
+	public final function planos()
+	{
+		$data['url_title']	= 'Planos';
+		$data['planos']		= $this->plan->all(array('status_id' => 1));
 		
 		$this->render($this->router->method, $data);
 	}

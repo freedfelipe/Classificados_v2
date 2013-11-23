@@ -1,7 +1,7 @@
 <div id="faixa-banner" class="clearfix">
 	<div id="margin">
 		<div class="title-anuncio">Quem Somos</div>
-		<div class="navegacao"><a href="<?=site_url();?>">Home</a> >> Quem Somos</div>
+		<div class="navegacao"><a href="<?=site_url('home');?>">Home</a> >> Quem Somos</div>
 	</div>
 </div>
 

@@ -152,3 +152,6 @@ $route['quem-somos']                                                = 'frontend/
 
 # publicidade
 $route['publicidade']                                               = 'frontend/home/publicidade';
+
+# planos
+$route['planos']                                                    = 'frontend/home/planos';
