@@ -30,7 +30,7 @@
 				Os campos obrigatórios sao indicados por um <font color="#990000">*</font>.
 				Voce terá a oportunidade de rever o seu anúncio antes de ser publicado.
 			</div>
-			<form class="submit_form" id="anuncio" name="anuncio" action="<?=site_url('anuncio/ajax/verifica-passo-2');?>" method="POST">
+			<form class="submit_form_2" id="anuncio" name="anuncio" action="<?=site_url('anuncio/ajax/salva-passo-2');?>" method="POST">
 			
 			<div id="linha-planos-2">
 				
@@ -444,7 +444,7 @@
 				</div>
 				
 				<div id="line-btns">
-					<input type="submit" name="proximo" id="proximo" value="Proximo >>">
+					<input type="submit" name="proximo" id="proximo" class="proximo2" value="Proximo >>">
 					<input type="submit" name="anterior" id="anterior" value="<< Anterior">
 					
 				</div>

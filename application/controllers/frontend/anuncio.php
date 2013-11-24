@@ -52,20 +52,6 @@ class Anuncio extends CI_Controller{
 		$data['url_title']	= 'Passo 1';
 		$data['planos']		= $this->plan->all(array('status_id' => 1));
 		
-		if($_POST){
-			
-			$retorno = $this->anuncio->verifica_passo1();
-			
-			if($retorno){
-				$text = '';
-				foreach($retorno as $k => $error){				
-					$text .= '<p class="text-white">'.$error.'</p>';
-				}
-				
-				$data['alert']['error'] = $text;
-			}
-		}
-		
 		$this->render($this->router->method, $data);
 	}
 	
@@ -143,6 +129,10 @@ class Anuncio extends CI_Controller{
 				echo json_encode($data);
 			break;
 			
+			case 'salva-passo-1':
+				$this->anuncio->verifica_passo1();
+			break;
+			
 			case 'verifica-passo-2':
 				$this->anuncio->verifica_passo2();
 			break;
@@ -151,7 +141,7 @@ class Anuncio extends CI_Controller{
 				$this->anuncio->salva_passo2();
 			break;
 			
-			case 'erro-passo-2':
+			case 'erro':
 				$session 		= $this->session->userdata('anuncio');
 				$data['erro'] 	= $session['erro'];
 				$this->alert($data);

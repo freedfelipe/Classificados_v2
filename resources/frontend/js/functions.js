@@ -66,28 +66,28 @@ $(document).ready(function(){
 		
     });
 	
-	$('#proximo').live('click', function(){
+	$('.proximo1').on('click', function(e){
+		e.preventDefault();
 		window.scrollTo(0,0);
-		$('form.submit_form').submit();
+		$('form.submit_form_1').submit();
 	});
 	
-	
-	$('form.submit_form').submit(function(){
+	$('form.submit_form_1').submit(function(){
 		
-		//$.blockUI({ message: '<h1>Salvando informações..</h1>' });
+		$.blockUI({ message: '<h1>Salvando informações..</h1>' });
 		
 		var options = {success:processJson,error:returnError,async:true,dataType:'json'};
 		$(this).ajaxSubmit(options);
 		
 		function processJson(data) {
 			if(isNaN(data.ok)) {
-				//$.unblockUI();
+				$.unblockUI();
 				alert('Erro, tente novamente mais tarde.');
 			} else {
 				if(data.ok == '0') {
-					//$.unblockUI();
+					$.unblockUI();
 					$.fancybox.open({
-						href 		: url_base + '/anuncio/ajax/erro-passo-2',
+						href 		: url_base + '/anuncio/ajax/erro',
 						type 		: 'iframe',
 						autoSize 	: false,
 						width		: 840,
@@ -96,18 +96,65 @@ $(document).ready(function(){
 						scrolling 	: 'no'
 					});
 				} else {
-					window.location = url_base + '/anuncio/ajax/salva-passo-2'
+					$.unblockUI();
+					window.location = url_base + '/anuncio/cadastrar/passo-2'
 				}
 			}
 		}
 		
 		function returnError() {
-			//$.unblockUI();
+			$.unblockUI();
 			alert('returnError');
 		}
 		
 		return false;
 	});
+	
+	
+	$('.proximo2').on('click', function(e){
+		e.preventDefault();
+		window.scrollTo(0,0);
+		$('form.submit_form_2').submit();
+	});
+	
+	$('form.submit_form_2').submit(function(){
+		
+		$.blockUI({ message: '<h1>Salvando informações..</h1>' });
+		
+		var options = {success:processJson,error:returnError,async:true,dataType:'json'};
+		$(this).ajaxSubmit(options);
+		
+		function processJson(data) {
+			if(isNaN(data.ok)) {
+				$.unblockUI();
+				alert('Erro, tente novamente mais tarde.');
+			} else {
+				if(data.ok == '0') {
+					$.unblockUI();
+					$.fancybox.open({
+						href 		: url_base + '/anuncio/ajax/erro',
+						type 		: 'iframe',
+						autoSize 	: false,
+						width		: 840,
+						padding		: 0,
+						margin		: 0,
+						scrolling 	: 'no'
+					});
+				} else {
+					$.unblockUI();
+					window.location = url_base + '/anuncio/cadastrar/passo-3'
+				}
+			}
+		}
+		
+		function returnError() {
+			$.unblockUI();
+			alert('returnError');
+		}
+		
+		return false;
+	});
+	
 	
 	window.fbAsyncInit = function() {
 		FB.init({
@@ -129,6 +176,9 @@ $(document).ready(function(){
     }(document));
 	
 	$('#btn-facebook').on('click', function(){
+		
+		$.blockUI({ message: '<h1>Efetuando Login..</h1>' });
+		
 		FB.login(function(response) {
 			if (response.authResponse) {
 				
@@ -144,19 +194,23 @@ $(document).ready(function(){
 						
 						switch (data.retorno) {
 							case 'ok':
+								$.unblockUI();
 								window.location = url_base;
 							break;
 							
 							case 'erro-login':
+								$.unblockUI();
 								alert('Login não encontrado');
 							break;
 							
 							case 'erro':
+								$.unblockUI();
 								alert('Não foi possivel Logar com o Facebook');
 							break;
 						}
 					},
 					error: function() {
+						$.unblockUI();
 						alert('Erro do servidor');
 					}
 				});
@@ -164,6 +218,7 @@ $(document).ready(function(){
 				return false;
 				
 			} else {
+				$.unblockUI();
 				alert("Nao autorizou");
 			}
 		},{scope: 'email'});

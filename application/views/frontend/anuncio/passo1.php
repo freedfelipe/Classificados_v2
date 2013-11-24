@@ -19,7 +19,7 @@
 		<div id="title-plano">Escolha seu Plano</div>
 		<div id="sub-title-plano">Escolha um dos nossos planos de anúncio.</div>
 		
-		<form name="planos" method="post" action="<?=site_url($_SERVER['REQUEST_URI']);?>" accept-charset="utf-8">
+		<form class="submit_form_1" name="planos" method="post" action="<?=site_url('anuncio/ajax/salva-passo-1');?>" accept-charset="utf-8">
 			
 			<div id="line-planos">
 				
@@ -56,7 +56,7 @@
 			</div>
 			
 			<div id="line-btns">
-				<input type="submit" name="proximo" id="proximo" value="Proximo >>">
+				<input type="submit" name="proximo" id="proximo" class="proximo1" value="Proximo >>">
 				<input type="submit" name="anterior" id="anterior" value="Cancelar">
 			</div>
 		</form>
