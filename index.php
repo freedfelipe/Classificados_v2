@@ -18,7 +18,19 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'development');
+
+switch($_SERVER['HTTP_HOST']){
+	case 'local.classificados.com.br':
+    case 'localhost':
+		define('ENVIRONMENT', 'development');
+	break;
+	case 'dev.meucarroturbo.com.br':
+		define('ENVIRONMENT', 'testing');
+	break;
+	case 'meucarroturbo.com.br':
+		define('ENVIRONMENT', 'production');
+	break;
+}
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
