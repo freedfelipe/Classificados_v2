@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `sys_contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(250) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `mensagem` text NOT NULL,
+  `created_in` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

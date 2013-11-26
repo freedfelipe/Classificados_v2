@@ -281,4 +281,29 @@ $(document).ready(function(){
 	var itvl = setInterval(function(){autoAdvance()},changeEvery*1000);
 
 	/* End of customizations */
+	
+	(function($){
+	//object containing margin settings
+		var margins = {
+			panel1: 0,
+			panel2: -653,
+			panel3: -1306,
+			panel4: -1959,
+			panel5: -2612,
+			panel6: -3265
+		}
+	//handle nav click
+		$("#nav a").click(function(e){					
+			//stop browser default
+			e.preventDefault();					
+			//remove on states for all nav links
+			$("#nav a").removeClass("on");
+			//add on state to selected nav link
+			$(this).addClass("on");
+			//set margin of slider to move
+			$("#slider").animate({
+				marginLeft: margins[$(this).attr("href").split("#")[1]]
+			});					
+		});
+	})(jQuery);
 });

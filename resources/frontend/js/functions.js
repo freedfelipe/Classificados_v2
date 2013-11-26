@@ -155,6 +155,49 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	$('.enviar_contato').on('click', function(e){
+		e.preventDefault();
+		window.scrollTo(0,0);
+		$('form.form_submit_contato').submit();
+	});
+	
+	$('form.form_submit_contato').submit(function(){
+		
+		$.blockUI({ message: '<h1>Enviado Formulário..</h1>' });
+		
+		var options = {success:processJson,error:returnError,async:true,dataType:'json'};
+		$(this).ajaxSubmit(options);
+		
+		function processJson(data) {
+			if(isNaN(data.ok)) {
+				$.unblockUI();
+				alert('Erro, tente novamente mais tarde.');
+			} else {
+				if(data.ok == '1') {
+					$.unblockUI();
+					$.fancybox.open({
+						href 		: url_base + '/contato/ajax/alert',
+						type 		: 'iframe',
+						autoSize 	: false,
+						width		: 840,
+						padding		: 0,
+						margin		: 0,
+						scrolling 	: 'no'
+					});
+				} //else {
+					//$.unblockUI();
+					//window.location = url_base + '/anuncio/cadastrar/passo-3'
+				//}
+			}
+		}
+		
+		function returnError() {
+			$.unblockUI();
+			alert('returnError');
+		}
+		
+		return false;
+	});
 	
 	window.fbAsyncInit = function() {
 		FB.init({

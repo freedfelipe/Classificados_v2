@@ -20,9 +20,9 @@
 				<div id="links"><a href="<?=site_url('quem-somos');?>">Quem Somos</a></div> 
 			</div>
 			<div id="colunas">
-				<div id="links"><a href="#">Sugestão</a></div> 
-				<div id="links"><a href="#">Reclamação</a></div> 
-				<div id="links"><a href="#">Contato</a></div> 
+				<div id="links"><a href="<?=site_url('contato');?>">Sugestão</a></div> 
+				<div id="links"><a href="<?=site_url('contato');?>">Reclamação</a></div> 
+				<div id="links"><a href="<?=site_url('contato');?>">Contato</a></div> 
 			</div>
 		</div>
 		<div class="box-redes_sociais">
@@ -52,32 +52,5 @@
 		<a href="http://www.wadtecnologia.com.br/" target="_blank"><div id="right">WAD TECNOLOGIA</div></a>
 	</div><!-- end  -->
 </footer><!-- end #footer2 -->
-<!-- Banner - Destaque -->
-<script type="text/javascript">
-(function($){
-//object containing margin settings
-	var margins = {
-		panel1: 0,
-		panel2: -653,
-		panel3: -1306,
-		panel4: -1959,
-		panel5: -2612,
-		panel6: -3265
-	}
-//handle nav click
-	$("#nav a").click(function(e){					
-		//stop browser default
-		e.preventDefault();					
-		//remove on states for all nav links
-		$("#nav a").removeClass("on");
-		//add on state to selected nav link
-		$(this).addClass("on");
-		//set margin of slider to move
-		$("#slider").animate({
-			marginLeft: margins[$(this).attr("href").split("#")[1]]
-		});					
-	});
-})(jQuery);
-</script>
 </body>
 </html>

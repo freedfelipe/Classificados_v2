@@ -155,3 +155,7 @@ $route['publicidade']                                               = 'frontend/
 
 # planos
 $route['planos']                                                    = 'frontend/home/planos';
+
+# contato
+$route['contato']                                                   = 'frontend/home/contato';
+$route['contato/ajax/(:any)']                                       = 'frontend/home/ajax/$1';
