@@ -380,6 +380,11 @@ header #margin{
      float: left;
      margin-top: 20px;
 }
+.widget-right{
+     width: 305px;
+     float: right;
+     margin-top: 20px;
+}
 .filtro{
      width: 300px;
      float: left;
@@ -2090,6 +2095,18 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 	width: 15px;
 }
 
-
-
-
+/* Institucionais */
+.texto-quem-somos{
+     float: left;
+     padding: 30px 20px 10px 0px;
+     line-height: 25px;
+     font-family: rondalo;
+     font-size: 18px;
+     
+}
+.video-quem-somos{
+     float: left;
+     width: 500px;
+     height: 300px;
+     margin: 30px 50px 10px 50px;
+}
