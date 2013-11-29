@@ -1562,8 +1562,9 @@ input[type="checkbox"]:checked + label span {
 	}
 
 .upload-file-container input{
-		width: 20px;
-		cursor: pointer;
+		width: 140px;
+               cursor: pointer;
+               height: 105px;
 	}
 
 
@@ -1655,7 +1656,7 @@ input[type="checkbox"]:checked + label span {
      color:#000;
 }
 #linha-regiao{
-     width: 198px;
+     width: 100%;
      float: left;
      margin-bottom: 15px;
 }
