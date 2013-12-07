@@ -59,9 +59,9 @@ class Model_model extends CI_Model{
 		return false;
 	}
 	
-	public final function all()
+	public final function all($where = array())
 	{
-		$query = $this->db->get_where($this->tablename);
+		$query = $this->db->get_where($this->tablename, $where);
 		
 		if($query->num_rows() > 0){
 			return $query->result_array();
