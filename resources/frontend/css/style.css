@@ -2190,3 +2190,168 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
      height: 300px;
      margin: 30px 50px 10px 50px;
 }
+
+/* preview - passo 3 */
+#linha-planos-3{
+     width: 100%;
+     float: left;
+     border-bottom: 1px solid #E6E6E6;
+     margin-top: 20px;
+}
+#div-fotos{
+     width: 450px;
+     float: left;
+     background: #F4F4F4;
+     padding: 10px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     border: #E6E6E6 1px solid;
+     
+}
+/* Demo styles */
+.cred{margin-top:20px;font-size:11px;}
+/* This rule is read by Galleria to define the gallery height: */
+#galleria{height:320px}
+#div-informacoes{
+     float: left;
+     margin: 0px 0px 0px 10px;
+     width: 485px;
+     padding: 5px;
+}
+#title-anuncio{
+     width: 100%;
+     margin: 15px 0px 10px 0px;
+     float: left;
+     font-family: rondalo;
+     font-size: 30px;
+}
+#preco-anuncio{
+     width: 450px;
+     margin: 0px 0px 10px 0px;
+     float: left;
+     padding-top: 10px;
+     padding-left: 35px;
+     font-family: rondalo;
+     font-size: 25px;
+     color: #990000;
+     font-weight: bold;
+     background: url(../images/icon-preco1.png) no-repeat 5px 2px;
+}
+#preco-anuncio span{
+     font-size: 9px;
+     font-family: sans-serif;
+     
+}
+#tabela-anuncio{
+     float: left;
+     padding: 10px;
+     width: 450px;
+}
+#tabela-anuncio #linha-1{
+     width: 100%;
+     float: left;
+     background: #F4F4F4;
+     border: 1px solid #fff;
+     padding: 10px 0px 10px 5px;
+}
+#tabela-anuncio #linha-2{
+     width: 100%;
+     float: left;
+     background: #F9F9F9;
+     border: 1px solid #fff;
+     padding: 10px 0px 10px 5px;
+}
+#tabela-anuncio #coluna1{
+     float: left;
+     width: 150px;
+     font-family: rondalo;
+     font-size: 15px;
+}
+#tabela-anuncio #coluna2{
+     float: left;
+     width: 290px;
+     font-family: rondalo;
+     font-size: 15px;
+}
+#tabela-anuncio #coluna-vendedor{
+     float: left;
+     width: 100%;
+     font-family: rondalo;
+     font-weight: bold;
+     text-transform: uppercase;
+     font-size: 18px;
+}
+/*Tabela dados vendedor*/
+
+#tabela-dados-vendedor{
+     float: left;
+     padding: 10px;
+     width: 550px;
+}
+#tabela-dados-vendedor #linha-1{
+     width: 100%;
+     float: left;
+     background: #F4F4F4;
+     border: 1px solid #fff;
+     padding: 10px 0px 10px 5px;
+}
+#tabela-dados-vendedor #linha-2{
+     width: 100%;
+     float: left;
+     background: #F9F9F9;
+     border: 1px solid #fff;
+     padding: 10px 0px 10px 5px;
+}
+#tabela-dados-vendedor #coluna1{
+     float: left;
+     width: 150px;
+     font-family: rondalo;
+     font-size: 18px;
+}
+#tabela-dados-vendedor #coluna2{
+     float: left;
+     width: 290px;
+     font-family: rondalo;
+     font-size: 18px;
+}
+#tabela-dados-vendedor #coluna-vendedor{
+     float: left;
+     width: 100%;
+     font-family: rondalo;
+     font-weight: bold;
+     text-transform: uppercase;
+     font-size: 18px;
+}
+/**/
+#preview-desc-esq{
+     float: left;
+     width: 670px;
+}
+#preview-desc-esq #opcionais-review{
+     float: left;
+     font-family: rondalo;
+     font-size: 18px;
+     line-height: 25px;
+     margin-bottom: 15px;
+}
+#preview-desc-dir{
+     float: right;
+     width: 370px;
+     background: #F2F2F2;
+     border: 1px solid #E6E6E6;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     border-radius: 5px;
+     margin-bottom: 15px;
+}
+#preview-desc-dir #title{
+     font-size: 20px;
+}
+#preview-desc-dir #mapa-vendedor{
+     float: left;
+     width: 280px;
+     height: 280px;
+     margin: 5px 10px 5px 10px;
+}
+
