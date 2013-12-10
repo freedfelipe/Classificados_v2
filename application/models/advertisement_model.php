@@ -312,7 +312,7 @@ class Advertisement_model extends CI_Model{
 			
 			$insert_passo_2 = array(
 				'user_id' 	=> $sessao['user_id'],
-				'plan_id'	=> $sessao['plano'],
+				'plan_id'	=> $sessao['plan_id'],
 				'categoria' => $this->input->post('categoria', TRUE),
 				'brand_id' 	=> $this->input->post('brand_id', TRUE),
 				'model_id' 	=> $this->input->post('model_id', TRUE),

@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var url_base = $(location).attr('origin');
 	
     //filtros...
-    $('#brand_id').live('change', function(){
+    $('#brand_id').on('change', function(){
         
         var url = url_base + '/modelos/consultar/' + $(this).val();
 		$.get(url, function(d){
@@ -11,7 +11,7 @@ $(document).ready(function(){
 		});
     });
     
-    $('#state_id').live('change', function(){
+    $('#state_id').on('change', function(){
 		var url = url_base + '/cidades/consultar/' + $(this).val();
 		$.get(url, function(d){
 			$('#city_id').html(d);
@@ -30,7 +30,7 @@ $(document).ready(function(){
     });
 	
 	// upload de imagens
-	$('#fileupload').live('change', function(){
+	$('#fileupload').on('change', function(){
         
 		var id = $(this).attr('rel');
 		

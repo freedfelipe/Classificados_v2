@@ -75,6 +75,21 @@ class Anuncio extends CI_Controller{
 		}
 	}
 	
+	public final function passo3()
+	{
+		$sessao = $this->session->userdata('anuncio');
+		
+		if($sessao){
+			
+			$data['url_title']	= 'Passo 3';
+			
+			$this->render($this->router->method, $data);
+		}else{
+			redirect('anuncio/cadastrar');
+		}
+	}
+	
+	
 	public final function ajax($metodo, $input = '')
 	{
 		
