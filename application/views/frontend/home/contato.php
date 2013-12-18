@@ -12,11 +12,11 @@
 				<div id="box-contato">
 					<div id="line-box-line">
 						<div id="text-contato">Nome:</div>
-						<div id="form-login"><input type="text" name="nome" id="form"></div>
+						<div id="form-login"><input type="text" name="nome" id="form-contato"></div>
 					</div>
 					<div id="line-box-line">
 						<div id="text-contato">Email:</div>
-						<div id="form-login"><input type="text" name="email" id="form"></div>
+						<div id="form-login"><input type="text" name="email" id="form-contato"></div>
 					</div>
 					<div id="line-box-line">
 						<div id="text-contato">Mensagem:</div>

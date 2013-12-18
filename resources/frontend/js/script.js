@@ -205,6 +205,14 @@ $(document).ready(function(){
 		$('.preco-roda').prop('disabled', false);
 		$('.descricao-roda').prop('disabled', false);
 	});
+	$("#cep-regiao").click(function(){
+		$("#title-maps").css("display", "block");
+		$("#linha-mapa").css("display", "block");
+	});
+	$("#cep-regiao").focus(function(){
+		$("#title-maps").css("display", "block");
+		$("#linha-mapa").css("display", "block");
+	});
 });
 
 $(document).ready(function(){

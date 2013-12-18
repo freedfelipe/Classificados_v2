@@ -399,39 +399,40 @@
 					
 					<div id="linha-regiao">
 						<div id="texto-form-user">CEP<font color="#990000">*</font></div>
-						<div id="formulario-line-regiao">
-							<input type="text" name="cep" id="nome-regiao" class="cep">
+						<div id="formulario-line-cep">
+							<input type="text" name="cep" id="cep-regiao" class="cep">
 						</div>
 						
 						<div id="texto-form-user">Estado<font color="#990000">*</font></div>
-						<div id="formulario-line-regiao">
-							<input type="text" name="uf" id="nome-regiao" class="uf">
+						<div id="formulario-line-estado">
+							<input type="text" name="uf" id="estado-regiao" class="uf">
 						</div>
 						
 						<div id="texto-form-user">Cidade<font color="#990000">*</font></div>
-						<div id="formulario-line-regiao">
-							<input type="text" name="cidade" id="nome-regiao" class="cidade">
+						<div id="formulario-line-cidade">
+							<input type="text" name="cidade" id="cidade-regiao" class="cidade">
 						</div>
 						
 						<div id="texto-form-user">Bairro<font color="#990000">*</font></div>
-						<div id="formulario-line-regiao">
-							<input type="text" name="bairro" id="nome-regiao" class="bairro">
+						<div id="formulario-line-bairro">
+							<input type="text" name="bairro" id="bairro-regiao" class="bairro">
 						</div>
 						
 						<div id="texto-form-user">Rua<font color="#990000">*</font></div>
-						<div id="formulario-line-regiao">
-							<input type="text" name="rua" id="nome-regiao" class="rua">
+						<div id="formulario-line-rua">
+							<input type="text" name="rua" id="rua-regiao" class="rua">
 						</div>
 					</div>
 				</div>
-				<div id="linha-planos-2">
-					<div id="map2"></div>
+				<div id="title-maps"><b>Mapa</b> de Localização</div>
+				<div id="linha-mapa">
+					<div id="map2">
+					</div>
 				</div>
 				
 				<div id="informacoes-planos">
 					<b>TERMOS DE USO</b> <br /><br />
 					Ao publicar o seu anúncio aqui, voce concorda que está em conformidade com nossas diretrizes listadas abaixo.<br /><br />
-	
 					Reservamo-nos o direito de modificar quaisquer anúncios em violaçao de nossa ordem orientaçoes para evitar abusos e
 					manter o conteúdo adequado para nosso público em geral. Isto inclui as pessoas de todas as idades, raças, religioes e
 					nacionalidades. Portanto, todos os anúncios que estao em violaçao das nossas diretrizes estao sujeitos a serem retirados
