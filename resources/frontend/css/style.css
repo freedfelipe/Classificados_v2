@@ -2488,4 +2488,66 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 #map2{
      height: 320px;
 }
+/* Upload de imagens 2 passo */
+#btn-upload{
+     cursor: pointer;
+     width: 150px;
+     height: 100px;
+     float: left;
+     margin: 20px;
+     background: url(../images/btn-uploap-pc.png) no-repeat;
+}
+#btn-upload2{
+     cursor: pointer;
+     width: 150px;
+     height: 100px;
+     float: left;
+     margin: 20px;
+     background: url(../images/btn-uploap-pc.png) no-repeat;
+}
+#btn-upload3{
+     cursor: pointer;
+     width: 150px;
+     height: 100px;
+     float: left;
+     margin: 20px;
+     background: url(../images/btn-uploap-pc.png) no-repeat;
+}
+#btn-upload4{
+     cursor: pointer;
+     width: 150px;
+     height: 100px;
+     float: left;
+     margin: 20px;
+     background: url(../images/btn-uploap-pc.png) no-repeat;
+}
+#bg-modal-upload{
+     display: none;
+     height: 100%;
+     width: 100%;
+     background: url(../images/bg-modal.png);
+     position:fixed;
+     top:0; left:0; 
+     z-index:10000; 
 
+}
+#modal-upload{
+     width: 510px;
+     position: fixed;
+     margin: -151px 0 0 -250px; 
+     left: 50%; top: 50%; 
+     background: #fff;
+     padding: 50px;
+
+}
+#fechar-modal{
+     background: url(../images/btn-fechar-modal.png) no-repeat;
+     padding-left: 25px;
+     text-transform: uppercase;
+     font-family: rondalo;
+     font-size: 25px;
+     font-weight: bold;
+     cursor: pointer;
+     float: right;
+     margin-top: 50px;
+}

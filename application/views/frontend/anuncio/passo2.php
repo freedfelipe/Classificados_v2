@@ -129,24 +129,10 @@
 				<div id="linha-planos-2">
 					<div id="title"><b>Imagens</b> do Veículo</div>
 					
-					<progress value="0" max="100"></progress><span id="porcentagem">0%</span>
+					<!-- Upload de imagens modal -->
+					<div id="btn-upload"></div>						
+					<!-- fim Upload de imagens modal-->
 					
-					<div id="resposta"></div>
-					
-					<div id="line-fotos">
-						<ul class="field-content">
-							<li class="select-six">
-								
-								<? if(isset($plano['num_pics']) and $plano['num_pics'] > 0){ for($foto = 1; $foto <= $plano['num_pics']; $foto++){ ?>
-								<div class="upload-file-container">
-									<span>
-										<input type="file" id="fileupload" name="file_<?=$foto;?>" rel="<?=$foto;?>"/>
-									</span>
-								</div>
-								<? } } ?>
-							</li>
-						</ul>
-					</div>
 				</div>
 				
 				<? if(isset($plano['video']) and $plano['video'] == 1){ ?>
@@ -197,24 +183,10 @@
 				<div id="linha-planos-2">
 					<div id="title"><b>Imagens</b> da Peça - <b>Acessório</b></div>
 					
-					<progress value="0" max="100"></progress><span id="porcentagem">0%</span>
+					<!-- Upload de imagens modal -->
+					<div id="btn-upload2"></div>						
+					<!-- fim Upload de imagens modal-->
 					
-					<div id="resposta"></div>
-					
-					<div id="line-fotos">
-						<ul class="field-content">
-							<li class="select-six">
-								
-								<? if(isset($plano['num_pics']) and $plano['num_pics'] > 0){ for($foto = 1; $foto <= $plano['num_pics']; $foto++){ ?>
-								<div class="upload-file-container">
-									<span>
-										<input type="file" id="fileupload" name="file_<?=$foto;?>" rel="<?=$foto;?>"/>
-									</span>
-								</div>
-								<? } } ?>
-							</li>
-						</ul>
-					</div>
 				</div>
 				
 				<? if(isset($plano['video']) and $plano['video'] == 1){ ?>
@@ -266,24 +238,9 @@
 				<div id="linha-planos-2">
 					<div id="title"><b>Imagens</b> da Peça - <b>Mecânica</b></div>
 					
-					<progress value="0" max="100"></progress><span id="porcentagem">0%</span>
-					
-					<div id="resposta"></div>
-					
-					<div id="line-fotos">
-						<ul class="field-content">
-							<li class="select-six">
-								
-								<? if(isset($plano['num_pics']) and $plano['num_pics'] > 0){ for($foto = 1; $foto <= $plano['num_pics']; $foto++){ ?>
-								<div class="upload-file-container">
-									<span>
-										<input type="file" id="fileupload" name="file_<?=$foto;?>" rel="<?=$foto;?>"/>
-									</span>
-								</div>
-								<? } } ?>
-							</li>
-						</ul>
-					</div>
+					<!-- Upload de imagens modal -->
+					<div id="btn-upload3"></div>						
+					<!-- fim Upload de imagens modal-->
 				</div>
 				
 				<? if(isset($plano['video']) and $plano['video'] == 1){ ?>
@@ -335,24 +292,9 @@
 				<div id="linha-planos-2">
 					<div id="title"><b>Imagens</b> da Roda</div>
 					
-					<progress value="0" max="100"></progress><span id="porcentagem">0%</span>
-					
-					<div id="resposta"></div>
-					
-					<div id="line-fotos">
-						<ul class="field-content">
-							<li class="select-six">
-								
-								<? if(isset($plano['num_pics']) and $plano['num_pics'] > 0){ for($foto = 1; $foto <= $plano['num_pics']; $foto++){ ?>
-								<div class="upload-file-container">
-									<span>
-										<input type="file" id="fileupload" name="file_<?=$foto;?>" rel="<?=$foto;?>"/>
-									</span>
-								</div>
-								<? } } ?>
-							</li>
-						</ul>
-					</div>
+					<!-- Upload de imagens modal -->
+					<div id="btn-upload4"></div>						
+					<!-- fim Upload de imagens modal-->
 				</div>
 				
 				<? if(isset($plano['video']) and $plano['video'] == 1){ ?>
@@ -457,4 +399,34 @@
 			
 			
 		</div>
+		
+<!-- Modal para o form -->
+<div id="bg-modal-upload">
+	<div id="modal-upload">
+		<form>
+			<progress value="0" max="100"></progress><span id="porcentagem">0%</span>
+			
+			<div id="resposta"></div>
+			
+			<div id="line-fotos">
+				<ul class="field-content">
+					<li class="select-six">
+						
+						<? if(isset($plano['num_pics']) and $plano['num_pics'] > 0){ for($foto = 1; $foto <= $plano['num_pics']; $foto++){ ?>
+						<div class="upload-file-container">
+							<span>
+								<input type="file" id="fileupload" name="file_<?=$foto;?>" rel="<?=$foto;?>"/>
+							</span>
+						</div>
+						<? } } ?>
+					</li>
+				</ul>
+			</div>
+		</form>
+		<div id="fechar-modal">fechar</div>
+	</div>
+	
+</div>
+<!-- Fim do Modal para o form -->
+
 	</div>

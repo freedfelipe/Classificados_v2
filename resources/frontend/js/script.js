@@ -205,6 +205,7 @@ $(document).ready(function(){
 		$('.preco-roda').prop('disabled', false);
 		$('.descricao-roda').prop('disabled', false);
 	});
+	/* Aparecer o Maps do 2 passo */
 	$("#cep-regiao").click(function(){
 		$("#title-maps").css("display", "block");
 		$("#linha-mapa").css("display", "block");
@@ -212,6 +213,40 @@ $(document).ready(function(){
 	$("#cep-regiao").focus(function(){
 		$("#title-maps").css("display", "block");
 		$("#linha-mapa").css("display", "block");
+	});
+	
+	/* Modal upload img */
+	$("#btn-upload").click(function(){
+		$("#bg-modal-upload").css("display", "block");
+	});
+	$("#fechar-modal").click(function(){
+		$("#bg-modal-upload").css("display", "none");
+	});
+	$(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+            $("#bg-modal-upload").css("display", "none");
+        }
+        });
+	/* 2 */
+	$("#btn-upload2").click(function(){
+		$("#bg-modal-upload").css("display", "block");
+	});
+	$("#fechar-modal").click(function(){
+		$("#bg-modal-upload").css("display", "none");
+	});
+	/* 3 */
+	$("#btn-upload3").click(function(){
+		$("#bg-modal-upload").css("display", "block");
+	});
+	$("#fechar-modal").click(function(){
+		$("#bg-modal-upload").css("display", "none");
+	});
+	/* 4 */
+	$("#btn-upload4").click(function(){
+		$("#bg-modal-upload").css("display", "block");
+	});
+	$("#fechar-modal").click(function(){
+		$("#bg-modal-upload").css("display", "none");
 	});
 });
 
