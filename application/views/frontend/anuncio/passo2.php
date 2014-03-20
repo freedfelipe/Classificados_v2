@@ -30,7 +30,7 @@
 				Os campos obrigatórios sao indicados por um <font color="#990000">*</font>.
 				Voce terá a oportunidade de rever o seu anúncio antes de ser publicado.
 			</div>
-			<form class="submit_form_2" id="anuncio" name="anuncio" action="<?=site_url('anuncio/ajax/salva-passo-2');?>" method="POST">
+			<form class="submit_form_2" name="anuncio" action="<?=site_url('anuncio/ajax/salva-passo-2');?>" method="POST">
 			
 			<div id="linha-planos-2">
 				
@@ -403,7 +403,7 @@
 <!-- Modal para o form -->
 <div id="bg-modal-upload">
 	<div id="modal-upload">
-		<form>
+		<form id="anuncio" method="post" enctype="multipart/form-data">
 			<progress value="0" max="100"></progress><span id="porcentagem">0%</span>
 			
 			<div id="resposta"></div>
